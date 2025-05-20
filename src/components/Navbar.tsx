@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,10 +40,11 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'Compare Plans', href: '#plans' },
-    { name: 'Reviews', href: '#testimonials' },
-    { name: 'FAQ', href: '#faq' }
+    { name: 'Home', href: '/' },
+    { name: 'Compare Plans', href: '/compare-plans' },
+    { name: 'Insurance', href: '/insurance' },
+    { name: 'Reviews', href: '/reviews' },
+    { name: 'FAQ', href: '/faq' }
   ];
 
   return (
@@ -51,7 +53,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <a href="/" className="text-2xl font-bold text-deepBlue">InsureTravel</a>
+          <Link href="/" className="text-2xl font-bold text-deepBlue">InsureTravel</Link>
           
           {/* Mobile menu button */}
           <button 
@@ -70,12 +72,12 @@ const Navbar = () => {
                     {index > 0 && (
                       <span className="mx-4 text-gray-300 text-lg font-light">|</span>
                     )}
-                    <a 
+                    <Link 
                       href={link.href}
                       className="text-gray-700 hover:text-deepBlue transition-colors duration-300 text-base font-medium whitespace-nowrap px-2"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -98,15 +100,15 @@ const Navbar = () => {
             <div className="flex flex-col">
               {navLinks.map((link, i) => (
                 <div key={link.name} className="flex flex-col">
-                  <motion.a
-                    custom={i}
-                    variants={menuItemVariants}
-                    href={link.href}
-                    className="text-xl text-gray-700 hover:text-deepBlue transition-colors py-3 px-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </motion.a>
+                  <motion.div custom={i} variants={menuItemVariants}>
+                    <Link
+                      href={link.href}
+                      className="text-xl text-gray-700 hover:text-deepBlue transition-colors py-3 px-2 block"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                   {i < navLinks.length - 1 && (
                     <div className="border-b border-gray-200 w-full my-1"></div>
                   )}
