@@ -57,6 +57,8 @@ type InsurancePlan = {
     underwrittenBy: string;
     maxDependentAge: string;
   };
+  brochure_url?: string;
+  policy_document_url?: string;
 };
 
 const iconMapping = {
@@ -79,6 +81,8 @@ const mockInsurancePlans: InsurancePlan[] = [
     pricePerMonth: '$XX per month',
     rating: 5,
     recommended: true,
+    brochure_url: '',
+    policy_document_url: '',
     features: {
       'Medication': {
         description: 'Reasonable and customary charges',
@@ -128,6 +132,8 @@ const mockInsurancePlans: InsurancePlan[] = [
     pricePerMonth: '$XX per month',
     rating: 3.5,
     recommended: false,
+    brochure_url: '',
+    policy_document_url: '',
     features: {
       'Medication': {
         description: 'Max 30-day supply up to $500',
@@ -177,6 +183,8 @@ const mockInsurancePlans: InsurancePlan[] = [
     pricePerMonth: '$XX per month',
     rating: 4.5,
     recommended: false,
+    brochure_url: '',
+    policy_document_url: '',
     features: {
       'Medication': {
         description: 'Max 30-day supply up to coverage amt.',
@@ -226,6 +234,8 @@ const mockInsurancePlans: InsurancePlan[] = [
     pricePerMonth: '$XX per month',
     rating: 4,
     recommended: false,
+    brochure_url: '',
+    policy_document_url: '',
     features: {
       'Medication': {
         description: 'Max 30-day supply up to $2000',
@@ -297,6 +307,12 @@ const htmlToMarkdown = (html: string): string => {
     .replace(/&nbsp;/g, ' ');
     
   return markdown;
+};
+
+// Utility function to format feature descriptions
+const formatFeatureDescription = (description: string): string => {
+  // Add comma after numbers only if they're not at the end of the string
+  return description.replace(/(\d+)(?!\s*,)(?=\s+\w)/g, '$1,');
 };
 
 // Function to convert API quotes to InsurancePlan format
@@ -435,6 +451,8 @@ const convertApiQuotesToPlans = (quotes: any): InsurancePlan[] => {
       recommended: false,
       features: keyFeatures,
       websiteUrl: quote.trv_redirection_companywebsite_url || undefined,
+      brochure_url: quote.brochure_url || '',
+      policy_document_url: quote.policy_document_url || '',
       // Include expanded details from the actual API response
       additionalInfo: {
         preExisting: quote.trv_covers_pre_existing || 'No',
@@ -841,7 +859,7 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                                   </div>
                                   <div>
                                     <div className="text-sm font-bold text-gray-700">{type}</div>
-                                    <div className="text-sm text-gray-600">{feature.description}</div>
+                                    <div className="text-sm text-gray-600">{formatFeatureDescription(feature.description)}</div>
                                   </div>
                                 </div>
                               );
@@ -876,7 +894,7 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                                       </div>
                                       <div>
                                         <div className="text-sm font-bold text-gray-700">{type}</div>
-                                        <div className="text-sm text-gray-600">{feature.description}</div>
+                                        <div className="text-sm text-gray-600">{formatFeatureDescription(feature.description)}</div>
                                       </div>
                                     </div>
                                   );
@@ -910,7 +928,7 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                                     </div>
                                     <div>
                                       <div className="text-sm font-bold text-gray-700">{type}</div>
-                                      <div className="text-sm text-gray-600">{feature.description}</div>
+                                      <div className="text-sm text-gray-600">{formatFeatureDescription(feature.description)}</div>
                                     </div>
                                   </div>
                                 );
@@ -923,13 +941,21 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                         <div className="w-full md:w-56 flex flex-col items-center text-center md:items-center mt-4 md:mt-0 md:pl-6">
                           <div className="text-4xl font-bold text-magenta mb-1">{plan.price}</div>
                           {plan.pricePerMonth && <div className="text-sm text-gray-500 mb-4">{plan.pricePerMonth}</div>}
-                          <button 
-                            onClick={() => handleBuyNowClick(plan)}
+                          {plan.provider !== "21st Century" ?  
+                            <button 
+                              onClick={() => handleBuyNowClick(plan)}
+                              className={`w-full md:w-auto py-3 px-8 rounded-lg font-medium uppercase transition-colors shadow-sm ${quoteData === null ? 'bg-gray-400 cursor-not-allowed' : 'bg-magenta hover:bg-magenta/90'} text-white`}
+                              aria-disabled={quoteData === null}
+                            >
+                              BUY NOW
+                            </button> : 
+                            <button 
                             className={`w-full md:w-auto py-3 px-8 rounded-lg font-medium uppercase transition-colors shadow-sm ${quoteData === null ? 'bg-gray-400 cursor-not-allowed' : 'bg-magenta hover:bg-magenta/90'} text-white`}
                             aria-disabled={quoteData === null}
-                          >
-                            BUY NOW
-                          </button>
+                            >
+                            CALL NOW
+                            </button> 
+                          } 
                           <div className="text-xs text-gray-400 mt-2">With our partner {plan.provider}</div>
                         </div>
                       </div>
@@ -988,18 +1014,32 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                               <div className="flex flex-wrap items-center">
                                 <div className="font-medium text-gray-700 mr-4">Downloads:</div>
                                 <div className="flex flex-wrap gap-4">
-                                  <a href="#" className="inline-flex items-center text-blue-400 hover:text-blue-500">
-                                    <div className="w-8 h-8 flex items-center justify-center bg-red-100 rounded-md mr-2">
-                                      <span className="text-xs font-medium text-red-500">PDF</span>
-                                    </div>
-                                    Policy Wordings
-                                  </a>
-                                  <a href="#" className="inline-flex items-center text-blue-400 hover:text-blue-500">
-                                    <div className="w-8 h-8 flex items-center justify-center bg-red-100 rounded-md mr-2">
-                                      <span className="text-xs font-medium text-red-500">PDF</span>
-                                    </div>
-                                    Product Brochure
-                                  </a>
+                                  {plan.policy_document_url && (
+                                    <a 
+                                      href={plan.policy_document_url} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center text-blue-400 hover:text-blue-500"
+                                    >
+                                      <div className="w-8 h-8 flex items-center justify-center bg-red-100 rounded-md mr-2">
+                                        <span className="text-xs font-medium text-red-500">PDF</span>
+                                      </div>
+                                      Policy Wordings
+                                    </a>
+                                  )}
+                                  {plan.brochure_url && (
+                                    <a 
+                                      href={plan.brochure_url} 
+                                      target="_blank" 
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center text-blue-400 hover:text-blue-500"
+                                    >
+                                      <div className="w-8 h-8 flex items-center justify-center bg-red-100 rounded-md mr-2">
+                                        <span className="text-xs font-medium text-red-500">PDF</span>
+                                      </div>
+                                      Product Brochure
+                                    </a>
+                                  )}
                                 </div>
                               </div>
                             </div>
