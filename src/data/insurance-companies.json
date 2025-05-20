@@ -1,0 +1,577 @@
+{
+  "manulife": {
+    "name": "Manulife Travel Insurance",
+    "description": "Comprehensive travel insurance coverage for visitors to Canada, providing peace of mind during your stay.",
+    "benefits": {
+      "title": "Plan Benefits",
+      "introduction": "Manulife offers comprehensive travel insurance plans with the following benefits:",
+      "emergency_medical": {
+        "title": "Emergency Medical Benefits",
+        "items": [
+          "Maximum Benefits: $15,000; $25,000; $50,000; $100,000 and $150,000",
+          "Emergency Hospital: Semi-private room or intensive care unit when medically necessary",
+          "Ambulance Transportation: The use of a licensed local ambulance service",
+          "Emergency Air Transportation: The cost for one-way economy airfare, stretcher or air ambulance to transport you to your country of origin, and a medical attendant if required*",
+          "Diagnostics: Tests that are needed to diagnose or find out more about your condition**",
+          "Physician Services",
+          "Private Duty Registered Nurse while you are in hospital",
+          "Medical Appliances: The rental or purchase (whichever is less) of a hospital bed, wheelchair, brace, crutch, or other medical appliance",
+          "Follow-up Visits: Covered until the attending physician or Manulife medical advisors declare the end of the medical emergency",
+          "Professional Medical Services: Treatment from a licensed chiropractor, osteopath, acupuncturist, chiropodist, physiotherapist or podiatrist, up to $70 per visit to a maximum of $700 for a covered injury",
+          "Telemedicine Service by Maple: 24/7 days medical consultation service that connects you within minutes to a Canadian licensed primary care physician",
+          "Prescription Drugs",
+          "Accidental Dental: Up to $4,000 for repair or replacement of your natural or permanently attached artificial teeth damaged by an accidental blow to the mouth",
+          "Dental Emergencies: Up to $300 for the relief of dental pain",
+          "Expenses Related to Death: Up to $3,000 for container and to prepare or cremate the body, plus the expenses to return the body or ashes to the country of origin, or up to $3,000 for burial at place of death*",
+          "Travel Accident Insurance: Up to $50,000 for accidental death or dismemberment",
+          "Meals and Accommodation: Up to $150 per day to a maximum of $1,500 for hotel, meals, essential calls and taxi fares*",
+          "Bedside Expenses: Up to $3,000 for airfare and up to $500 for hotel and meals for someone to be with you*",
+          "Return Travel Companion: If you are repatriated or evacuated, Manulife will cover the cost of one-way economy class airfare to return your travel companion home*",
+          "Childcare Expenses: Up to $100 per day to a maximum of $300 per trip*",
+          "Return of Children: If you are admitted to hospital for more than 24 hours*",
+          "Hospital Allowance: Up to $100 for each 24-hour period to a maximum of $300 for telephone and television out-of-pocket expenses",
+          "Trip Break: For temporary visit back to your country of origin",
+          "Flight To/From Canada Coverage: When coverage is purchased prior to leaving home"
+        ],
+        "notes": [
+          "* These benefits must be authorized and arranged by the Assistance Centre.",
+          "** Magnetic resonance imaging (MRIs), computerized axial tomography (CAT) scans, sonograms, ultrasounds or biopsies, cardiac catheterization, angioplasty and/or cardiovascular surgery including any associated diagnostic test(s) or charges must be approved in advance by the Assistance Centre prior to being performed."
+        ]
+      },
+      "trip_interruption": {
+        "title": "Optional Benefit: Trip Interruption",
+        "description": "Up to $1,500 for single coverage or $5,000 for family if your trip is interrupted due to a covered event.",
+        "details": {
+          "title": "What is covered under optional Trip Interruption Insurance?",
+          "description": "Trip Interruption Insurance is an optional plan that provides coverage for an individual trip. If your trip is interrupted due to a covered event that occurs under this insurance, Manulife will pay up to a maximum of $1,500 for single coverage, or $5,000 for family coverage for:",
+          "items": [
+            {
+              "title": "",
+              "subitems": [
+                "a) The prepaid portion of your trip that is non-refundable and non-transferable to another travel date, except prepaid unused transportation home; or",
+                "b) Your additional and unplanned hotel and meal expenses, your essential phone calls and taxi fares to a maximum of up to $300 per day for up to 2 days when no earlier transportation arrangements are available; and/or",
+                "c) Your one-way economy class airfare via the most cost-effective itinerary to return you home."
+              ]
+            },
+            {
+              "title": "Events covered after you arrive in Canada from home include:",
+              "subitems": [
+                "a) Your or your travel companion's emergency medical condition or death;",
+                "b) Your or your travel companion's immediate family member's emergency medical condition or death;",
+                "c) Emergency hospitalization or death of the person whose guest you are during your trip."
+              ]
+            }
+          ],
+          "additional_note": "A medical condition related to a covered event, if the medical condition was not stable in the 3 months before the effective date of insurance."
+        }
+      }
+    },
+    "eligibility": {
+      "title": "Eligibility Requirements",
+      "sections": [
+        {
+          "title": "Who is Not Eligible",
+          "description": "You are not eligible for coverage under this policy if any of the following apply to you:",
+          "items": [
+            "You are travelling against the advice of a physician;",
+            "You have been diagnosed with a terminal illness with less than 2 years to live;",
+            "You have a kidney condition requiring dialysis;",
+            "You have used home oxygen during the 12 months prior to the date of application;",
+            "You have been diagnosed with Alzheimer's disease or any other form of dementia;",
+            "You are under 30 days or over 85 years of age (over 69 years of age for $150,000 Emergency Medical coverage);",
+            "You reside in a nursing home, home for the aged, other long-term care facility or rehabilitation centre; and/or",
+            "You require assistance with activities of daily living. Activities of daily living means eating, bathing, using the toilet, changing positions (including getting in and out of a bed or chair) and dressing."
+          ]
+        },
+        {
+          "title": "Who Can Apply?",
+          "items": [
+            "Visitors to Canada;",
+            "Canadians who are not eligible for benefits under a government health insurance plan;",
+            "Persons who are in Canada on a work visa or Parent and Grandparent Super Visa; or",
+            "New immigrants who are awaiting Canadian government health insurance plan coverage."
+          ]
+        },
+        {
+          "title": "Waiting Period",
+          "description": "Waiting period means the 48-hour period following and including your effective date of insurance if you purchase your policy:",
+          "items": [
+            "After the expiry date of an existing Manulife Visitor to Canada policy; or",
+            "After you arrive in Canada."
+          ],
+          "notes": [
+            "The waiting period will be waived if you purchased this policy prior to the expiry date of an existing Visitors to Canada policy already issued by Manulife, to take effect on the day following such expiry date, provided that there is no increase in the coverage amount or change in the Plan you select.",
+            "A waiting period will apply, except in the case of injury, if you purchase this insurance after your arrival in Canada or after the expiry date of an existing Visitors to Canada policy issued by Manulife."
+          ]
+        },
+        {
+          "title": "Pre-existing Conditions",
+          "description": "Manulife will not pay any expenses relating to:",
+          "sections": [
+            {
+              "title": "Plan A",
+              "items": [
+                "Any medical condition, diagnosed or undiagnosed, which existed or for which you sought or received medical advice, consultation, investigation, or for which treatment was required or recommended by a physician, within the 180 days prior to the effective date.",
+                "Any heart condition if, in the 180 days before the effective date, you required any form of nitroglycerine for the relief of angina pain; and/or",
+                "Any lung condition, if in the 180 days before the effective date, you required treatment with oxygen or Prednisone for a lung condition."
+              ]
+            },
+            {
+              "title": "Plan B",
+              "items": [
+                "Pre-existing condition that is not STABLE in the 180 days before the effective date of insurance;",
+                "Any heart condition if, in the 180 days before the effective date, you required any form of nitroglycerine for the relief of angina pain; and/or",
+                "Any lung condition if, in the 180 days before the effective date, you required treatment with oxygen or Prednisone for a lung condition."
+              ],
+              "note": "Plan B applicants 40 years of age or over must complete the medical questionnaire."
+            },
+            {
+              "title": "Plan A and B",
+              "description": "Expenses for a pre-existing condition for which you were hospitalized either more than once, or for at least two consecutive days, in the 12-months period before your effective date of insurance."
+            },
+            {
+              "title": "Stable Medical Condition Means",
+              "items": [
+                "You have not had a new symptom(s); and",
+                "Existing symptom(s) have not become more frequent or severe; and",
+                "A physician has not found that the medical condition has become worse; and",
+                "No test findings have shown that the medical condition may be getting worse; and",
+                "A physician has not provided, prescribed, or recommended any new medication, or any change in medication; and",
+                "A physician has not provided, prescribed, or recommended any new treatment, or any change in treatment; and",
+                "There has been no hospitalization or referral to a specialist or specialty clinic; and",
+                "A physician has not advised referral to a specialty clinic or a specialist or further testing, and there has been no testing for which the results have not yet been received."
+              ]
+            }
+          ],
+          "medication_note": {
+            "title": "Change in medication",
+            "description": "means the medication dosage, frequency, or type has been reduced, increased, or stopped, and/or new medication/s has/have been prescribed. The following is not considered a change in medication:",
+            "items": [
+              "A change from a brand-name drug to an equivalent generic drug of the same dosage;",
+              "A routine adjustment in the dosage of your medication, as a result of your blood levels only, if you are taking Coumadin (warfarin) or insulin and are required to have your blood levels tested on a regular basis, and your medical condition remains unchanged."
+            ]
+          }
+        }
+      ]
+    },
+    "refunds": {
+      "title": "Refund Policy",
+      "sections": [
+        {
+          "title": "To Obtain a Refund of Premium",
+          "items": [
+            "If you are cancelling your policy because your application for a Parent and Grandparent Super Visa was refused, you must provide proof of Visa refusal with your request for a full refund. Otherwise, you can ask for a full refund at any time before the effective date of your insurance.",
+            "If you obtain Canadian government health insurance plan coverage, or return home before the date you were scheduled as per your confirmation, and have not reported or initiated a claim or been provided with any assistance services, you may ask for a refund of the premium for the unused days of your trip and will need to provide proof of the date you actually returned home or the effective date of your Canadian government health insurance plan coverage. Simply contact us to ask for a refund. All travellers insured under the same policy must return together or have Canadian government health insurance plan* coverage in effect for a refund to be possible. Minimum premium refund amount is $25.",
+            {
+              "text": "If you hold a Parent and Grandparent Super Visa and have purchased 365 days of coverage, and requesting a partial refund due to your early return to your home or departure from Canada and:",
+              "subitems": [
+                "Have had no claim that has been reported, paid or denied – unused premiums (minimum of $25) may be refunded when you have provided proof of return to your home or departure from Canada.",
+                "Have reported a claim or have a payable claim for which the payment has not been issued or the total amount of all reported eligible claim expenses will not exceed the deductible amount – you may apply to have such claim withdrawn and, subject to our approval, unused premium may be refunded less a handling fee of $300 per claim which will be deducted from any amount to be refunded. Any expenses related to any claim that you withdraw, will be your responsibility for payment.",
+                "When a claim has been denied or paid – no refund is possible."
+              ]
+            }
+          ],
+          "note": "* Government health insurance plan means the health insurance coverage that a Canadian provincial or territorial government provides to its residents."
+        },
+        {
+          "title": "Cancellation Process",
+          "description": [
+            "A written request to cancel this policy must be received within 60 days following the date your return home along with proof of your departure from Canada. In no event will we back-date a cancellation to a date more than 60 days prior to the date of receipt of your cancellation request.",
+            "If your cancellation request must include a copy of your return airline ticket or a copy of your boarding pass, and a copy of every page of your passport to verify that you did not visit Canada between the date you returned home and the date you submitted your refund request and a statement saying that you have not incurred any payed claims and will not report or submit any claims against this policy.",
+            "Once any refund of premium has been requested, no expenses will be accepted for consideration under the policy, regardless of the date the expense was incurred. Refunds will be credited to the same credit card used to charge the premium.",
+            "No refunds are available for Trip Interruption Insurance after the effective date, side-trips or Trip Breaks."
+          ],
+          "note": "NOTE: If you are a visitor to Canada with an IEC work permit, this policy will continue to provide eligible benefits that are not covered by your government health insurance plan."
+        }
+      ]
+    },
+    "extensions": {
+      "title": "Policy Extensions",
+      "sections": [
+        {
+          "title": "Extension Requests",
+          "description": [
+            "To extend your coverage, you must make your request before your expiry date or the date you were scheduled to return home as per your confirmation.",
+            "If you have had no change in your health status and have had no event that has resulted or may result in a claim against the policy since the effective date of insurance, the extension may be issued upon request. Otherwise, the extension is subject to the approval of the Assistance Centre.",
+            "In order to avoid the waiting period, purchase your extension of coverage before the expiry date of your existing Visitors to Canada policy issued by Manulife."
+          ]
+        },
+        {
+          "title": "Side Trips",
+          "description": [
+            "This insurance provides coverage while travelling outside Canada (excluding your country of origin), as long as your side-trip originates and terminates in Canada and does not exceed the lesser of: 30 days per policy or 49% of your total number of coverage days.",
+            "During your coverage period, if you take a side-trip outside of Canada that is longer than that permitted in this policy, your Visitors to Canada coverage will be suspended for the remainder of your side-trip but your coverage will not be terminated. When you return to Canada, your coverage will resume.",
+            "Proof of travel dates for side-trips outside Canada are required in case of a claim."
+          ]
+        },
+        {
+          "title": "Automatic Extension",
+          "description": "Automatic extension of your coverage is provided beyond the date you were scheduled to return home as per your confirmation if:",
+          "items": [
+            "Your common carrier is delayed and prevents you from travelling on your expiry date. In this case, Manulife will extend your coverage for up to72 hours;",
+            "You or your travel companion are hospitalized on your expiry date. In this case, Manulife will extend your coverage during the hospitalization up to a maximum of 365 days or until, in Manulife's opinion, you are stable for discharge from the hospital or for evacuation home, whichever is earlier, and for up to 5 days after discharge from the hospital;",
+            "You or your travel companion have a medical condition that does not require hospitalization but prevents travel on your expiry date, as confirmed by a physician. In this case, Manulife will extend your coverage for up to 5 days."
+          ]
+        }
+      ]
+    },
+    "claims": {
+      "title": "Claims Process",
+      "sections": [
+        {
+          "title": "Emergency Claims",
+          "description": [
+            "In the event of an emergency, you must call the Assistance Center immediately:",
+            "1-877-878-0142 toll free from Canada or the U.S., or 519-251-5166 collect call from anywhere else.",
+            "Call within 24 hours of hospitalization. If you do not contact the Assistance Centre before receiving medical treatment, you will have to pay 20% of the medical expenses normally paid by Manulife under this insurance.",
+            "If it is medically impossible for you to call, we ask that you call as soon as you can or that someone calls on your behalf.",
+            "The Assistance Centre will verify and explain your coverage to you; refer you to a medical provider; arrange to have your covered expenses billed directly to Manulife where possible; and monitor your medical condition."
+          ]
+        },
+        {
+          "title": "Mobile App Access",
+          "description": [
+            "Immediate access to the Assistance Centre is also available through its TravelAid mobile app. The TravelAid mobile app can also provide you with directions to the nearest medical facility, and local emergency telephone numbers (such as 911 in North America).",
+            "To download the app, visit: http://www.active-care.ca/en/travelaid/"
+          ]
+        },
+        {
+          "title": "Claim Submission",
+          "description": [
+            "Your claim must be sent to Manulife within 90 days of your loss.",
+            "Ensure you keep a copy of your receipts, bills and invoices for your records.",
+            "Please, mail all original receipt, bills and invoices to:",
+            "Manulife Financial Travel Insurance\nc/o Active Care Management\nP.O. Box 1237 Stn. A\nWindsor, ON\nN9A 6P8",
+            "For Online Claim Submission visit manulife.acmtravel.ca"
+          ]
+        }
+      ]
+    },
+    "exclusions": {
+      "title": "Policy Exclusions",
+      "introduction": "Manulife will not pay any expenses or benefits relating directly or indirectly to:",
+      "items": [
+        "Any sickness, or disease suffered during the waiting period.",
+        {
+          "text": "For Plan A –",
+          "subitems": [
+            "Any medical condition, diagnosed or undiagnosed, which existed or for which you sought or received medical advice, consultation, investigation, or for which treatment was required or recommended by a physician, within the 180 days prior to the effective date.",
+            "Any heart condition if, in the 180 days before the effective date, you required any form of nitroglycerine for the relief of angina pain; and/or",
+            "Any lung condition if, in the 180 days before the effective date, you required treatment with oxygen or Prednisone for a lung condition."
+          ]
+        },
+        {
+          "text": "For Plan B –",
+          "subitems": [
+            "A pre-existing condition that is not stable in the 180 days before the effective date of insurance;",
+            "Any heart condition if, in the 180 days before the effective date, you required any form of nitroglycerine for the relief of angina pain; and/or",
+            "Any lung condition if, in the 180 days before the effective date, you required treatment with oxygen or Prednisone for a lung condition."
+          ]
+        },
+        "Expenses for a pre-existing condition for which you were hospitalized either more than once, or for at least 2 consecutive days, in the 12-month period before your effective date of insurance.",
+        "Covered expenses that exceed the reasonable and customary charges that normally apply where the medical emergency occurs.",
+        "Covered expenses that exceed the maximum insured amount available under the plan you have purchased.",
+        "Any expenses or benefits if the information provided on the application for insurance is not truthful and accurate or you did not meet the eligibility requirements under this coverage.",
+        "Covered expenses that exceed 80% of those Manulife would normally pays under this insurance, if you do not contact the Assistance Centre within 24 hours of hospitalization, unless your medical condition makes it medically impossible for you to call (in that case, the 20% co-insurance does not apply).",
+        "Any treatment that is not for an emergency.",
+        "Continued treatment of a medical condition when you have already received emergency treatment for that condition during your trip, if Manulife's medical advisors determine that the medical emergency has ended.",
+        "Magnetic resonance imaging (MRIs), computerized axial tomography (CAT) scans, sonograms, ultrasounds or biopsies, cardiac catheterization, angioplasty and/or cardiovascular surgery including any associated diagnostic test(s) or charges unless approved in advance by the Assistance Centre prior to being performed. All surgery must be authorized by the Assistance Centre prior to being performed except in extreme circumstances where surgery is performed on an emergency basis immediately upon admission to hospital.",
+        {
+          "text": "A medical condition:",
+          "subitems": [
+            "when you knew, before you left home, or before the effective date of coverage, that you would need or be required to seek treatment for that medical condition during your trip; and/or",
+            "for which it was reasonable to expect before you left home, or before your effective date of coverage, that you would need treatment during your trip; and/or",
+            "for which future investigation or treatment was planned before you left home; and/or",
+            "which produced symptoms that would have caused an ordinarily prudent person to seek treatment in the 3 months before leaving home; and/or",
+            "that had caused your physician to advise you not to travel."
+          ]
+        },
+        "Any emergency and non-emergency medical services for any injury that occurred or illness that started or was treated during any trip break that you have taken or after the number of days permitted for your side-trip outside of Canada."
+      ],
+      "note": "View the full list of exclusions and limitations."
+    },
+    "logo": "/images/Manulife.png",
+    "company_info": {
+      "administrated_by": "The Manufactures Life Insurance Company (Manulife Financial)",
+      "underwritten_by": "The Manufactures Life Insurance Company (Manulife Financial)",
+      "assistance_center": "Active Care Management",
+      "legal_note": "Manulife Financial and the block design are registered service marks and trademarks of The Manufacturers Life Insurance Company and are used by it and its affiliates, including Manulife Financial Corporation."
+    },
+    "downloads": [
+      {
+        "name": "Manulife Visitors Insurance POLICY PDF",
+        "url": "#"
+      },
+      {
+        "name": "Manulife Visitors Application Form – DocuSign",
+        "url": "#"
+      }
+    ]
+  },
+  "allianz": {
+    "name": "Allianz Travel Insurance",
+    "description": "Comprehensive travel insurance coverage for visitors to Canada, providing peace of mind during your stay.",
+    "benefits": {
+      "title": "Plan Benefits",
+      "introduction": "Allianz offers comprehensive travel insurance plans with the following benefits:",
+      "emergency_medical": {
+        "title": "Emergency Medical Benefits",
+        "items": [
+          "Maximum Benefits: $25,000; $50,000; $100,000 and $500,000",
+          "Emergency Hospital: Up to the amount of insurance purchased for semi-private accommodation",
+          "Physicians, surgeons and anesthetic services",
+          "Private duty services of a Registered nurse up to $10,000*",
+          "Diagnostics: Lab tests and X-ray examinations ordered by a physician",
+          "Ambulance Transportation: Licensed local air, land, or sea ambulance (including mountain or sea evacuation) to the nearest hospital, when reasonable and necessary",
+          "Emergency Air Transportation: such as air ambulance, one-way economy airfare, stretcher and/or a medical attendant to transport you to your country of origin due to a covered emergency sickness or injury *",
+          "Medical Appliance: Rental of crutches or hospital-type bed, not exceeding the purchase price, and the cost of splints, trusses, braces or other approved prosthetic appliances*",
+          "Follow-up visits as prescribed by the attending physician at the time of the emergency. Follow up visits must occur during the period of coverage and be directly related to the emergency. The emergency must occur during the period of coverage and has been reported to AGA",
+          "Prescription drugs or medications – one-month supply, to a maximum of $1,000",
+          "Professional Medical Services referred by a physician – care received from a licensed physiotherapist, chiropractor, osteopath, chiropodist, podiatrist and acupuncturist – up to $500 per profession",
+          "Accidental Dental: Up to $4,000 for repair or replacement of whole or sound natural teeth damaged by an accidental blow to the face",
+          "Dental Emergencies: Up to $500 for the immediate relief of acute dental pain, other than provided under Accidental Dental",
+          "Transportation of Family or Friend: Up to $3,000 for a round-trip economy transportation to bring one family member or close friend to your bedside when advised by an attending physician OR to identify your remains in the event of your death. Up to $1,000 for accommodation, meals, essential telephone calls and taxi fares incurred by your family member or close friend after arrival. *",
+          "Meals and Accommodation in the event you or your insured travelling companion are confined to hospital on the date on which you are scheduled to return home – up to $150 per day to a maximum of $1,500, or up to a maximum 10 days for commercial accommodation, meals, child care costs, essential telephone calls and taxi fares incurred by you or any insured travelling companion",
+          "Emergency Return Home: Up to $3,000 for the cost of one-way economy transportation to your country of origin if the covered sickness or injury requires your immediate return home during the period of coverage. This benefit also includes one additional insured family member. *",
+          "Return of Deceased (Repatriation): In the event of death from covered condition, up to $10,000 is provided to return the body home, or up to $4,000 for cremation or burial at the place of death. The cost of a coffin or urn is not covered",
+          "Accidental Death & Dismemberment: up to a maximum of the sum insured indicated on your confirmation of coverage, for accidental loss of life, limb or sight (excluding flight accident)",
+          "Act of Terrorism: If you sustain a loss from an act of terrorism, the insurer will pay up to the aggregate limit described in the insurance policy",
+          "Flight to/from Canada coverage: Coverage begins on the later of: a) the date and time the completed application and premium are accepted by AGA or its representative; or b) the date indicated as the effective date on your confirmation of coverage; or c) the first time you exit your country of origin. Expiry time of coverage is the time within the Canadian time zone where the coverage was purchased"
+        ],
+        "notes": [
+          "* Subject to advance approval by AGA"
+        ]
+      }
+    },
+    "eligibility": {
+      "title": "Eligibility Requirements",
+      "sections": [
+        {
+          "title": "Who is Not Eligible",
+          "description": "Coverage is NOT AVAILABLE to any individual who, as of their effective date:",
+          "items": [
+            "has been diagnosed with a terminal illness; or",
+            "has been diagnosed with stage 3 or 4 cancer; or",
+            "has received treatment for any cancer (other than basal or squamous cell skin cancer or breast cancer treated only with hormone therapy) in the past 3 months; or",
+            "requires assistance with activities of daily living as the result of a medical condition or state of health. Activities of daily living means eating, bathing, using the toilet, changing positions (including getting in and out of a bed or chair) and dressing."
+          ]
+        },
+        {
+          "title": "Who Can Apply?",
+          "description": "To be eligible for coverage you must, as of the effective date:",
+          "items": [
+            "be at least 15 days old and not more than 89 years old; and",
+            "not be insured or eligible for benefits under a Canadian government health insurance plan; and",
+            "be in good health at the time you purchase your policy and on the date you exit your country of origin, and know of no reason to seek medical consultation* during the period of coverage."
+          ],
+          "note": "*Medical consultation means any medical services obtained from a licensed medical practitioner for a sickness, injury or medical condition, including but not limited to any or all of: history taking, medical examination, investigative testing, advice or treatment, and during which a diagnosis of the condition need not have been definitively made. This does not include regular medical check-ups where no medical signs or symptoms existed between check-ups or were found during the check-up."
+        },
+        {
+          "title": "Waiting Period",
+          "description": "For illness:",
+          "items": [
+            "No waiting period if the application for this insurance is completed PRIOR to your exit of your country of origin or before the expiry date of the existing Allianz Global Assistance Visitors to Canada policy.",
+            "48 hours after the effective date if the policy has been purchased AFTER you exit your country of origin or after the expiry date of the existing Allianz Global Assistance Visitors to Canada policy."
+          ],
+          "note": "Any sickness that manifests itself during the 48-hour waiting period is not covered even if related expenses are incurred after the 48-hour waiting period."
+        },
+        {
+          "title": "Pre-existing Conditions",
+          "items": [
+            "Age 59 years or under on the effective date: Benefits are not payable for costs incurred due to or resulting from your medical condition or related condition that was not stable at any time during the 90 days immediately before the effective date.",
+            "Age 60 to 89 years on the effective date: Benefits are not payable for costs incurred due to or resulting from your pre-existing medical condition or related condition that was not stable at any time during the 180 days immediately before the effective date."
+          ]
+        },
+        {
+          "title": "Stable Medical Condition",
+          "description": "STABLE describes any medical condition or related condition, including any heart condition or lung condition, for which:",
+          "items": [
+            "there has been no new treatment; and",
+            "there has been no change in treatment or change in treatment frequency or type; and",
+            "there have been no signs or symptoms or new diagnosis; and",
+            "there have been no test results showing deterioration; and",
+            "there has been no hospitalization; and",
+            "there has been no referral to a specialist (made or recommended) and you are not awaiting surgery or the results of further investigations performed by any medical professional."
+          ],
+          "notes": [
+            {
+              "title": "The following are considered stable:",
+              "items": [
+                "Routine (not prescribed by a physician) adjustment of insulin to control diabetes provided the insulin was not first prescribed during the stability period.",
+                "Change from a brand name medication to a generic medication provided the medication was not first prescribed during the stability period and there is no increase or decrease in dosage.",
+                "A minor ailment, which describes a sickness or injury during the stability period which ended more than 30 days prior to the effective date and which did not require: i. treatment for a period longer than 15 consecutive days; or ii. more than one follow-up visit to a physician; or iii. hospitalization, surgery, or referral to a specialist."
+              ]
+            },
+            {
+              "title": "The following conditions are not considered stable:",
+              "items": [
+                "any lung condition for which you were prescribed or are taking prednisone;",
+                "any heart condition for which you were prescribed or are taking nitroglycerin."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "refunds": {
+      "title": "Refund Policy",
+      "sections": [
+        {
+          "title": "Refund Conditions",
+          "description": "Refunds are payable when:",
+          "items": [
+            "The entire trip is cancelled prior to the effective date.",
+            "You return to your country of origin prior to the expiry date, without intending to return to Canada. Refunds are not payable for time spent in your country of origin between visits to Canada.",
+            "You become insured under a Canadian provincial or territorial health/medical plan."
+          ]
+        },
+        {
+          "title": "Documentation Required",
+          "description": "When submitting your premium refund request, please include:",
+          "items": [
+            "a fully completed and signed Refund Request Form; and",
+            "a copy of your confirmation of coverage; and",
+            "confirmation of your early departure such as boarding pass or itinerary, or any other written proof of your early return to your country of origin; and",
+            "any other documentation to support your refund request."
+          ]
+        },
+        {
+          "title": "Important Notes",
+          "items": [
+            "There will be no refund of premium if a claim has been made.",
+            "Refunds are payable from the date Allianz Global Assistance receive the request.",
+            "Refunds for partial cancellations will be calculated by multiplying the daily premium by the actual number of days the policy was in effect; if this amount is less than the minimum premium required, the minimum premium will be used. This amount is then subtracted from the total premium paid. The refund will be calculated based on the date the refund request is received by Allianz Global Assistance.",
+            "A refund fee may apply.",
+            "Refund amounts less than the minimum premium will not be issued."
+          ]
+        }
+      ]
+    },
+    "extensions": {
+      "title": "Policy Extensions",
+      "sections": [
+        {
+          "title": "Extension Requests",
+          "description": [
+            "If you decide to extend your trip, you may apply for a new period of coverage provided you meet the Eligibility requirements.",
+            "Each policy or period of coverage is considered a separate contract and all limitations and exclusions will apply."
+          ]
+        },
+        {
+          "title": "Side Trips",
+          "description": [
+            "Costs incurred outside of Canada other than in your country of origin are covered provided the majority of the period of coverage is spent in Canada.",
+            "If you travel to your country of origin, your policy will remain in effect, however costs incurred in your country of origin are not covered.",
+            "Country of origin means the country in which you maintained a permanent residence prior to entry into Canada or the country which issued your passport. For Canadian passport holders without a permanent residence, country of origin means the country you departed from before arriving in Canada."
+          ]
+        },
+        {
+          "title": "Automatic Extension of Coverage",
+          "items": [
+            {
+              "title": "Delay of conveyance",
+              "description": "Coverage will be automatically extended for up to 72 hours in the event of a delay, due to circumstances beyond your control, of the conveyance in which you are riding or are scheduled to ride as a passenger. The delay must occur prior to the coverage expiry date and the conveyance must be due to arrive prior to the coverage expiry date. Conveyance means a vehicle, airline, bus, train, or government-operated ferry system."
+            },
+            {
+              "title": "Medically unfit to travel",
+              "description": "Coverage will be automatically extended for up to 5 days if medical evidence supports that you are medically unfit to travel due to a covered sickness or injury on or before the coverage expiry date."
+            },
+            {
+              "title": "Hospitalization",
+              "description": "Coverage will be automatically extended during the period of hospital confinement, plus 72 hours after release to travel home, if you are hospitalized at the end of your trip as a result of a covered injury or sickness. This coverage will be extended to your travelling companion(s) remaining with you when reasonable and necessary, under their respective Allianz Global Assistance administered policy."
+            }
+          ],
+          "note": "Additional premium will not be required for any automatic extension of coverage."
+        }
+      ]
+    },
+    "claims": {
+      "title": "Claims Process",
+      "sections": [
+        {
+          "title": "Emergency Claims",
+          "description": [
+            "You must notify AGA Emergency Assistance (toll free 1-800-995-1662 or worldwide collect 416-340-0049) within 24 hours of admission to a hospital and before any surgery is performed.",
+            "Failure to do so, without reasonable cause, will result in the reduction of eligible benefit amounts payable by 20%."
+          ]
+        },
+        {
+          "title": "Claim Submission",
+          "description": [
+            "Claims must be reported within 30 days of occurrence.",
+            "Written proof of claim must be submitted within 90 days of occurrence.",
+            "To submit your claim, fill out the claim form completely and include all original bills. Incomplete information will cause delay.",
+            "Any costs incurred for documentation or required reports are your or the claimant's responsibility.",
+            "Always make a copy of the documents that you send."
+          ]
+        },
+        {
+          "title": "Submit Claims To",
+          "description": [
+            "Allianz Global Assistance Claims Department",
+            "P.O. Box 277",
+            "Waterloo, ON, N2J 4A4",
+            "For Online Claim Submission visit: www.allianzassistanceclaims.ca"
+          ]
+        },
+        {
+          "title": "Emergency Assistance",
+          "description": [
+            "AGA Emergency Assistance and claims personnel are available to help you 24 hours a day, 7 days a week. AGA's experienced multilingual staff verifies coverage to hospitals, arrange emergency medical evacuation, coordinate payments, and contact your family doctor and relatives as needed.",
+            "Call AGA Emergency Assistance or have someone call on your behalf as soon as possible.",
+            "Where possible, Allianz Global Assistance will arrange to pay the provider directly."
+          ]
+        }
+      ]
+    },
+    "exclusions": {
+      "title": "Policy Exclusions",
+      "introduction": "Allianz will not pay any expenses or benefits relating directly or indirectly to:",
+      "items": [
+        "VTC1 Pre-existing Conditions Exclusion: a) If you are 59 years of age or under on the effective date: Benefits are not payable for costs incurred due to or resulting from your medical condition or related condition that was not stable at any time during the 90 days immediately before the effective date. b) If you are 60 to 89 years of age on the effective date: Benefits are not payable for costs incurred due to or resulting from your pre-existing medical condition or related condition that was not stable at any time during the 180 days immediately before the effective date.",
+        "VTC2 Benefits are not payable for costs incurred due to any treatment, investigation or hospitalization which is a continuation of, or subsequent to, emergency treatment of a sickness or injury, unless approved in advance by Allianz Global Assistance.",
+        "VTC3 Benefits are not payable for any costs incurred due to any sickness for which signs or symptoms occurred within 48 hours after the effective date, except when applying for coverage: a) before the expiry date of your existing Allianz Global Assistance administered policy; or b) prior to the date you exit your country of origin.",
+        "VTC4 Benefits are not payable for costs incurred due to any loss incurred outside of Canada when you have not spent the majority of the period of coverage in Canada.",
+        "VTC5 Benefits are not payable for costs incurred due to any loss incurred inside your country of origin.",
+        "VTC6 Benefits are not payable for costs or losses incurred while sane or insane due to: a) your emotional or mental disorders resulting from any cause, including but not limited to anxiety or depression; or b) your suicide or attempted suicide; or c) your intentionally self-inflicted injury.",
+        "VTC7 Benefits are not payable for costs incurred due to pregnancy, abortion, miscarriage, childbirth or complications thereof.",
+        "VTC8 Benefits are not payable for costs incurred due to loss, death or injury, if at the time of the loss, death or injury, evidence supports that the medical condition causing the loss was in any way contributed to by: a) your intoxication or abuse of alcohol; or b) your use of prohibited drugs, or any other intoxicant; or c) your non-compliance with prescribed treatment or medical therapy; or d) your misuse of medication.",
+        "VTC9 Benefits are not payable for costs incurred due to injury resulting from training for or participating in: a) motorized speed contests; or b) stunt activities; or c) professional sport activities (Professional means you are considered professional by the governing body of the sport, earn the majority of your income from such activity, and are paid for your participation whether you win or lose); or d) high-risk activities. High-risk activity(ies) mean(s) any skiing out of bounds, heliskiing, ski jumping, skydiving, sky-surfing, scuba diving (except if certified by internationally recognized and accepted program such as NAUI or PADI, or if diving depth does not exceed 30 meters), white water rafting (except grades 1 to 4), street luge, skeleton activity, mountaineering, or participation in any rodeo activity. Mountaineering means the ascent or descent of a mountain requiring the use of specified equipment including crampons, pick axes, anchors, bolts, carabiners and lead-rope or top rope anchoring equipment.",
+        "VTC10 Benefits are not payable for costs incurred due to sickness or injury resulting from a motor vehicle accident where you are entitled to receive benefits pursuant to any policy or legislative plan of motor vehicle insurance, except when such benefits are exhausted.",
+        "VTC11 Benefits are not payable for costs incurred due to any sickness, injury or medical condition when a trip is undertaken for the purpose of securing medical treatment or advice.",
+        "VTC12 Benefits are not payable for costs incurred due to your travelling against the advice of a physician or any loss resulting from your sickness or medical condition that was diagnosed by a physician as terminal prior to the effective date of this policy.",
+        "VTC13 Benefits are not payable for costs incurred due to any treatment which can be reasonably delayed until you return to your country of origin (whether or not you intend to return) by the next available means of transportation, unless approved in advance by Allianz Global Assistance.",
+        "VTC14 Benefits are not payable for costs incurred due to any medical consultation that is non-emergency, on-going, elective or the consequence of a prior elective procedure.",
+        "VTC15 Benefits are not payable for costs incurred due to hospitalization or services rendered in connection with general health examinations for check-up purposes, treatment of an on-going condition, regular care of a chronic condition, home health care, investigative testing, rehabilitation, or on-going care or treatment in connection with drugs, alcohol or any other substance abuse.",
+        "VTC16 Benefits are not payable for costs incurred due to any rehabilitation or convalescent care.",
+        "VTC17 Benefits are not payable for costs incurred due to dental or cosmetic surgery.",
+        "VTC18 Benefits are not payable for costs incurred due to naturopathic or holistic treatment.",
+        "VTC19 Benefits are not payable for costs that exceed the reasonable and customary rate for the area where the treatment or services are being performed.",
+        "VTC20 Benefits are not payable for costs incurred due to treatment or services that contravene, or are prohibited by legislation under a provincial or territorial hospital/ medical plan.",
+        "VTC21 Benefits are not payable for costs incurred due to, contributed to by, or resulting from any sickness or injury when such sickness or injury occurs in a city, region, or country for which Global Affairs Canada issued a written warning to avoid all travel, or to avoid non-essential travel, to that city, region, or country, before the later of: a) the effective date of your policy, or b) the date you depart for the destination under advisory, and such sickness or injury is due to, contributed to by, or resulting from the reason for the warning.",
+        "VTC22 Benefits are not payable for costs incurred due to any: a) act of war; or b) kidnapping; or c) act of terrorism caused directly or indirectly by nuclear, chemical or biological means; or d) riot, strike or civil commotion; or e) unlawful visit in any country.",
+        "VTC23 Benefits are not payable for costs incurred due to any nuclear occurrence however caused.",
+        "VTC24 Benefits are not payable for costs incurred due to the participation by you, a family member or travelling companion in: a) protests; or b) armed forces activities; or c) a commercial sexual transaction; or d) the commission or attempted commission of any criminal offence; or e) the contravention of any statutory law or regulation in the area where the loss occurred.",
+        "VTC25 Benefits are not payable for costs incurred due to being an occupant of an aircraft, either as passenger or crew, except while being transported under the terms of the Emergency Transportation or Emergency Return Home benefits, or while boarding or alighting from an aircraft."
+      ],
+      "notes": [
+        "The family rate includes the applicant, the applicant's spouse, age 59 or under, and their dependent children under age 22.",
+        "Maximum period of coverage: 365 days.",
+        "Minimum premium per policy: $20.00.",
+        "Deductible means the dollar amount for which you are responsible before any remaining eligible expenses are reimbursed under this insurance. It is retroactive to the effective date and applies once during the period of coverage. Your deductible is indicated on your confirmation of coverage."
+      ]
+    },
+    "logo": "/images/Allianz.svg",
+    "company_info": {
+      "administrated_by": "Allianz Global Assistance (AGA)",
+      "underwritten_by": "CUMIS General Insurance Company, a member of The Co-operators group of companies",
+      "assistance_center": "AGA Emergency Assistance"
+    },
+    "downloads": [
+      {
+        "name": "Allianz Visitors Insurance POLICY PDF",
+        "url": "#"
+      }
+    ]
+  }
+} 

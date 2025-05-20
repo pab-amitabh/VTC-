@@ -1,0 +1,67 @@
+import React from 'react'
+import dynamic from 'next/dynamic'
+import { Metadata } from 'next'
+
+// Import the App component directly instead of through a client component
+const App = dynamic(() => import('../../src/App'), { ssr: false })
+
+// We'll handle specific slugs rather than catch-all
+export function generateStaticParams() {
+  return [
+    { slug: 'insurance' },
+    { slug: 'quote' },
+    { slug: 'plans' }
+    // Add other valid slug values as needed
+  ]
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = params
+  const title = `${slug.charAt(0).toUpperCase() + slug.slice(1)} | InsureTravel`
+  
+  return {
+    title,
+    description: `Compare travel insurance quotes from top providers. Get comprehensive coverage for medical emergencies, trip cancellation, and more. Instant quotes, 24/7 support.`,
+    keywords: [
+      'travel insurance quotes',
+      'travel medical insurance',
+      'trip cancellation insurance',
+      'visitor insurance canada',
+      'super visa insurance',
+      'travel insurance comparison',
+      'best travel insurance',
+      'cheap travel insurance',
+      'travel insurance coverage',
+      'emergency medical insurance'
+    ],
+    alternates: {
+      canonical: `https://your-domain.com/${slug}`,
+    },
+    openGraph: {
+      title,
+      description: 'Compare travel insurance quotes from top providers. Get comprehensive coverage for medical emergencies, trip cancellation, and more. Instant quotes, 24/7 support.',
+      url: `https://your-domain.com/${slug}`,
+      siteName: 'InsureTravel',
+      images: [
+        {
+          url: 'https://lovable.dev/opengraph-image-p98pqg.png',
+          width: 1200,
+          height: 630,
+          alt: 'InsureTravel - Compare Travel Insurance Quotes'
+        }
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: 'Compare travel insurance quotes from top providers. Get comprehensive coverage for medical emergencies, trip cancellation, and more. Instant quotes, 24/7 support.',
+      images: ['https://lovable.dev/opengraph-image-p98pqg.png'],
+    },
+  }
+}
+
+export default function Page() {
+  return <App />
+} 
