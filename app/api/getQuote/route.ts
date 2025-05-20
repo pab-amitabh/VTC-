@@ -4,7 +4,6 @@ import { NextResponse } from 'next/server';
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    console.log('body', body)
     const loginRes = await fetch('https://qa.policyadvisor.ca/admin/auth/accounts/sign_in.json', {
       method: 'POST',
       headers: {
@@ -68,12 +67,10 @@ export async function POST(req: Request) {
       const yyyy = date.getFullYear();
       return `${dd}/${mm}/${yyyy}`;
     };
-    // console.log(body.coverageDates)
     const coverageDates = body.coverageDates || "May 7, 2025 → May 6, 2026" 
     const [startDate, endDate] = coverageDates.split('→').map((date: string) => date.trim());
     const coverage_start_date = formatToDDMMYYYY(startDate);
     const coverage_end_date = formatToDDMMYYYY(endDate);
-    // console.log(coverage_start_date, coverage_end_date)
 
     const quoteData = {
       quote: {
@@ -89,7 +86,6 @@ export async function POST(req: Request) {
       traveller_profile: travellerProfiles,
       vtc_type: "for_all"
     };
-    // console.log(quoteData)
 
     const quoteRes = await fetch('https://qa.policyadvisor.ca/admin/travel_insurances/fetch_quote.json', {
       method: 'POST',
@@ -102,7 +98,6 @@ export async function POST(req: Request) {
       },
       body: JSON.stringify(quoteData)
     });
-    // console.log(quoteRes)
     if (!quoteRes.ok) {
       const error = await quoteRes.json();
       return new NextResponse(
@@ -121,7 +116,86 @@ export async function POST(req: Request) {
     }
 
     const quoteResponse = await quoteRes.json();
-    console.log(quoteResponse)
+
+    // Function to fetch product details
+    const fetchProductDetails = async (productCode: string) => {
+      try {
+        const productRes = await fetch(`https://content.policyadvisor.com/company-product-infos?product_code=${productCode}`, {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (!productRes.ok) {
+          console.error(`Failed to fetch product details for ${productCode}`);
+          return null;
+        }
+
+        const productData = await productRes.json();
+        if (productData && productData.length > 0) {
+          const product = productData[0];
+          const baseUrl = 'https://content.policyadvisor.com';
+          
+          // Convert relative URLs to absolute URLs
+          const brochureUrl = product.Product_Brochure?.[0]?.file_attached?.url;
+          const policyDocUrl = product.Sample_policy_document?.[0]?.file_attached?.url;
+
+          return {
+            brochure_url: brochureUrl ? `${baseUrl}${brochureUrl}` : null,
+            policy_document_url: policyDocUrl ? `${baseUrl}${policyDocUrl}` : null
+          };
+        }
+        return null;
+      } catch (error) {
+        console.error(`Error fetching product details for ${productCode}:`, error);
+        return null;
+      }
+    };
+
+    // Enhance quote response with product details
+    let quotes = [];
+    if (quoteResponse.travel_quotes?.quotes) {
+      quotes = quoteResponse.travel_quotes.quotes;
+    } else if (quoteResponse.quotes) {
+      quotes = quoteResponse.quotes;
+    } else {
+      console.error('No quotes found in response:', quoteResponse);
+      return new NextResponse(
+        JSON.stringify({ status: 'error', message: 'No quotes found in response' }),
+        {
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+            'Pragma': 'no-cache',
+            'Expires': '0',
+            'Surrogate-Control': 'no-store'
+          }
+        }
+      );
+    }
+
+    const enhancedQuotes = await Promise.all(
+      quotes.map(async (quote: any) => {
+        if (quote.product_code) {
+          const productDetails = await fetchProductDetails(quote.product_code);
+          return {
+            ...quote,
+            brochure_url: productDetails?.brochure_url,
+            policy_document_url: productDetails?.policy_document_url
+          };
+        }
+        return quote;
+      })
+    );
+
+    // Update the response with enhanced quotes
+    if (quoteResponse.travel_quotes) {
+      quoteResponse.travel_quotes.quotes = enhancedQuotes;
+    } else {
+      quoteResponse.quotes = enhancedQuotes;
+    }
     return new NextResponse(
       JSON.stringify({ status: 'success', quote: quoteResponse }),
       {
