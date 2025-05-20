@@ -4,7 +4,7 @@
     "description": "Comprehensive travel insurance coverage for visitors to Canada, providing peace of mind during your stay.",
     "benefits": {
       "title": "Plan Benefits",
-      "introduction": "Manulife offers comprehensive travel insurance plans with the following benefits:",
+      "introduction": "Manulife offers   comprehensive travel insurance plans with the following benefits:",
       "emergency_medical": {
         "title": "Emergency Medical Benefits",
         "items": [
@@ -570,6 +570,1339 @@
     "downloads": [
       {
         "name": "Allianz Visitors Insurance POLICY PDF",
+        "url": "#"
+      }
+    ]
+  },
+  "bluecross": {
+    "name": "Bluecross Travel Insurance",
+    "description": "Comprehensive travel insurance coverage for visitors to Canada, providing peace of mind during your stay.",
+    "benefits": {
+      "title": "Plan Benefits",
+      "introduction": "Bluecross offers comprehensive travel insurance plans with the following benefits:",
+      "emergency_medical": {
+        "title": "Emergency Medical Benefits",
+        "items": [
+          "Maximum Benefits: $50,000, $100,000 and $150,000",
+          "Ambulance Transportation: land or air transport costs to the nearest medical facility",
+          "Hospitalization expenses for a semi-private room accommodation",
+          "Physician services",
+          "Diagnostic services – laboratory tests and X-rays when prescribed by the attending physician",
+          "Nursing care of a graduate nurse while hospitalized and when medically necessary",
+          "Prescription drugs as part of emergency treatment (except when they are required for the continued stabilization of a chronic medical condition)",
+          "Medical appliances – rental or purchase cost for crutches, canes or splints, the rental of wheelchair or other medical appliances when prescribed by an attending physician",
+          "Professional Services – physiotherapist, chiropractor, osteopath, podiatrist or chiropodist when medically necessary and prescribed by the attending physician, limited to a maximum of $400 per profession",
+          "Accidental Dental: Up to $2,000 per accident for repair or replacement of whole or sound natural teeth damaged by an external injury",
+          "Dental Emergencies: Up to $300 per trip and per insured person for the fees of dental surgeons for emergency dental care treatment, excluding root canal therapy",
+          "Return of the deceased: up to $10,000 for the cost of preparing and transporting the deceased person to the place of residence, or up to $4,000 for the cost of cremation or burial on site",
+          "Meals and Accommodation – the cost of round-trip economy-class transportation and up to $300 for accommodation and meals when a family member or a friend is required to go to the place of death to identify the deceased",
+          "Repatriation to Residence: the cost of repatriation of insured to the country of residence by means of appropriate transportation in order to receive immediate medical attention",
+          "Return of Traveling Companion or a family member covered under the same contract, in case of repatriation of the insured",
+          "Trip Break (for coverage of 365 days) – Covered persons can return to their country of residence and come back to Canada without terminating the insurance contract",
+          "Subsistence Allowance – up to $1,500 ($150 per day) for the cost of accommodation, meals and transportation, when the return must be delayed due to illness or bodily injury"
+        ],
+        "notes": [
+          "* These services must be approved and planned by Blue Cross Travel Assistance."
+        ]
+      }
+    },
+    "eligibility": {
+      "title": "Eligibility Requirements",
+      "sections": [
+        {
+          "title": "Who is Not Eligible",
+          "description": "In order to be eligible for Visitors to Canada insurance, the covered person must not:",
+          "items": [
+            "Have received medical advice not to travel",
+            "Suffer from an illness in a terminal stage",
+            "Suffer from kidney failure treated through dialysis",
+            "Have been diagnosed with or treated for a metastatic cancer",
+            "Have been diagnosed with, had treatments or taken medication for cancer in the past 12 months (with the exception of basal cell carcinoma)",
+            "Suffer from heart failure or cardiomyopathy",
+            "Be waiting for an organ transplant for one or several of the following: kidneys, lungs, liver, heart, bone marrow or pancreas",
+            "Have used home oxygen or taken cortisone pills for a pulmonary condition in the past 24 months"
+          ]
+        },
+        {
+          "title": "Waiting Period for Sickness",
+          "description": "The waiting period depends on when you purchase your policy:",
+          "items": [
+            "No waiting if the insurance is purchased BEFORE your arrival or before expiry of a similar coverage in Canada",
+            "If the insurance is purchased AFTER the covered person's arrival in Canada or after the expiry of a similar coverage: The coverage becomes effective on the day of purchase, but a 3-day waiting period for illness applies from that date"
+          ],
+          "note": "During this waiting period, the insured person will be covered for accidents and injuries, but not for illness. If an illness occurs during the waiting period, the illness will be considered as a pre-existing medical condition."
+        },
+        {
+          "title": "Pre-existing Conditions",
+          "description": "The contract contains exclusions relating to pre-existing conditions:",
+          "sections": [
+            {
+              "title": "For people of all ages",
+              "description": "All of the following conditions listed in one of the categories below will be excluded if, for one of the conditions in this category:",
+              "items": [
+                "You have already undergone a procedure, seen the physician, been diagnosed, treated, hospitalized, or",
+                "If you have received a prescription or taken a medication, or",
+                "It has been recommended by a physician that you receive treatment, undergo tests, take medication or undergo a procedure"
+              ]
+            },
+            {
+              "title": "Excluded Condition Categories",
+              "description": "The following categories of conditions may be excluded:",
+              "items": [
+                "CARDIOVASCULAR CONDITIONS: Angina; Angioplasty; Aortic aneurysm; Bypass surgery; Defibrillator; Heart attack; Heart rhythm disorders (arrhythmia, tachycardia, bradycardia); Peripheral vascular problems; Valvulopathy",
+                "NEUROLOGICAL CONDITIONS: Stroke (cerebrovascular accident); TIA (transient ischemic attack)",
+                "PULMONARY CONDITIONS: Chronic bronchitis; COPD (chronic obstructive pulmonary disease); Cystic fibrosis; Emphysema"
+              ]
+            },
+            {
+              "title": "For people age 54 and under",
+              "description": "During the 3 months preceding the effective date of coverage, in addition to the exclusion in point 1:",
+              "items": [
+                "Any medical condition that affects you and that is not stable",
+                "Any heart condition for which you have used nitroglycerin"
+              ]
+            },
+            {
+              "title": "For people age 55 to 79",
+              "description": "During the 6 months preceding the effective date of coverage, in addition to the exclusions in point 1:",
+              "items": [
+                "Any medical condition that affects you and that is not stable",
+                "Any heart condition for which you have used nitroglycerin"
+              ]
+            },
+            {
+              "title": "Stable Medical Condition",
+              "description": "For a pre-existing condition to be considered STABLE, it must meet all the following criteria:",
+              "items": [
+                "No new medical diagnosis has been made",
+                "No new symptoms appeared and there was no worsening or increase in the frequency of existing symptoms",
+                "No hospitalization has taken place",
+                "No new medication was prescribed or recommended",
+                "No change of dosage was made to a medication already prescribed or recommended",
+                "No new treatment or medical test is pending or has been prescribed, ongoing or recommended",
+                "No ongoing treatment has been changed or discontinued",
+                "No prescribed or recommended treatment, nor medical advice has been ignored"
+              ],
+              "note": "Blue Cross does not consider the following to be a change of dosage in existing medication: routine insulin or Coumadin® adjustment; Replacement of a medication by an equivalent generic brand if its dosage remains unchanged; Decrease in dosage of cholesterol medication; Adjustment to a hormone replacement therapy treatment; Change in consumption of non-prescribed Aspirin®, vitamins, minerals, etc.; Use of cream or ointment prescribed for skin irritation."
+            }
+          ]
+        }
+      ]
+    },
+    "refunds": {
+      "title": "Refund Policy",
+      "sections": [
+        {
+          "title": "When a refund is available",
+          "description": "When a Visitors to Canada contract is cancelled, a $25 administrative fee is deducted from the refund. You can request the cancellation and refund of your contract from us:",
+          "items": [
+            "Before the effective date of the contract, or",
+            "After the effective date of the contract, during the 10 days following the date of purchase, unless you have submitted or intend to submit a claim related to the contract, or the contract is for a period of 10 days or less",
+            "If you leave Canada or if you become insured under another policy before the contract expiry date and you have not and do not intend to submit a claim"
+          ]
+        },
+        {
+          "title": "Refund Calculation",
+          "description": "When authorized, reimbursement is for unused contract days, less an administrative fee of $25. Unused days are accounted for as follows:",
+          "items": [
+            "From the day after your departure date from Canada or from the effective date of mandatory medical insurance in Canada, upon presentation of proof of such date, or",
+            "From the day after Blue Cross receive your request, without presentation of proof"
+          ],
+          "note": "Any proof provided must clearly indicate the effective date of the other insurance coverage you now have, or clearly show that you were outside Canada on the application date."
+        },
+        {
+          "title": "No refund is granted if",
+          "items": [
+            "You have submitted or intend to submit a claim related to the contract, or",
+            "You are repatriated at the expense of Blue Cross"
+          ]
+        }
+      ]
+    },
+    "extensions": {
+      "title": "Policy Extensions",
+      "sections": [
+        {
+          "title": "To extend your insurance coverage",
+          "description": "To extend your insurance coverage:",
+          "items": [
+            "You must contact us before the end of the coverage period of your contract",
+            "You must still be eligible for insurance",
+            "Your health must not have changed since the beginning of the coverage period",
+            "You must pay the required additional premium"
+          ],
+          "note": "If the extension or the coverage affect the initial rate of the premium, the new premium will apply for the entire duration of the contract."
+        },
+        {
+          "title": "Claims during the initial period",
+          "description": "If you file a claim during the initial period of coverage:",
+          "items": [
+            "The Insurer's approval is required to extend the contract",
+            "Once the approval to extend the contract has been granted, any claim that pertains to an event that occurred during the initial period of coverage will be rejected"
+          ],
+          "note": "When requesting an extension, you must notify us of any claims made or to come in connection with costs incurred since the effective date of the contract. If you fail to do so, no claim for the coverage period prior to your extension request will be accepted if it is submitted after the extension has been granted."
+        },
+        {
+          "title": "Side Trips",
+          "description": "The insurance coverage remains valid when the covered person takes a side-trip outside of Canada under the following conditions:",
+          "items": [
+            "Trips outside of Canada must not exceed 30 days at a time",
+            "Each side-trip must begin and end in Canada",
+            "The covered person is not travelling to his/her country of permanent residence",
+            "The duration of all side-trips combined does not exceed 49% of the period of coverage of the contract"
+          ],
+          "note": "When a side-trip exceeds 30 days, only the first 30 days of the trip will be covered. Starting on the 31th day, the insurance coverage will be suspended with no premium refund for the remainder of the side-trip. The coverage will resume when the covered person returns to Canada."
+        },
+        {
+          "title": "Automatic extension of coverage",
+          "description": "The coverage is automatically extended, free of charge:",
+          "items": [
+            "Up to 24 hours when returning to your country of permanent residence is postponed due to a carrier delay, a traffic accident or mechanical failure of the private vehicle used to return from your trip",
+            "For the duration of your hospitalization and the 24-hour period following your discharge from the hospital",
+            "Up to 72 hours when the return to your country of permanent residence is postponed due to a medical emergency that affects you; the medical condition must have started within 24 hours prior to the scheduled return date and must require emergency treatments"
+          ]
+        }
+      ]
+    },
+    "claims": {
+      "title": "Claims Process",
+      "sections": [
+        {
+          "title": "Emergency Claims",
+          "description": [
+            "In the event of an emergency during a trip, immediately contact Blue Cross Travel Assistance: Canada or United States: 1-800-361-6068 or 514-286-8411.",
+            "Assistance agents offer the covered person 24-hour service, 7 days a week.",
+            "NOTICE: Failure to contact the assistance centre in the event of medical consultation or hospitalization following an accident or sudden illness could result in the compensation requested being refused."
+          ]
+        },
+        {
+          "title": "Claim Submission",
+          "description": [
+            "All claims should be reported to CanAssistance in writing within 30 days of acquiring and all original documents have to be transmitted to the insurance company within 90 days.",
+            "Get a claim form online from: https://canassistance.com/en/policyholder/claims",
+            "You can also contact the Customer Service at 1-800-387-2538 or 514-286-6690",
+            "Submit your claims via the secure website: https://canassistance.com/en/policyholder/depot",
+            "Mail your requests and supporting documents to:",
+            "Blue Cross – Travel Insurance Claims\nPO BOX 3888, Station B\nMontreal, QC, H3B 3L7"
+          ]
+        }
+      ]
+    },
+    "exclusions": {
+      "title": "Policy Exclusions",
+      "introduction": "No amount is payable, under the terms of this coverage, if the loss sustained or the costs incurred result directly or indirectly from one of the following causes:",
+      "items": [
+        {
+          "text": "Exclusions due to pre-existing medical conditions:",
+          "subitems": [
+            "For people of all ages: All of the conditions listed in the cardiovascular, neurological, and pulmonary categories will be excluded if you have undergone a procedure, seen a physician, been diagnosed, treated, hospitalized, or received a prescription for one of these conditions",
+            "For people age 54 and under: During the 3 months preceding the effective date, any medical condition that is not stable and any heart condition for which you have used nitroglycerin",
+            "For people age 55 to 79: During the 6 months preceding the effective date, any medical condition that is not stable and any heart condition for which you have used nitroglycerin"
+          ]
+        },
+        "Treatment received without approval from Blue Cross Travel Assistance",
+        "Foreseeable treatment: Costs related to a medical condition for which it is expected that treatment will be required during the trip",
+        "Pending treatment or failure to comply with a prescribed treatment",
+        "Non-urgent, experimental or optional treatment",
+        "Continued treatment once the medical emergency is over",
+        "Treatment received further to your transfer or repatriation refusal",
+        "Abusive or unreasonable billing",
+        "Treatments not covered under government programs",
+        "Trip undertaken for medical purposes",
+        "Pregnancy, childbirth, or related complications",
+        "Child born during the coverage period",
+        "Mental health disorders",
+        "Suicide and self-inflicted injury",
+        "Use of alcohol, drugs and other intoxicating substances",
+        "Illegal act",
+        "Act of war and civil unrest",
+        "High-risk sports or activities"
+      ],
+      "notes": [
+        "The family rate includes the applicant, the applicant's spouse, age 59 or under, and their dependent children under age 22.",
+        "Maximum period of coverage: 365 days.",
+        "Minimum premium per policy: $20.00.",
+        "Deductible means the dollar amount for which you are responsible before any remaining eligible expenses are reimbursed under this insurance. It is retroactive to the effective date and applies once during the period of coverage. Your deductible is indicated on your confirmation of coverage."
+      ]
+    },
+    "logo": "/images/BlueCross.png",
+    "company_info": {
+      "administrated_by": "Blue Cross Canada",
+      "underwritten_by": "Blue Cross",
+      "assistance_center": "CanAssistance"
+    },
+    "downloads": [
+      {
+        "name": "Blue Cross Visitors Insurance Policy PDF",
+        "url": "#"
+      }
+    ]
+  },
+  "21st-century": {
+    "name": "21st Century Travel Insurance",
+    "description": "Comprehensive travel insurance coverage for visitors to Canada, providing peace of mind during your stay.",
+    "benefits": {
+      "title": "Plan Benefits",
+      "introduction": "21st Century offers comprehensive travel insurance plans with the following benefits:",
+      "emergency_medical": {
+        "title": "Emergency Medical Benefits",
+        "items": [
+          "Maximum Benefits: $15,000; $25,000; $50,000, $100,000, $150,000, and $200,000",
+          "Emergency hospital: semi-private room or intensive care unit when medically necessary",
+          "Ambulance Transportation: the use of a licensed local ambulance service",
+          "Emergency Air Transportation: the cost for one-way economy airfare, a stretcher, or air ambulance to transport you to your country of origin, and a medical attendant if required",
+          "Diagnostics: tests that are needed to diagnose or find out more about your condition",
+          "Physician services",
+          "Private duty registered nursing or licensed home care providers",
+          "Medical Appliances – rental of crutches, hospital bed, splints, trusses, braces, or other prosthetic devices, up to $5,000",
+          "Follow up visits are covered until the attending physician, or 21st Century declares the end of the medical emergency (Basic Plan is limited to only one follow-up during period of coverage)",
+          "Professional Medical Services referred by a physician – treatment provided by a licensed acupuncturist, chiropodist, chiropractor, osteopath, physiotherapist or podiatrist up to a maximum of $1,000 per insured (Basic Plan is limited to service from acupuncturist, chiropractor and physiotherapist)",
+          "Telemedicine service by StandByMD (Maple) – 24/7 days medical consultation service that connects you within minutes to a Canadian licensed primary care physician to get an assessment, diagnosis and prescription as needed",
+          "Prescription drugs or medicines up to $500 and not exceeding a 30-day supply",
+          "Emergency Dental (Enhanced and Standard Plans only): up to $300 for relief of acute dental pain",
+          "Accidental Dental (Enhanced and Standard Plans only): Up to $4,000 for repair or replacement of whole or sound natural teeth damaged by an accidental blow to the face",
+          "Expenses related to death from covered medical condition – up to $7,500 for combined cost of preparing and transportation of the body to your place of burial or for cremation and/or burial at the place of death",
+          "Accidental Death and Dismemberment (Enhanced and Standard Plans only) – up to $25,000 (in excess of the aggregate policy limit)",
+          "Re-occurrence of already claimed medical condition (Enhanced and Standard Plans only) if in the 90-days prior to that subsequent emergency this condition was stable",
+          "Flight to/from Canada coverage will be provided with no additional premium during your uninterrupted flight directly to and from Canada"
+        ],
+        "notes": [
+          "* A deposit of one-time $50 policy fee plus 2 months of premium for pending policies or 3 month premium for active policies is due at time of application.",
+          "** This policy does not cover cardiac catheterization, angioplasty, and/or cardiovascular surgery including any associated test(s) or charges, magnetic resonance imaging (MRI), computerized axial tomography (CAT) scans, sonograms, ultrasounds or biopsies unless such services are approved in advance by the Assistance Centre.",
+          "*** These benefits must be authorized and arranged by the Assistance Centre."
+        ]
+      }
+    },
+    "eligibility": {
+      "title": "Eligibility Requirements",
+      "sections": [
+        {
+          "title": "Who is Not Eligible",
+          "description": "You are not eligible for coverage under this policy if:",
+          "items": [
+            "You are travelling against the advice of a physician",
+            "You have been diagnosed with a terminal illness with less than two (2) years to live",
+            "You have been diagnosed with or received treatment within the last two (2) years for pancreatic, lung, brain, or liver cancer",
+            "You have been diagnosed with any type of cancer that has spread from one part or organ of the body to another (metastatic cancer)",
+            "You have had or are waiting for an organ or bone marrow transplant (excluding corneal transplant)",
+            "You have been diagnosed with Congestive Heart Failure",
+            "You have been prescribed or used home oxygen in the 12 months",
+            "You require kidney dialysis",
+            "You reside in a nursing home or long term care facility; and/or",
+            "You are age 86 or older"
+          ]
+        },
+        {
+          "title": "Waiting Period for Sickness",
+          "description": "The waiting period depends on when you purchase your policy:",
+          "items": [
+            "No waiting period if the insurance is purchased or activated prior to your arrival in Canada or the same policy has been extended",
+            "72 hours if the policy is purchased within 30 days of your arrival in Canada (age 0 to 85)",
+            "7 days if the policy is purchased after 30 days of your arrival in Canada (age 0 to 85)",
+            "If age 86 or older, the waiting period is 15 days for Basic Plan"
+          ],
+          "note": "Any sickness that manifests itself during the waiting period is not covered even if related expenses are incurred after the waiting period."
+        },
+        {
+          "title": "Pre-existing Conditions and Plan Options",
+          "sections": [
+            {
+              "title": "Enhanced Plan – coverage for stable pre-existing medical conditions",
+              "items": [
+                "If you are under age 55, the Enhanced Plan is available to you if you satisfy the Eligibility requirements and pay the appropriate premium",
+                "If you are age 55 to 85, the Enhanced Plan is available to you if you satisfy the Eligibility requirements, truthfully and accurately answer \"No\" to all questions on the Medical Declaration and pay the appropriate premium",
+                "If you are age 55 to 85 and you answer \"Yes\" to any question on the Medical Declaration, you are not eligible for the Enhanced Plan, but the Standard Plan is available to you under this policy if you satisfy the Eligibility requirements and pay the appropriate premium",
+                "If you are under age 86, the Standard Plan is available to you, without the completion of the Medical Declaration, if you satisfy the Eligibility requirements and pay the appropriate premium",
+                "Applicants age 86 and over or applicants of any age who do not satisfy the Eligibility requirements are not eligible to purchase this policy"
+              ]
+            },
+            {
+              "title": "Unstable Chronic Condition",
+              "description": "\"Unstable Chronic Condition\" means a pre-existing medical condition for which, in the 180 days prior to your effective date of insurance, any of the following apply:",
+              "items": [
+                "There have been new symptoms or change in symptoms",
+                "Existing symptoms have become more frequent or severe",
+                "A physician has found that the medical condition has become worse",
+                "Test findings have shown that the medical condition may be getting worse",
+                "A physician has provided, prescribed, or recommended any new medication, or any change in medication",
+                "A physician has provided, prescribed, or recommended any new treatment, or any change in treatment",
+                "A physician has provided, prescribed, or recommended any investigative testing, other than regular scheduled maintenance investigations or testing",
+                "There has been hospitalization or referral to a specialist or specialty clinic",
+                "A physician has advised referral to a specialist or further testing, and there has been testing for which results have not yet been received"
+              ]
+            },
+            {
+              "title": "Change in medication",
+              "description": "Change in medication means the medication dosage, frequency or type has been reduced, increased, stopped and/or new medication(s) has/have been prescribed.",
+              "items": [
+                "Exceptions: the routine adjustment of Coumadin, Warfarin or insulin, as long as they are not newly prescribed or stopped and there has been no change in your medical condition; and, a change from a brand name medication to a generic brand medication of the same dosage"
+              ]
+            },
+            {
+              "title": "Additional Exclusions",
+              "items": [
+                "21st Century will not cover any heart condition if, in the 180 days before the effective date, you required any form of nitroglycerine for the relief of angina pain",
+                "21st Century will not cover any lung condition if, in the 180 days before the effective date, you required treatment with prednisone for a lung condition"
+              ]
+            },
+            {
+              "title": "90-Day Provision (Enhanced and Standard Plans only)",
+              "description": "If you are advised by the Assistance Centre that your emergency has ended, you will have no further coverage under this policy for any insured services that are directly or indirectly related to ongoing treatment, recurrence or complication of that medical condition. However, if your claim is deemed to be payable under this policy then subject to the other terms, conditions and exclusions of this policy such medical condition will be covered again in the event of a subsequent emergency if, in the 90-days prior to that subsequent emergency:",
+              "items": [
+                "You have not had any recurrence, new symptom(s) or any complications",
+                "Existing symptom(s) have not become more frequent or severe",
+                "A physician has not determined that your medical condition has become worse",
+                "No test findings have shown that your medical condition may be getting worse",
+                "A physician has not provided, prescribed, or recommended any new medication, or any change in medication",
+                "A physician has not provided, prescribed, or recommended any new treatment, or any change in treatment",
+                "There has been no hospitalization or referral to a specialist or specialty clinic",
+                "A physician has not advised referral to a specialist or further testing, and",
+                "There has been no testing for which results have not yet been received"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "refunds": {
+      "title": "Refund Policy",
+      "sections": [
+        {
+          "title": "Non-arrival Refunds",
+          "description": "Requests for premium refunds due to non-arrival can be submitted for consideration as long as this insurance has not been issued as part of the requirements necessary to obtain or maintain a visitor visa, in which case proof of visa refusal must be provided.",
+          "items": [
+            "You can cancel your insurance and obtain a partial refund of the unused premium amount when you provide proof that you are covered under a government health insurance plan; or with proof of return to your country of origin provided that there has been no claim paid or denied",
+            "If you are applying for a partial refund and a claim has been paid or denied, you may apply to have such claim(s) withdrawn. The amount of claim(s) paid will be deducted from the refund amount plus a file handling fee of $300 per claim will also be deducted. A denied claim will be subject to a file handling fee of $500 per claim",
+            "If you become eligible for coverage under a Government Health Insurance Plan (GHIP), 21st Century will consider your cancellation request from the date we receive acceptable proof. Such requests cannot be backdated because this insurance policy provides Insured Services and other benefits that are not provided by government health insurance",
+            "If you return to your country of origin, 21st Century will consider refunding back to that date up to a maximum of 60 days, but if your cancellation request is received more than 30 days following the date you returned to your country of origin, 21st Century will require acceptable proof that you did not visit Canada between the date you returned to your country of origin and the date you submitted your cancellation request"
+          ]
+        },
+        {
+          "title": "Refunds for Monthly Payment Option plan",
+          "items": [
+            "If your visa application is denied by the Government of Canada, or you formally withdraw your visa application and your coverage under this policy has not been activated, 21st Century will refund any premium paid. Proof of the denial or withdrawal of your application for a visa must be provided to 21st Century with your written request for a refund",
+            "If the Government of Canada issues you an entry permit that is different than the one you applied for, you may request a refund of any premium paid or change from a monthly payment plan to payment in full as long as 21st Century receives your request prior to your entry into Canada. Proof of the change in entry permits will be required. Once you enter Canada, your deposit premium becomes non-refundable",
+            "The $50 Policy Fee for any cancellation of, or change from the Monthly Payment Option is non-refundable",
+            "The two month deposit premium and the $50 Policy Fee for the Monthly Payment Option are non-refundable in any circumstance where the entry permit is approved and issued by the Government of Canada",
+            "The two month deposit premium and the $50 Policy Fee for the Monthly Payment Option are non-refundable on any activated policy. For policies terminated mid-term, only full monthly premiums will be refunded; partial months will not be refunded"
+          ],
+          "note": "Effective January 1, 2025, 21st Century introduced a new refund procedure on its Monthly Payment Plan: pro-rated refunds for partial months on early cancellation requests. If an insured returns home earlier or secures provincial health coverage mid-month, they can cancel their policy at any point during the billing month and receive a refund for the unused days, less a $25 administration fee."
+        },
+        {
+          "title": "Policy Termination Conditions",
+          "description": "After you have activated your coverage under this policy, subject to all other policy terms, your insurance will terminate on the date that:",
+          "items": [
+            "You return to your country of origin in the event of your death under Insured Service benefit \"Expenses related to death\", or following emergency treatment of your medical condition under Insured Service benefit \"Emergency Air Transportation\"; or",
+            "The Assistance Centre specified when advising you to return to your country of origin due to your medical condition, even if you choose to remain in Canada; or",
+            "21st Century receives proof that you are eligible and covered under a Canadian government health insurance plan (GHIP); or",
+            "You return to your country of origin and submit a written request to cancel your policy"
+          ]
+        }
+      ]
+    },
+    "extensions": {
+      "title": "Policy Extensions",
+      "sections": [
+        {
+          "title": "Extension Conditions",
+          "description": "If you are purchasing coverage to extend your trip, you will receive a new policy with policy terms starting on the effective date stated on your policy confirmation.",
+          "items": [
+            "Waiting period will apply if you decrease your deductible amount or change from a 21st Century plan that does not cover stable pre-existing medical conditions to one that does or increase your aggregate policy limit (sum insured) when you purchase consecutive policies with no gap between the expiry date of the previous policy and the effective date of the subsequent policy"
+          ]
+        },
+        {
+          "title": "Side Trips",
+          "description": "This insurance provides coverage for up to 30 days in total within a 365-day period while traveling outside Canada as long as you spend not less than 51% of your time in Canada.",
+          "items": [
+            "You must be continuously insured under a 21st Century Visitors to Canada policy or consecutive policies with no gaps in coverage during your side trip",
+            "You are not covered under this insurance policy in your country of origin",
+            "If you take a side trip outside of Canada that is longer than that permitted in this policy, your coverage will be suspended for the remainder of your side trip but your coverage will not be terminated. When you return to Canada, your coverage will resume and continue up to the expiry date shown on your policy confirmation"
+          ],
+          "note": "Proof of all travel dates will be required in the event of a claim."
+        },
+        {
+          "title": "Automatic Extension",
+          "description": "If you are unavoidably delayed on your scheduled return to your country of origin, through no fault of your own, coverage will automatically be extended beyond your expiry date:",
+          "items": [
+            "For the length of your delay to a maximum of 72 hours if your common carrier is delayed; or",
+            "If you are hospitalized on your expiry date. In this case, we will extend your coverage during the hospitalization up to a maximum of 365 days or until, in our opinion, you are stable for discharge from the hospital and for up to 5 days after discharge from the hospital; or you are stable for evacuation to your country of origin, whichever is earlier; or",
+            "If you have a medical emergency that occurs within the 5 days prior to your expiry date that does not require hospitalization but prevents travel as confirmed by a physician. In this case, 21st Century will extend your coverage for up to 5 days"
+          ]
+        }
+      ]
+    },
+    "claims": {
+      "title": "Claims Process",
+      "sections": [
+        {
+          "title": "Emergency Claims",
+          "description": [
+            "IN THE EVENT OF AN EMERGENCY, YOU MUST CALL THE ASSISTANCE CENTRE IMMEDIATELY: 1-877-882-2957 toll-free from the USA and Canada. If unable to use the toll-free number, call collect to Canada: +1 519-251-7856.",
+            "Call prior to receiving any medical treatment. If you do not call the Assistance Center before you obtain emergency treatment, you will have to pay 20% of the medical expenses 21st Century would normally pay under this insurance. If medically impossible for you to call, please have someone call on your behalf as soon as possible.",
+            "The Assistance Centre can also be contacted through the Manulife TravelAid™ mobile application."
+          ]
+        },
+        {
+          "title": "Claim Submission",
+          "description": [
+            "To make a claim, you will need to complete a claim form and attach the original medical bills, receipts and invoices (always make a copy for your record), your medical and/or hospital record (diagnosis, X-ray, lab tests confirming that the treatment was medically necessary), copy of police report (in case of a Motor Vehicle Accident) and mail it to:",
+            "21st Century Visitors Claims\nc/o Active Care Management\nP.O. Box 1237, Stn A\nWindsor, ON, N9A 6P8",
+            "For Online Claim Submission visit manulife.acmtravel.ca",
+            "Claims must be reported within 30 days of occurrence.",
+            "Written proof of claim must be submitted within 90 days of occurrence.",
+            "To enquire about the status of your claim call 1-855-297-4379 from 8:00 AM to 8:00 PM ET."
+          ]
+        }
+      ]
+    },
+    "exclusions": {
+      "title": "Policy Exclusions",
+      "introduction": "21st Century will not reimburse you for insured services or pay an Accidental Death and Dismemberment claim and/or any other expenses directly or indirectly related to:",
+      "items": [
+        {
+          "text": "Pre-existing conditions exclusions:",
+          "subitems": [
+            "Any pre-existing condition if you are covered under the Standard Plan; or",
+            "Any unstable condition if you are covered under the Enhanced Plan, paid the required premium and if you are age 55 to 85 you have completed the Medical Declaration"
+          ]
+        },
+        "Any sickness, disease or symptom that manifests before or during the waiting period even if related expenses are incurred after the waiting period",
+        {
+          "text": "Any sickness, disease, symptom, or injury:",
+          "subitems": [
+            "When you knew, prior to your effective date, that you would need or be required to seek treatment for that medical condition during your trip; and/or",
+            "For which, prior to your effective date, it was reasonable to expect that you would need treatment during your trip; and/or",
+            "For which future investigation or treatment was planned prior to your effective date; and/or",
+            "Which produced symptoms that would have caused an ordinarily prudent person to seek treatment in the 180 days prior to the effective date; and/or",
+            "That had caused your physician to advise you not to travel; and/or",
+            "That presented, recurred or was treated during any temporary return to your country of origin during the Coverage Period as is permitted only if you are a holder of a multi-entry visa"
+          ]
+        },
+        "Any expenses or benefits if the information provided on your application for insurance is not truthful and accurate or you did not meet the eligibility requirements",
+        "Any cardiac catheterization, angioplasty and/or cardiovascular surgery including any associated diagnostic test(s) including but not limited to magnetic resonance imaging (MRI), computerized axial tomography (CAT) scans, sonograms, ultrasounds or biopsies, or charges unless approved by the Assistance Centre prior to being performed, except in extreme circumstances where such test or procedures are performed on an emergency basis immediately upon admission to a hospital",
+        "Your self-inflicted injuries, unless medical evidence establishes that the injuries are related to a mental health illness",
+        "Any claim that results from or is related to your commission or attempted commission of a criminal offence or illegal act",
+        "Any medical condition that is the result of you not following treatment as prescribed to you, including prescribed medication",
+        "Any medical condition, including symptoms of withdrawal, arising from, or in any way related to, your chronic use of alcohol, drugs or other intoxicants whether prior to or during your Coverage Period; or any medical condition arising during your Coverage Period, from or in any way related to, the abuse of alcohol, drugs or other intoxicants",
+        "Any loss resulting from your minor mental or emotional disorder",
+        "Any non-emergency, investigative, experimental or elective treatment such as cosmetic surgery, chronic care, rehabilitation including any expenses for directly or indirectly related complications",
+        "General health examinations or services",
+        "Prescription drugs or medicines, treatment, appliances or devices provided to monitor or maintain any pre-existing condition",
+        {
+          "text": "An emergency resulting from:",
+          "subitems": [
+            "Mountain climbing requiring the use of specialized equipment, including carabiners, crampons, pick axes, anchors, bolts and lead-rope or top-rope anchoring equipment to ascend or descend a mountain",
+            "Rock-climbing",
+            "Parachuting, skydiving, hang-gliding or using any other air-supported sporting device",
+            "Participating in a motorized speed contest including training activities; or",
+            "Your professional participation in a sport, snorkeling or scuba-diving when that sport, snorkeling or scuba-diving is your principal paid occupation"
+          ]
+        },
+        {
+          "text": "Any pregnancy that commences prior to the effective date;",
+          "subitems": [
+            "Your routine pre-natal or post-natal care",
+            "Your pregnancy, delivery, or complications of either, arising 9 weeks before the expected date of delivery or 9 weeks after"
+          ]
+        },
+        "Medical treatment or services provided to your child born during your Coverage Period",
+        "The provision of insured services to children under 30 days of age",
+        "An act of war or an act of terrorism when you are outside of Canada and covered under this insurance",
+        "A continuation of treatment or service first recommended or prescribed by a physician or health-care practitioner before the effective date of this policy or where such insured services were first initiated before the effective date of this policy or during the waiting period, or for holders of a valid multiple-entry visa issued by the Government of Canada, during a return to your country of origin during the Coverage Period",
+        "Your medical or health assessment or any form of report or document supporting an application to obtain immigrant status or extend your visa in Canada or any recommended treatment resulting from such health assessment",
+        "Any medical treatment or follow-up visit outside of Canada when the emergency occurred in Canada",
+        "Any emergency that occurs or recurs after our medical advisors recommend that you return to your country of origin and you choose not to",
+        "The ongoing treatment, recurrence or complication of a medical condition when you have already received emergency treatment for that condition during your Coverage Period and the Assistance Centre determines that your medical emergency has ended",
+        "Any medical condition you suffer or contract in a specific country, region or city outside of Canada, while covered under the \"Side-Trips Outside of Canada\" provision or while on an uninterrupted flight to or from Canada if a Government of Canada Travel Advisory, issued before you travel to that location, advises to Avoid non-essential travel or to Avoid all travel to that specific country, region or city",
+        "Any medical treatment for which you are eligible and/or covered under a government health insurance plan",
+        "Covered expenses that exceed 80% of those 21st Century would normally pay, if you do not contact the Assistance Centre within 24 hours of hospitalization unless your medical condition makes it impossible for you to call"
+      ],
+      "notes": [
+        "The Basic Plan is a reduced benefit plan with NO coverage for pre-existing medical conditions",
+        "Deductibles are PER CLAIM for the Basic Plan (vs. per policy period for Enhanced and Standard Plans except for the $2,500 Disappearing Deductible which is also per person per claim)",
+        "Waiting Period is 15 days for Basic Plan policy holders age 86 and over if coverage is purchased after arrival in Canada or after the expiry date of another Visitors to Canada policy"
+      ]
+    },
+    "logo": "/images/21st.avif",
+    "company_info": {
+      "administrated_by": "21st Century Travel Insurance Limited",
+      "underwritten_by": "The Manufactures Life Insurance Company (Manulife Financial)",
+      "assistance_center": "Active Care Management"
+    },
+    "downloads": [
+      {
+        "name": "21st Century ENHANCED Plan and STANDARD Plan Policy PDF",
+        "url": "#"
+      },
+      {
+        "name": "21st Century Medical Declaration DocuSign (fillable)",
+        "url": "#"
+      }
+    ]
+  },
+  "destination-canada": {
+    "name": "Destination Canada Travel Insurance",
+    "description": "Comprehensive travel insurance coverage for visitors to Canada, providing peace of mind during your stay.",
+    "benefits": {
+      "title": "Plan Benefits",
+      "introduction": "Destination Canada offers comprehensive travel insurance plans with the following benefits:",
+      "emergency_medical": {
+        "title": "Emergency Medical Benefits",
+        "items": [
+          "Maximum Benefits: $25,000; $50,000; $100,000; $150,000; $200,000; $250,000; $300,000",
+          "Emergency Hospital: semi-private hospital accommodation",
+          "Physicians, surgeons or anesthetic services",
+          "Private duty services of a Registered nurse up to $10,000",
+          "Diagnostic services: Lab tests and/or X-ray examination as ordered by a physician for the purpose of diagnosis",
+          "Ambulance Transportation: Licensed local air, land, or sea ambulance (including mountain or sea evacuation) to the nearest hospital, when reasonable and necessary",
+          "Emergency Air Transportation: such as air ambulance, one-way economy airfare, stretcher and/or a medical attendant to transport you to your country of origin due to a covered emergency sickness or injury",
+          "Medical Appliance: Rental of crutches or hospital-type bed, not exceeding the purchase price, and the cost of splints, trusses, braces or other approved prosthetic appliances",
+          "Prescription drugs: 30-day supply up to $1,000 per policy",
+          "Professional Medical Services referred by a physician – care received from a licensed physiotherapist – up to $500. The service of a chiropractor, osteopath, chiropodist, and podiatrist – up to $500 for out-patient treatment",
+          "Accidental Dental: Up to $3,000 for emergency treatment to whole or sound natural teeth damaged by an accidental direct blow to the face",
+          "Dental Emergencies: Up to $500 for the immediate relief of acute dental pain",
+          "Follow-up visits: Up to $3,000 provided they are directly related to the emergency",
+          "Emergency Return Home: Up to $3,000 for the cost of one-way economy transportation to your country of origin, if the covered sickness or injury necessitates your immediate return home during the period of coverage. This benefit also includes one additional insured family member",
+          "Return of Deceased (Repatriation): up to $10,000 to return the body to the country of origin, or up to $4,000 for cremation or burial at the place of death. The cost of a coffin or urn is not covered",
+          "Childcare expenses – (Attendant) up to $50 a day to a maximum of $500 for attendant to care for your travelling companion(s) under age 18, or physically or mentally handicapped travelling companion(s) who rely on you for assistance, if you are hospitalized for 48 hours or more as a result of an emergency",
+          "Meals and Accommodation – in the event you or your insured travelling companion are confined to hospital on the date on which you are scheduled to return home – up to $150 per day to a maximum of $1,500, or up to a maximum 10 days for commercial accommodation, meals, child care costs, essential telephone calls and taxi fares incurred by you or any insured travelling companion",
+          "Transportation of Family or Friend: Up to $3,000 for a round-trip economy transportation to bring one family member or close friend to your bedside when advised by an attending physician OR to identify your remains in the event of your death. Up to $1,000 for accommodation, meals, essential telephone calls and taxi fares incurred by your family member or close friend after arrival",
+          "Accidental Death & Dismemberment: up to the maximum sum insured selected at the time of application, not to exceed $150,000 for accidental loss of life, limb or sight (excluding flight accident)",
+          "Flight Accident – up to $50,000 for death as a result of air flight accident",
+          "Flight to/from Canada coverage: Coverage begins on the latest of the following: a) the date and time the completed application and premium are accepted by the Destination Travel Group Inc. or its agent; or b) the date indicated as the effective date in your confirmation of coverage; or c) the date and time you exit your country of origin"
+        ],
+        "notes": [
+          "* Must be pre-approved by Zurich Travel Assist.",
+          "** Follow-up means re-examination of you to monitor the effects of earlier treatment related to the initial emergency, except while hospitalized. Follow-up does not include continuous or ongoing treatment or further diagnostic, or investigative testing related to the initial emergency.",
+          "*** All payments are to be made to the Estate of the Insured person in the case of their death."
+        ]
+      }
+    },
+    "eligibility": {
+      "title": "Eligibility Requirements",
+      "sections": [
+        {
+          "title": "Who is Not Eligible",
+          "description": "As of the effective date, you are eligible for coverage if you:",
+          "items": [
+            "are at least 15 days old; and",
+            "are not travelling against the advice of a physician; or",
+            "have not been diagnosed with a terminal illness; or",
+            "have not been diagnosed with or received treatment for pancreatic cancer, liver cancer or any type of cancer that has metastasized (migrated to another organ from its original site); or",
+            "have not been prescribed or used home oxygen in the last 12 months; or",
+            "have not been diagnosed with or received treatment for heart failure; or",
+            "have not had a major organ transplant (heart, kidney, liver, lung), bone marrow or stem cell transplant; or",
+            "have not received kidney dialysis treatment in the last 12 months; or",
+            "have not been diagnosed aneurysm of 4 centimeters or more in either length or diameter, that has not been surgically repaired"
+          ],
+          "note": "If your effective date is more than 3 years from your application date we will cancel and refund your policy."
+        },
+        {
+          "title": "Waiting Period for Illness",
+          "description": "The waiting period depends on when you purchase your policy:",
+          "items": [
+            "No waiting period if the insurance is purchased: before your departure from your country of origin or the same policy has been extended",
+            "48 hours after your effective date, if you purchase within 30 days of the date you depart from your country of origin",
+            "7 days after your effective date, if you purchase 30 days or more after the date you depart from your country of origin"
+          ],
+          "note": "The waiting period will be waived when this insurance is purchased: before the date of departure from your country of origin; or before the date your existing Destination: Canada policy expires and there is no lapse or gap in coverage; or before the date any other existing health insurance coverage expires, and there is no lapse in coverage."
+        },
+        {
+          "title": "Pre-existing Conditions",
+          "items": [
+            "If at the time of application, you are 59 years of age or under and selected Option 1: Pre-existing medical conditions are covered provided that those medical conditions have been stable in the 90 days immediately before the effective date",
+            "If at the time of application, you are between 60 and 69 of age or under and selected Option 1: Pre-existing medical conditions are covered provided that those medical conditions have been stable in the 120 days immediately before the effective date",
+            "If at the time of application, you are between 70 and 79 of age or under and selected Option 1: Pre-existing medical conditions are covered provided that those medical conditions have been stable in the 180 days immediately before the effective date",
+            "If at the time of application you are 79 years of age or under and selected Option 2 at the time of application: All pre-existing medical conditions will be excluded from coverage",
+            "If at the time of application you are 80 years of age or over: All pre-existing medical conditions will be excluded from coverage"
+          ]
+        },
+        {
+          "title": "Stable Medical Condition",
+          "description": "A medical condition is considered stable when all of the following statements are true:",
+          "items": [
+            "There has not been any new treatment prescribed or recommended, or change(s) to existing treatment (including a stoppage in treatment); and",
+            "There has not been any change in medication (including increase or decrease of dosage), or any recommendation or starting of a new prescription drug, and",
+            "The medical condition has not become worse, and",
+            "There has not been any new, more frequent or more severe signs or symptoms, and",
+            "There has not been any hospitalization or referral to a specialist, and",
+            "There have not been any tests, investigation or treatment recommended, but not yet complete, nor any outstanding test results, and",
+            "There is no planned or pending treatment"
+          ],
+          "note": "All of the above conditions must be met for a medical condition to be considered stable."
+        }
+      ]
+    },
+    "refunds": {
+      "title": "Refund Policy",
+      "sections": [
+        {
+          "title": "Refund Conditions",
+          "description": "When submitting your refund request, please send a written request to us by fax, mail or email before your coverage period ends, and include:",
+          "items": [
+            "A copy of confirmation of coverage; and",
+            "Confirmation of your early departure such as boarding pass or any other documentation to support your refund request"
+          ]
+        },
+        {
+          "title": "Refunds will only be considered when",
+          "items": [
+            "The entire trip is cancelled prior to the effective date",
+            "You return to your country of origin prior to the expiry date",
+            "You become insured under a Canadian provincial or territorial health/medical plan as long as you are not required to maintain coverage for work permit or other immigration purposes"
+          ],
+          "note": "If the insurance was issued as part of the requirement necessary to obtain or maintain a visa and no proof of visa refusal is provided, a fee of $150 will be applied by The Destination: Travel Group Inc. when cancelling a policy issued for one year of consecutive coverage prior to the effective date. Once your policy becomes effective, your deposit premium becomes non-refundable."
+        },
+        {
+          "title": "Partial refunds",
+          "description": "Partial refunds will be:",
+          "items": [
+            "Considered if the request for premium refunds is received no more than 90 days after the expiry date of the policy; and",
+            "Calculated based on the date the refund request is received by The Destination: Travel Group Inc.; and",
+            "Subject to a $25.00 administration fee applied by The Destination: Travel Group Inc. and a minimum refund of $25.00"
+          ],
+          "note": "Under no condition will a refund be made if a claim has been incurred or paid or is pending."
+        },
+        {
+          "title": "Monthly Payment Plan",
+          "description": "The Monthly Premium Payment Plan is only available to applicants purchasing a minimum:",
+          "items": [
+            "Coverage period of at least 180 days; and",
+            "A minimum aggregate policy limit of $50,000",
+            "Each installment premium includes an additional $10 fee and applies to each installment throughout the whole term of the policy"
+          ]
+        }
+      ]
+    },
+    "extensions": {
+      "title": "Policy Extensions",
+      "sections": [
+        {
+          "title": "Extension Requests",
+          "description": "If you decide to extend your trip, you may apply for a new period of coverage provided you meet the requirements in Eligibility of this policy.",
+          "items": [
+            "If you have incurred a claim, the Assistance Centre, on behalf of the insurer, will review your file before deciding on granting an extension",
+            "Each policy or period of coverage is considered a separate contract and all limitations and exclusions will apply"
+          ],
+          "note": "If you extend your trip for the purpose of returning to your country of origin, coverage outside Canada will be provided while you are in transit even if you do not spend the majority of the period of coverage in Canada if: a) the policy is purchased on or prior to the expiry date of an existing Destination: Canada policy; and b) the number of days in transit to your country of origin does not exceed 3 days."
+        },
+        {
+          "title": "Side Trips",
+          "description": "Emergency medical expenses you incur during a side-trip outside of Canada, provided the majority of the period of coverage is spent in Canada (at least 51% of your trip).",
+          "items": [
+            "Costs incurred in your country of origin are not covered",
+            "The temporary return must be less than 51% of the coverage period"
+          ]
+        },
+        {
+          "title": "Automatic Extension of Coverage",
+          "items": [
+            {
+              "title": "Delay in conveyance",
+              "description": "This coverage shall be automatically extended for up to 72 hours in the event of a delay, during the period of coverage, beyond your control of the conveyance in which you are riding or are scheduled to ride as a passenger. The delay must occur prior to the expiry date. Conveyance means an airline, train, bus, vehicle, or ferry."
+            },
+            {
+              "title": "Medically unfit to travel",
+              "description": "If medical evidence supports that you are medically unfit to travel due to a covered sickness or injury on or before the coverage expiry date, coverage will be automatically extended for up to 5 days."
+            },
+            {
+              "title": "Hospitalization",
+              "description": "If you are hospitalized at the end of the period of coverage, as a result of a covered sickness or injury, coverage will be extended for you and one insured travelling companion remaining with you, when reasonable and necessary, during the period of hospital confinement, plus 72 hours after release to travel home. Coverage for your travelling companion will only be extended under their respective policy when issued by us."
+            }
+          ],
+          "note": "Additional premium will not be required for an automatic extension of coverage."
+        }
+      ]
+    },
+    "claims": {
+      "title": "Claims Process",
+      "sections": [
+        {
+          "title": "Emergency Claims",
+          "description": [
+            "In the event of a medical emergency, you must notify Zurich Travel Assist (toll free 1-888-726-1839 or worldwide collect + 1 (416) 260-4553) prior to any surgery being performed or within 24 hours of admission to a hospital.",
+            "If you fail to notify Zurich Travel Assist, without reasonable cause, it will result in the reduction of eligible benefit amounts payable by 20%. You will be responsible for any expenses that are not payable by the insurer."
+          ]
+        },
+        {
+          "title": "Claim Submission",
+          "description": [
+            "Claims must be reported within 30 days of occurrence.",
+            "Written proof of claim must be submitted within 90 days of occurrence.",
+            "Any costs incurred for documentation or required reports are your or the claimant's responsibility.",
+            "To submit your claim, fill out the claim form completely and include all original bills. Incomplete information will cause delay.",
+            "All eligible claims must be supported by original receipts from commercial organizations.",
+            "Submit claims to: Zurich Canada Travel Insurance, c/o Zurich Travel Assist, 100 King Street West, Suite 5300, Toronto, Ontario, Canada, M5X 1C9",
+            "For Online Claim Submission visit https://destinationtravelclaims.nac.zurich.com"
+          ],
+          "note": "Benefit Payments – Unless otherwise stated, all provisions in this policy apply to each eligible insured person during one period of coverage. Benefits are only payable under one policy, for each insured person during the period of coverage."
+        }
+      ]
+    },
+    "exclusions": {
+      "title": "Policy Exclusions",
+      "introduction": "This policy will not provide coverage, provide services, or pay claims for expenses incurred directly or indirectly as a result of:",
+      "items": [
+        {
+          "text": "Pre-existing medical conditions",
+          "subitems": [
+            "Option 1: Coverage for stable pre-existing medical conditions. a) If at the time of application, you are 59 years of age or under: Any pre-existing medical condition unless it was stable in the 90 days immediately before the effective date. b) If at the time of application, you are between 60 and 69 years of age: Any pre-existing medical condition unless it was stable in the 120 days immediately before the effective date. c) If at the time of application, you are between 70 and 79 years of age: Any pre-existing medical condition unless it was stable in the 180 days immediately before the effective date.",
+            "Option 2: Any pre-existing medical conditions."
+          ]
+        },
+        "Any sickness for which symptoms occurred before or during the waiting period",
+        "Costs incurred due to: a) Alzheimer's disease or dementia; b) any loss resulting from your minor mental or emotional disorder; and/or c) your self-inflicted injuries, unless medical evidence establishes that the injuries are related to a mental health illness",
+        "Costs incurred due to: act(s) of war or act(s) of terrorism, kidnapping, riot, strike or civil commotion, unlawful visit in any country, participation in protests, participation in armed forces activities, participation in a commercial sexual transaction, the commission or attempted commission of any criminal offence or illegal act, contravention of any statutory law or regulation in the area where the loss occurred",
+        "Any sickness or injury when a trip is undertaken for the purpose of securing medical treatment or advice, a diagnosis, treatment, surgery, investigation, palliative care, or any alternative therapy, as well as any directly or indirectly-related complication",
+        {
+          "text": "Any loss, death or injury, if evidence supports that you were affected by, or the medical condition was in any way contributed to by, arising from, or in any way related to:",
+          "subitems": [
+            "The abuse or chronic use of alcohol either before or during the period of coverage; or",
+            "The use of prohibited drugs, or any other intoxicant either before or during the period of coverage; or",
+            "The non-compliance with prescribed treatment or medical therapy either before or during the period of coverage; or",
+            "The misuse of medication either before or during the period of coverage"
+          ]
+        },
+        "Any medical consultation or any treatment that is non-emergency, experimental or elective such as cosmetic surgery, including any expenses for directly or indirectly related complications",
+        "Any treatment, investigation or hospitalization which is a continuation of, or subsequent to, emergency treatment of a medical condition, unless approved in advance by the Assistance Centre",
+        "Any treatment which can be reasonably delayed until you return to your country of origin (whether or not you intend to return) by the next available means of transportation, unless approved in advance by the Assistance Centre",
+        "Hospitalization or services rendered in connection with general health examinations for \"check-up\" purposes, treatment of an ongoing condition, regular care of a chronic condition, home health care, investigative testing, rehabilitation or ongoing care or treatment in connection with drugs, alcohol or any other substance abuse",
+        "Any rehabilitation or convalescent care",
+        {
+          "text": "Injury resulting from training for or participating in:",
+          "subitems": [
+            "Professional sport activities",
+            "Speed contests or racing of motorized land, water or air vehicle(s)",
+            "Stunt activities, exhibitions or demonstrations of any kind",
+            "Sport activities, if you are considered professional by the governing body of that sport and you are paid for your participation",
+            "Heliskiing, ski jumping",
+            "Skydiving, sky-surfing",
+            "Scuba diving if diving depth does not exceed 30 meters (except if certified by internationally recognized and accepted program such as NAUI or PADI)",
+            "White water rafting (except grades 1 to 4)",
+            "Street luge, skeleton activity",
+            "Mountaineering; or",
+            "Participation in any rodeo activity"
+          ]
+        },
+        "Any loss incurred as a result of pregnancy, delivery, abortion, miscarriage, or complications thereof",
+        "Any loss incurred as a result of your child born during a trip",
+        "Any sickness or injury resulting from a motor vehicle accident where you are entitled to receive benefits pursuant to any policy or legislative plan of motor vehicle insurance",
+        "Treatment or services that contravene, or are prohibited by legislation under a provincial or territorial hospital/medical plan",
+        "Naturopathic, holistic or acupuncture treatment",
+        "Costs that exceed the reasonable and customary rate for the area where the treatment or services are being performed",
+        "Any act of terrorism or medical condition you suffer or contract when an official travel advisory was issued by the Canadian government stating \"Avoid all non-essential travel\" or \"Avoid all travel\" regarding the country, region or city of your destination, before your policy effective date; and/or for your side-trip outside Canada, if the official travel advisory was in place on or before the date you leave for your side-trip",
+        "Any loss incurred outside of Canada when you have not spent the majority of the period of coverage in Canada",
+        "Any loss incurred inside your country of origin",
+        "Any sickness, symptom, or injury that presented, recurred, or for which treatment was received during any temporary return to your country of origin during the period of coverage",
+        "Air travel other than as a passenger in a commercial aircraft licensed to carry passengers for hire, except while being transported under the terms of the Emergency Transportation or Emergency Return Home benefits",
+        "Any loss resulting when you are a driver, the operator, a co-driver, a crew member or any other passenger on a commercial vehicle used for the purpose of delivering goods or car- rying a load"
+      ],
+      "notes": [
+        "Country of origin means the country in which you maintained a permanent residence or passport prior to entry into Canada as declared as your country of origin on your application. For Canadian passport holders without permanent residence, country of origin means the country you departed from before arriving in Canada.",
+        "Age 86 and older – $500 minimum deductible",
+        "The deductible amount is shown on your confirmation of coverage and applies to each claim."
+      ]
+    },
+    "logo": "/images/DestinationCanada.png",
+    "company_info": {
+      "administrated_by": "The Destination: Travel Group Inc.",
+      "underwritten_by": "Zurich Insurance Company Ltd (Canadian Branch)",
+      "assistance_center": "Zurich Travel Assist"
+    },
+    "downloads": [
+      {
+        "name": "Destination Canada POLICY PDF",
+        "url": "#"
+      },
+      {
+        "name": "Destination Canada Application Form – DocuSign (fillable)",
+        "url": "#"
+      }
+    ]
+  },
+  "tugo": {
+    "name": "TuGo Travel Insurance",
+    "description": "Comprehensive travel insurance coverage for visitors to Canada, providing peace of mind during your stay.",
+    "benefits": {
+      "title": "Plan Benefits",
+      "introduction": "TuGo offers comprehensive travel insurance plans with the following benefits:",
+      "emergency_medical": {
+        "title": "Emergency Medical Benefits",
+        "items": [
+          "Maximum benefits: $10,000; $25,000; $50,000; $100,000, $200,000, $300,000 and $500,000",
+          "Hospital services: semi-private accommodation",
+          "Physician services",
+          "Ambulance services: ground, air or sea ambulance to the nearest hospital",
+          "X-ray examinations and diagnostic laboratory procedures",
+          "Prescription drugs for a maximum of 30-day period",
+          "Medical appliances: the cost to rent or purchase essential medical appliances, including but not limited to, wheelchairs, crutches and canes",
+          "Fracture Treatment – up to $1,000 for cast removal, physiotherapy, X-ray, re-examination or re-casting, if medically necessary",
+          "Private duty nursing services",
+          "Professional medical services of physiotherapist, chiropractor, chiropodist, osteopath, podiatrist, optometrist and acupuncturist up to a maximum limit of $600 per practitioner",
+          "Follow-up visits: 5 follow-up visits within the 14 days after the initial emergency medical treatment if necessary",
+          "Accidental dental, maximum $6,000 for the repair or replacement of whole or sound teeth",
+          "Emergency dental, maximum $600 for a pain relief, other than caused by an accident",
+          "Return of Deceased (Repatriation): the preparation and return of your body or ashes to your country of origin or up to $6,000 for burial or cremation at the place of death (excluding the cost of funeral, a burial coffin or an urn)",
+          "Hospital Allowance: up to $100 per day to cover hospital charges for TV rental and phone",
+          "Emergency Air Transportation: The cost of medical air evacuation, a stretcher or one-way economy airfare to return to your country of permanent residence and the cost for a medical attendant if necessary",
+          "Return of Dependent Children: cost of airfare and a chaperone to return dependent children travelling with you back home, if you are returned to your country of permanent residence under the Emergency Air Transportation Benefit or the Repatriation Benefit",
+          "Child Care: up to $500 per day to a maximum of $5,000 for child care costs if you are hospitalized",
+          "Family Transportation: the transportation costs and allowance of $400 per day to a maximum of $2,000 for meals and accommodation for one family member to be with you while you are hospitalized, if an attending physician considers it necessary",
+          "Out of Pocket Expenses: up to $500 per day to a maximum of $5,000 for your accommodation, meals, telephone calls, internet charges, taxi fare, parking charges, bus fare and/or rental car in lieu, if your travelling companion is confined to hospital on or after the date you are scheduled to return to your country of permanent residence",
+          "Accidental Death and Dismemberment insurance: up to $25,000",
+          "Return of Vehicle: up to $2,500 to return a vehicle that you own or rent if you are incapable of continuing your trip by means of the vehicle used to depart from your country of permanent residence",
+          "Maternity: up to a maximum of $6,000 for pre-natal care, delivery and/or complications thereof arising within the nine weeks before the expected date of delivery, provided the pregnancy commenced after the effective date of the Policy",
+          "Flight to/from Canada coverage: The effective date can be either: a) The date you leave your country of permanent residence for direct travel to Canada (direct travel includes stopovers and layovers), provided travel to Canada does not exceed 48 hours; or, b) The date you arrive in Canada; or, c) Any date after you arrive in Canada"
+        ],
+        "notes": [
+          "* These benefits are payable only when pre-approved and arranged by Claims at TuGo."
+        ]
+      }
+    },
+    "eligibility": {
+      "title": "Eligibility Requirements",
+      "sections": [
+        {
+          "title": "Who Can Apply",
+          "description": "At the time of application, you are eligible for coverage if:",
+          "items": [
+            "You know of no reason for which you may seek medical attention",
+            "You are: a) A foreign worker, international student studying in Canada or a visitor to Canada with valid legal status in Canada; or, b) An immigrant awaiting provincial or territorial government health care coverage; or, c) A Canadian returning to Canada from an extended leave who is eligible for but not yet covered by a provincial or territorial government health care plan",
+            "You are not travelling against a physician or other registered medical practitioner's advice",
+            "You have not been diagnosed with a terminal condition",
+            "You are not receiving palliative care or palliative care has not been recommended",
+            "You do not have Chronic Obstructive Pulmonary Disease (COPD), including emphysema, requiring home oxygen",
+            "You do not have pancreatic cancer, liver cancer or any type of cancer that has metastasized or that required a bone marrow transplant",
+            "You do not have kidney disease requiring dialysis",
+            "You have not had or are not waiting for an organ transplant",
+            "You have not been diagnosed with congestive heart failure also known as pulmonary edema"
+          ]
+        },
+        {
+          "title": "Waiting Period for Illness",
+          "description": "The waiting period depends on when you purchase your policy:",
+          "items": [
+            "No waiting period if the insurance is purchased prior to arrival in Canada",
+            "48 hours if the policy is purchased within 60 days after arrival in Canada",
+            "7 days if the policy is purchased after 60 days or more from your arrival in Canada"
+          ]
+        },
+        {
+          "title": "Pre-existing Conditions",
+          "description": "TuGo will not be liable to provide coverage or services, or to pay claims for expenses incurred directly or indirectly as a result of:",
+          "items": [
+            "59 years and under on the application date – any medical condition which is not stable in the 90 days before the effective date of the policy",
+            "60 to 69 years on the application date – any medical condition which is not stable in the 120 days before the effective date of the policy. A medical questionnaire is required",
+            "70 to 85 years on the application date – any medical condition which is not stable in the 180 days before the effective date of the policy. A medical questionnaire is required",
+            "86 years and over on the application date – any medical condition which is not stable in the 365 days before the effective date of the policy. A medical questionnaire is required",
+            "If you are 79 years and under, you can add an optional Unstable Pre-existing Medical Conditions Coverage to your policy to cover pre-existing conditions provided they were stable on or within the 7 days before the effective date of the policy (Subject to policy exclusions, terms and conditions)"
+          ]
+        },
+        {
+          "title": "Stable Medical Condition",
+          "description": "A medical condition is considered stable when all of the following statements are true:",
+          "items": [
+            "There has been no deterioration of the medical condition as determined by a physician or other registered medical practitioner, and",
+            "There have been no new symptoms or findings or more frequent or severe symptoms or findings, and",
+            "There has been no change in treatment by a physician or other registered medical practitioner or any alteration in any medication related to the medical condition, and",
+            "There has been no new treatment received, prescribed or recommended by a physician or other registered medical practitioner"
+          ],
+          "note": "Alteration means the medication usage, dosage or type has been increased, decreased or stopped and/or a new medication has been prescribed. Exceptions include routine dosage adjustments for insulin/blood thinner medication and brand-name medication changes to generic equivalents of the same dosage."
+        }
+      ]
+    },
+    "refunds": {
+      "title": "Refund Policy",
+      "sections": [
+        {
+          "title": "Refund Conditions",
+          "description": "Refunds are not available if a claim has been or will be submitted.",
+          "items": [
+            "When no travel has taken place and the request for refund is received BEFORE the effective date of the Policy, a full refund is available",
+            "When no travel has taken place and the request for refund is received AFTER the effective date of the Policy: a) A full refund is available in the 10 days from the application date of the policy; or, b) A refund less an administration fee is available when the request for refund is received more than 10 days after the application date of the policy but within the 90 days after the expiry date of the Policy",
+            "When travel has taken place, a partial refund less an administration fee is available"
+          ]
+        },
+        {
+          "title": "Refund Calculation",
+          "description": "Refunds are calculated as follows:",
+          "items": [
+            "From the date the cancellation request is submitted to us, whether or not you have returned to your country of permanent residence or you became eligible and/or covered under a provincial or territorial government health care plan during the period of coverage; or",
+            "From the date you return to your country of permanent residence if a satisfactory proof of return is sent to us and the request is received by us within the 90 days after the expiry date of the Policy; or",
+            "From the date you become eligible and/or covered under a provincial or territorial government health care plan during the period of coverage if a satisfactory proof of the provincial or territorial government health care coverage is sent to us and the request is received by us within the 90 days after the date you became eligible"
+          ],
+          "note": "Once any refund of premium has been requested, no expenses will be accepted for consideration under the policy, regardless of the date the expense was incurred."
+        },
+        {
+          "title": "Special Policy Refunds",
+          "description": "Applicable to 365-day Policies with a sum insured of $100,000 or more (Super Visa Policies):",
+          "items": [
+            "A refund is available, subject to a $250 cancellation fee, provided no travel has taken place. For cancellation after the effective date of the Policy, the request must be received within the 90 days after the expiry date of the Policy; or",
+            "If a Super Visa application was denied, a full refund is available before the effective date of the Policy, or a refund less an administration fee is available after the effective date of the Policy, provided the request is received within the 90 days after the expiry date of the Policy. Supporting documentation must be sent to us"
+          ],
+          "note": "If your Super Visa application is delayed, please contact your agent before the effective date of the Policy to change the coverage dates of your Policy."
+        }
+      ]
+    },
+    "extensions": {
+      "title": "Policy Extensions",
+      "sections": [
+        {
+          "title": "Extension Requests",
+          "description": "You can extend your period of coverage before your policy expires by calling your agent or TuGo during general business hours.",
+          "items": [
+            "An administration fee may be charged in addition to the premium for the additional number of days required",
+            "You must meet the following conditions: 1) You have not submitted a claim and have no intent to submit a claim; 2) Your period of coverage has not already expired; 3) Extensions are not available if total trip length exceeds two years from the effective date of the original Policy; 4) You have not seen a physician or other registered medical practitioner since your departure date or the effective date of the Policy; 5) You are not currently experiencing any symptoms and you do not know of any reason to seek medical attention"
+          ],
+          "note": "If these conditions haven't been met, an extension may be authorized at the discretion of TuGo. If an extension has been authorized, there would be no coverage for subsequent claims related directly or indirectly to the condition(s) or symptom(s) for which a claim has been or will be submitted or for which medical treatment was received or required prior to the effective date of the extension."
+        },
+        {
+          "title": "Side Trips",
+          "description": "Travel outside Canada: Travel worldwide during the period of coverage is valid as long as the majority of the period of coverage is spent in Canada and you have travelled to Canada first before taking additional trips outside of Canada.",
+          "items": [
+            "Visits to your country of permanent residence are permitted; your Policy will not terminate, however, expenses will not be covered while in your country of permanent residence"
+          ]
+        },
+        {
+          "title": "Automatic Extensions to Coverage",
+          "description": "At the time the period of coverage ends your coverage will be automatically extended at no additional premium:",
+          "items": [
+            {
+              "title": "Hospitalization",
+              "description": "If you, your family travelling with you or your travelling companion are hospitalized. The automatic extension will be provided to you for the remaining period of the hospitalization, plus up to 7 days after hospital release to recover and/or travel home"
+            },
+            {
+              "title": "Medically Unfit to Travel",
+              "description": "If you, your family travelling with you or your travelling companion are unable to travel on the scheduled return date due to a medical condition that does not require hospitalization. The automatic extension will be provided to you for up to 7 days to recover and/or travel home. In the event of a claim, written documentation must be provided to TuGo by the attending physician to substantiate the inability to travel home as originally scheduled"
+            },
+            {
+              "title": "Delay of Common Carrier",
+              "description": "If your common carrier is delayed due to circumstances beyond your control, preventing you from returning to your country of permanent residence. The automatic extension will be provided to you for up to 7 days. In the event of a claim, written documentation must be provided to TuGo to substantiate the common carrier delay"
+            },
+            {
+              "title": "Quarantine",
+              "description": "If you, your family travelling with you or your travelling companion are unable to travel on your scheduled return date due to being placed under quarantine after a positive COVID-19 test, the automatic extension will be provided to you for up to 14 days. In the event of a claim, written documentation must be provided to TuGo to substantiate the quarantine"
+            }
+          ]
+        }
+      ]
+    },
+    "claims": {
+      "title": "Claims Process",
+      "sections": [
+        {
+          "title": "Emergency Claims",
+          "description": [
+            "In the event of a medical emergency, call Claims at TuGo immediately:",
+            "To make a claim, simply contact Claims at TuGo 24 hours a day, seven days a week:",
+            "From U.S.A. & Canada, call toll-free: 1-800-663-0399",
+            "From Mexico, call toll-free: 001-800-514-9976 or 800-681-8070",
+            "Worldwide, call collect: 1-604-278-4108",
+            "TuGo® Wallet app: For quick access to the emergency medical assistance phone numbers while travelling, download the \"TuGo Wallet\" app to your phone or tablet."
+          ]
+        },
+        {
+          "title": "Claim Submission",
+          "description": [
+            "Your claim must be sent to TuGo no later than 30 days from the date a claim arises. Within 90 days all documents supporting your claim have to be sent to the insurance company.",
+            "You shall be responsible for the verification of any hospital and medical expenses incurred and shall obtain itemized accounts of all hospital and medical services which have been provided.",
+            "All claims correspondence should be mailed to:",
+            "Claims at TuGo\n1200-6081 No. 3 Road\nRichmond, BC, V6Y 2B2",
+            "For Online Claim Submission visit www.tugo.com/claims"
+          ],
+          "note": "In the event of unresolved disputes respecting any claim or portion thereof, the following should be contacted: TuGo, 10th Floor, 6081 No. 3 Road, Richmond, BC, V6Y 2B2. Any complaints must be submitted within one year after the date of the expense."
+        }
+      ]
+    },
+    "exclusions": {
+      "title": "Policy Exclusions",
+      "introduction": "In addition to the General Exclusions shown below, TuGo will not be liable to provide coverage or services, or to pay claims for expenses incurred directly or indirectly as a result of:",
+      "items": [
+        "Any complications that develop after departure, related to a pre-existing medical condition that was not stable on or before the effective date of the Policy",
+        "Any claim incurred after a physician advised you not to travel",
+        "Any claim incurred after any other registered medical practitioner advised you not to travel",
+        "A trip that is undertaken after the diagnosis of a terminal condition",
+        "A trip that is undertaken while you are receiving palliative care or after palliative care has been recommended",
+        "Medical conditions or any related medical conditions for which, before the effective date of the Policy, diagnostic tests took place, were scheduled to take place or were recommended and for which results had not yet been received on or before the effective date of the Policy",
+        "The cost of any mandated test required for travel",
+        "Medical conditions or any related medical conditions for which, on or before the effective date of the Policy, tests to follow up on the effectiveness or response to a procedure, surgery or hospitalization are scheduled to take place or recommended",
+        "Medical conditions or any related medical conditions for which before the effective date of the Policy, medical procedures, surgeries and/or referrals to a specialist were scheduled to take place or were recommended but had not yet taken place at the time of the effective date of the Policy",
+        "Emotional or mental illness or disorders, unless they result in hospitalization",
+        "Acute psychosis if drug or alcohol induced",
+        "Any cancer (other than basal cell or squamous cell skin cancer and/or cancer that is in remission) for which you received or were recommended to receive active cancer treatment on or within the 90 days before the effective date of the Policy",
+        "Tests and investigation except when performed at the time of initial emergency medical condition",
+        "Any expenses incurred as a result of a disease or illness that originated or was symptomatic during the waiting period",
+        "The continued treatment, recurrence or complication of a medical condition or related condition, following emergency treatment during your trip, if we determine that your emergency has ended, unless otherwise specified in a benefit",
+        "Any medical condition, including symptoms of withdrawal, arising from, or in any way related to, your chronic use of alcohol, drugs or other intoxicants whether prior to or during your trip; or any medical condition arising during your trip from, or in any way related to, the misuse or abuse of drugs or other intoxicants",
+        "Expenses incurred for emergency air transportation and any expenses or benefits if we determine that you should transfer to another facility or could return to your country of permanent residence for treatment, and you choose not to, benefits will not be paid for further treatment related to the medical condition",
+        "An official travel advisory issued by a Canadian government stating to avoid optional, discretionary and/or non-essential travel into Canada, before the date you arrive in Canada",
+        "Any loss resulting from your minor mental or emotional disorder",
+        "Your self-inflicted injuries, unless medical evidence establishes that the injuries are related to a mental health illness",
+        "Any claim that results from or is related to your commission or attempted commission of a criminal offence or illegal act",
+        "Any medical condition that is the result of you not following treatment as prescribed to you, including prescribed medication",
+        "Any medical condition, including symptoms of withdrawal, arising from, or in any way related to, your chronic use of alcohol, drugs or other intoxicants whether prior to or during your Coverage Period; or any medical condition arising during your Coverage Period, from or in any way related to, the abuse of alcohol, drugs or other intoxicants",
+        "Any loss resulting from your minor mental or emotional disorder",
+        "Any non-emergency, investigative, experimental or elective treatment such as cosmetic surgery, chronic care, rehabilitation including any expenses for directly or indirectly related complications",
+        "General health examinations or services",
+        "Prescription drugs or medicines, treatment, appliances or devices provided to monitor or maintain any pre-existing condition"
+      ],
+      "notes": [
+        "Age refers to the age at the time of application."
+      ]
+    },
+    "logo": "/images/tugo.webp",
+    "company_info": {
+      "administrated_by": "TuGo",
+      "underwritten_by": "Industrial Alliance Insurance and Financial Services Inc.",
+      "assistance_center": "Claims at TuGo"
+    },
+    "downloads": [
+      {
+        "name": "TuGo Visitors Insurance POLICY PDF",
+        "url": "#"
+      },
+      {
+        "name": "TuGo Visitors Insurance Medical Questionnaire age 60+",
+        "url": "#"
+      }
+    ]
+  },
+  "gms": {
+    "name": "GMS Travel Insurance",
+    "description": "Comprehensive travel insurance coverage for visitors to Canada, providing peace of mind during your stay.",
+    "benefits": {
+      "title": "Plan Benefits",
+      "introduction": "GMS offers comprehensive travel insurance plans with the following benefits:",
+      "emergency_medical": {
+        "title": "Emergency Medical Benefits",
+        "items": [
+          "Maximum benefits: $25,000; $50,000; $100,000 and $150,000",
+          "Hospital Care – semi-private room accommodation and emergency room expenses",
+          "Physicians and surgeons services",
+          "Ambulance Transportation: Licensed local air or land ambulance, when necessary, to the nearest hospital. Air ambulance and medical escort back to your country of origin",
+          "Diagnostic Treatments: X-rays and other diagnostic tests",
+          "Prescription drugs or medicines, 30-day supply",
+          "Professional Medical Services – up to $500 per insured for the emergency services of an osteopath, physiotherapist, chiropractor, chiropodist and/or podiatrist",
+          "Accidental Dental: Up to $2,000 for repair or replacement of natural teeth or permanently attached artificial teeth, damaged by an accidental blow to the face",
+          "Dental Emergencies: Up to $300 for relief of dental pain",
+          "Return of Remains: In the event of death from covered condition, up to $10,000 is provided to return the body home, or up to $4,000 for cremation or burial at the place of death. This benefit does not cover funeral service expenses",
+          "Follow-up visits are covered up to 14 days after the initial medical emergency when deemed medically necessary",
+          "Child Care – up to $500 for licensed care of dependent children if they are travelling with you, should you be hospitalized due to a medical emergency",
+          "Meals and Accommodation – up to $150 per day to a maximum of $1,000 for accommodations, meals, necessary telephone calls and taxi or bus fares incurred by an accompanying family member in the event that you are hospitalized",
+          "Repatriation to Country of Origin: up to $5,000 for one-way air transportation for you and one accompanying family member insured under your policy to transport you back to your country of origin for further medical treatment. The cost of a medical escort or attendant is not covered",
+          "Coverage while in-transit between Canada and the country of origin – limited up to 48 hours after your initial departure"
+        ],
+        "notes": [
+          "* This benefit must be pre-approved by GMS.",
+          "** Magnetic resonance imaging, computerized axial tomography scans, sonograms, ultrasounds and biopsies are excluded, unless pre-authorized by GMS. GMS does not cover expenses for coronary artery angioplasty, cardiac surgery or implantable cardioverter defibrillator (ICD) (including any associated diagnostic tests or charges), unless necessary in a medical emergency and approved by GMS prior to any actions."
+        ]
+      }
+    },
+    "eligibility": {
+      "title": "Eligibility Requirements",
+      "sections": [
+        {
+          "title": "Who is Not Eligible",
+          "description": "If you are under fifty-five (55) years of age you are NOT eligible if you:",
+          "items": [
+            "Have any reason to seek medical treatment, excluding the regular care of a chronic condition or medical evaluation required to satisfy travel visa requirements",
+            "Are currently in Canada, and have ever been denied similar coverage offered by another Canadian insurer; and",
+            "Are currently in Canada, and had more than $5,000 in medical treatment in the last twelve (12) months while in Canada"
+          ]
+        },
+        {
+          "title": "Who is Not Eligible (Age 55+)",
+          "description": "If you are fifty-five (55) years of age and older you are NOT eligible if you:",
+          "items": [
+            "Are eighty (80) years of age or older on the policy effective date",
+            "Have any reason to seek medical treatment, excluding the regular care of a chronic condition or medical evaluation required to satisfy travel visa requirements",
+            "Are currently in Canada, and have ever been denied similar coverage offered by another Canadian insurer",
+            "Are currently in Canada, and had more than $5,000 in medical treatment in the last twelve (12) months while in Canada",
+            "Are expecting medical treatment for heart disease",
+            "Are waiting for test(s) for a suspected heart condition",
+            "Are taking prescription drugs for heart disease while taking insulin to treat diabetes",
+            "Have an implantable cardioverter defibrillator (ICD)",
+            "Fainted or fell more than once without medical diagnosis (syncope)",
+            "Use home oxygen for a medical condition",
+            "Take oral steroids to treat a lung condition",
+            "Are being treated for cancer or have Metastatic Cancer",
+            "Have a vascular aneurysm that is surgically untreated",
+            "Have ever had: a valve replacement; kidney (renal) dialysis; or an organ transplant",
+            "Were diagnosed; received new medical treatment (e.g. consultation, tests or prescription drugs); or had a change in your medical treatment (e.g. a stop, start or dosage change to a prescription drug, other than a dosage change of Coumadin or Warfarin) for, any of the following conditions in the last twelve (12) months: congestive heart failure; atrial flutter; atrial / ventricular fibrillation; peripheral vascular disease; stroke / transient ischemic attack (TIA); acquired immune deficiency syndrome (AIDS); terminal illness; blood clots; or gastrointestinal bleeding; and",
+            "Require assistance from another person(s) with activities of daily living (ADL) if you are seventy (70) years of age or older"
+          ]
+        },
+        {
+          "title": "Pre-existing Conditions",
+          "description": "GMS does not cover expenses resulting from medical condition(s) which have not been stable for one hundred and eighty (180) days immediately prior to your effective date, including:",
+          "items": [
+            "Medical condition(s) for which you received medical treatment or medical consultation; and/or",
+            "Undiagnosed medical condition(s) related to symptoms which you received medical treatment or medical consultation"
+          ],
+          "note": "You must be stable based on the definition of stable in this policy, regardless of the opinion of your physician or any other person who may provide an opinion on your medical condition(s)."
+        },
+        {
+          "title": "Stable Medical Condition",
+          "description": "A medical condition is stable if:",
+          "items": [
+            "You have no reason to expect medical treatment after your effective date for the medical condition or any symptoms",
+            "You have not received new or different medical treatment for the medical condition",
+            "You have not had an alteration to an existing prescription drug or were prescribed a new prescription drug for the medical condition",
+            "Your medical condition has not become worse",
+            "You have not experienced new, more frequent or more severe symptoms",
+            "You have not had or needed medical consultation for undiagnosed symptoms",
+            "You have not needed in-hospital care; a referral to a specialist, or a follow-up visit; and",
+            "You have not had tests or further investigation, whether you know the results or not, related to the medical condition"
+          ]
+        },
+        {
+          "title": "Waiting Period",
+          "description": "The waiting period depends on when you purchase your policy:",
+          "items": [
+            "If you apply before arriving in Canada, or purchase to continue coverage without a gap from another policy, that is providing similar coverage from a Canadian insurance company, coverage begins on the effective date with no wait period",
+            "If uninsured and apply within the first 30 days of arriving in Canada, coverage for injury begins on the effective date and a 2 day waiting period is applied to coverage for medical conditions, other than injury",
+            "If uninsured and apply more than 30 days of arriving in Canada, coverage for injury begins on the effective date and a 7 day waiting period is applied to coverage for medical conditions, other than injury"
+          ]
+        }
+      ]
+    },
+    "refunds": {
+      "title": "Refund Policy",
+      "sections": [
+        {
+          "title": "Full Refunds",
+          "description": "Full refunds are available if no travel has taken place, when your request for a refund is received:",
+          "items": [
+            "Prior to the effective date as shown on your confirmation document; or",
+            "After the effective date as shown on your confirmation document if you have not travelled to Canada because your application for a visa to enter Canada was declined. An administration fee applies, and it will be deducted from the refund"
+          ],
+          "note": "A copy of the visa decline letter will be needed when requesting a refund."
+        },
+        {
+          "title": "Partial Refunds",
+          "description": "Partial refunds are available, with an administration fee, in the following situations:",
+          "items": [
+            "Your request for a refund is received after the effective date shown on your confirmation document when no travel has taken place, except if your request is the result of a declined visa application. The refund will be calculated from the date GMS was notified",
+            "You return to your country of origin. The refund will be calculated from the date you departed Canada (proof of departure will be required)",
+            "You become eligible and covered under a government health plan during the period of coverage. The refund will be calculated from the date your government health plan takes effect",
+            "Your death occurs during the policy period. The refund will be calculated from the date of your death"
+          ]
+        },
+        {
+          "title": "No Refunds Available",
+          "description": "Refunds are not available when:",
+          "items": [
+            "A claim has been reported under this policy; or",
+            "You request a refund after the expiry date of your policy"
+          ]
+        }
+      ]
+    },
+    "extensions": {
+      "title": "Policy Extensions",
+      "sections": [
+        {
+          "title": "Extension Requirements",
+          "description": "You may purchase additional days to extend your coverage subject to GMS' approval if:",
+          "items": [
+            "You contact GMS forty-eight (48) hours prior to the expiry date of the existing coverage",
+            "During your period of coverage, you have not required medical treatment (whether a claim was submitted or not), excluding a medical evaluation required to satisfy travel visa requirements",
+            "Your total period of coverage, including all extensions, does not exceed one (1) year; and",
+            "You will not be eighty (80) years of age or older as of the start date for the policy extension"
+          ],
+          "note": "To avoid a waiting period, extend coverage before your policy expires."
+        },
+        {
+          "title": "Side Trips",
+          "description": "Coverage for side trips up to 30 days or less in duration, outside of Canada that:",
+          "items": [
+            "Originates and terminates in Canada; and",
+            "Are not greater than 50% of your period of coverage"
+          ],
+          "note": "Expenses incurred in your country of origin are not covered."
+        },
+        {
+          "title": "Automatic Policy Extension",
+          "description": "If coverage expires while hospitalized due to a medical emergency, coverage will continue for you, your spouse and any dependants travelling with you and are listed on your application during your hospitalization and for up to 72 hours after discharge from hospital."
+        }
+      ]
+    },
+    "claims": {
+      "title": "Claims Process",
+      "sections": [
+        {
+          "title": "Emergency Claims",
+          "description": [
+            "Emergency phone numbers: Toll free within Canada and the USA: 1-800-459-6604 and Collect call from all other locations: 905-762-5196.",
+            "Regardless of your plan deductible, in the event of a medical emergency, you are required to contact GMS within twenty-four (24) hours of receiving medical treatment or admission to hospital. Failure to do so may limit benefits to the lesser of 70% of reasonable and customary expenses or $50,000."
+          ]
+        },
+        {
+          "title": "Claim Submission",
+          "description": [
+            "Complete a claim form and attach all original itemized medical bills and prescription receipts.",
+            "Sign and date completed form and return package to:",
+            "World Travel Protection\n901 King Street West, Suite 300\nToronto, ON, M5V 3H5",
+            "For Online Claim Submission visit www.gms.ca/vtc-claims",
+            "Notice of claim: In the event of a medical emergency you must provide written notice of claim within thirty (30) days after contacting GMS Travel Assistance.",
+            "Proof of claim must be submitted within 90 days of occurrence.",
+            "Keep a copy of all the submitted correspondence for your records."
+          ]
+        }
+      ]
+    },
+    "exclusions": {
+      "title": "Policy Exclusions",
+      "introduction": "The following expenses are not covered by this policy:",
+      "items": [
+        "GMS does not cover expenses incurred in your country of origin",
+        "GMS does not cover expenses incurred where you act against medical advice or the advice of GMS",
+        "GMS does not cover expenses resulting from the regular care of a chronic condition",
+        "GMS does not cover any expenses that are the result of your failure, prior to arriving in Canada, to: a) adhere to medical treatment; b) obtain investigative or diagnostic tests recommended by a medical professional; and/or c) receive results from investigative or diagnostic tests",
+        "GMS does not cover expenses resulting directly or indirectly from medical condition(s) which have not been stable for one hundred and eighty (180) days immediately prior to your effective date",
+        "GMS does not cover expenses when you travel outside Canada when an official travel advisory is issued by the Canadian government",
+        "GMS does not cover any medical treatment, which is a continuation of or a recurrence of a medical condition",
+        "GMS does not cover any expenses resulting from medical treatment that is not a medical emergency, including but not limited to: routine or general physical examinations; medical check-ups; regular care of chronic conditions; elective surgery; dental or cosmetic surgery; and follow ups or continued services following emergency medical treatment",
+        "GMS does not cover expenses that are a duplication of any service, allowance or repayment available by an existing government health plan or private plan",
+        "GMS does not cover medical treatment, hospitalization or surgery (including elective, non-elective, personal comfort, dental or cosmetic) which is not considered to be an emergency, even if it is recommended by a physician",
+        "GMS does not cover expenses for medical treatment at a diagnostic facility unless pre-approved by GMS",
+        "GMS does not cover emergency air transportation or return to Canada or your country of origin, which is not arranged and pre-approved by GMS",
+        "GMS does not cover drugs which are commonly available without a prescription, not legally registered or approved in Canada, experimental drugs or preventative medicines or vaccines",
+        "GMS does not cover any expenses resulting from and/or incurred during trips undertaken for the purpose of receiving a diagnosis of medical treatment",
+        "GMS does not cover any expenses when you travel against the advice of a physician",
+        "GMS does not cover expenses related to your pregnancy, an abortion, miscarriage, childbirth or complications of any of these conditions",
+        "GMS does not cover a newborn until it has been released from the hospital for forty-eight (48) hours and has been added as a dependant on your coverage",
+        "GMS does not cover expenses for coronary artery angioplasty, cardiac surgery or implantable cardioverter defibrillator (ICD) (including any associated diagnostic tests or charges), unless necessary in a medical emergency and approved by GMS prior to any actions",
+        "GMS does not cover any expenses for medical treatment or surgery which is considered by GMS to be experimental",
+        "GMS does not cover expenses resulting directly or indirectly from your criminal or illegal acts",
+        "GMS does not cover expenses resulting from your sickness, injury, or death if at the time of the sickness, injury or death evidence supports that it was caused by, or in any way contributed to, by the use or abuse of prohibited drugs, alcohol, or any other intoxicant or the misuse of medication, whether prescribed or not",
+        "GMS does not cover expenses incurred as a result of a motor vehicle accident, unless such services are not covered by any other private or public vehicle insurance",
+        "GMS does not cover any expenses resulting from your participation in: a) professional sport; b) speed contests or racing of motorized land, water or air vehicle(s); c) an extreme sport, including but not limited to scuba diving (except when you are NAUI, PADI, ACUC or SSI certified), bungee jumping, parachuting, mountaineering, skydiving, participation in a rodeo, hang gliding, acrobatic or stunt flying or participating in a horse race as a jockey",
+        "GMS does not cover expenses resulting from air travel unless riding as a passenger on a common carrier",
+        "GMS does not cover medical treatment or services that contravene or are prohibited by provincial laws and/or the federal laws of Canada",
+        "GMS does not cover expenses resulting from your service in the armed forces, willful exposure to peril, and/or relief work",
+        "GMS does not cover expenses for medical treatment and services provided outside Canada except as provided under the following sections in this policy: a) Automatic Policy Extensions; or b) Travel Benefits Outside Canada",
+        "GMS does not cover expenses resulting from any nuclear reaction, radiation or radioactive contamination or occurrence, where the risk of the exposure was present prior to your arrival in Canada, however caused",
+        "GMS does not cover expenses resulting from war, terrorism or acts of foreign rebellion"
+      ],
+      "notes": [
+        "The deductible is applied to each claim.",
+        "Dependant: any unmarried child of you or your spouse (including step-child or adopted child) who is chiefly dependent upon you or your spouse for support and maintenance and is 18 years of age or under."
+      ]
+    },
+    "logo": "/images/GMS.png",
+    "company_info": {
+      "administrated_by": "GMS Insurance Inc.",
+      "underwritten_by": "GMS Insurance Inc.",
+      "assistance_center": "World Travel Protection (WTP)"
+    },
+    "downloads": [
+      {
+        "name": "GMS Visitors Insurance POLICY PDF",
+        "url": "#"
+      },
+      {
+        "name": "GMS Visitors Insurance Application Form – DocuSign (fillable)",
         "url": "#"
       }
     ]
