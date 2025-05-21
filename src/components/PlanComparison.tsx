@@ -22,7 +22,7 @@ import { getRedirectionUrl } from '@/constants/redirectLinks';
 export const QuoteContext = React.createContext<any>(null);
 
 type PlanFeature = {
-  type: 'Medication' | 'Hospitalization' | 'Complementary care' | 'Health Professional' | 'Dental Care' | 'Vision Care';
+  type: 'Medication' | 'Hospitalization' | 'Complementary care' | 'Health Professional' | 'Dental Care' | 'Pre-existing Conditions';
   description: string;
   icon: React.ElementType;
 };
@@ -67,7 +67,7 @@ const iconMapping = {
   'Complementary care': Stethoscope,
   'Health Professional': UserRound,
   'Dental Care': Smile,
-  'Vision Care': Eye
+  'Pre-existing Conditions': UserRound
 };
 
 // Mock insurance plans data for default display
@@ -99,13 +99,13 @@ const mockInsurancePlans: InsurancePlan[] = [
       'Dental Care': {
         description: 'Up to $4000 for accidental blow and $300 for emergency',
       },
-      'Vision Care': {
-        description: 'Not included',
+      'Pre-existing Conditions': {
+        description: 'Included',
       },
     },
     additionalInfo: {
       preExisting: 'Yes',
-      preExistingText: 'Stability 180 days',
+      preExistingText: 'Included',
       maxAge: 'N/A',
       keyFeatures: '<ul>\n<li>Comprehensive Plan</li>\n<li>Semi-private Hospital Cover Charges (Multiple follow-up visits during an emergency)</li>\n<li>Prescription Drugs: Reasonable and customary charges</li>\n<li>Dental: Up to $4000 for accidental blow and $300 for emergency treatment</li>\n<li>Professional services: Up to $700</li>\n<li>AD&amp;D benefits: Up to $50,000</li>\n<li>Meals &amp; Accommodation Allowance (if hospitalized beyond scheduled return date): $150/day up to $1,500</li>\n<li>Bedside Companion Allowance: Return economy class airfare up to $3,000 + upto $500</li>\n</ul>\n',
       familyPlan: 'No family plans',
@@ -150,13 +150,13 @@ const mockInsurancePlans: InsurancePlan[] = [
       'Dental Care': {
         description: 'Up to $1000 for accidental blow and $300 for emergency',
       },
-      'Vision Care': {
+      'Pre-existing Conditions': {
         description: 'Not included',
       },
     },
     additionalInfo: {
       preExisting: 'No',
-      preExistingText: 'No',
+      preExistingText: 'Not included',
       maxAge: '69',
       keyFeatures: '<ul>\n<li>Comprehensive Plan</li>\n<li>Hospital Ward Cover Charges (3 follow-up visits if pre-approved)</li>\n<li>Prescription Drugs: Max 30-day supply up to $500</li>\n<li>Dental: Up to $1000 for accidental blow and $300 for emergency treatment</li>\n<li>Professional services: Up to $300/practitioner</li>\n<li>AD&amp;D benefits: Up to $50,000</li>\n<li>Meals &amp; Accommodation Allowance (if hospitalized beyond scheduled return date): Not included</li>\n<li>Bedside Companion Allowance: Not included</li>\n</ul>\n',
       familyPlan: 'No family plans',
@@ -201,13 +201,13 @@ const mockInsurancePlans: InsurancePlan[] = [
       'Dental Care': {
         description: 'Up to $2000 for accidental blow and $300 for emergency',
       },
-      'Vision Care': {
-        description: 'Not included',
+      'Pre-existing Conditions': {
+        description: 'Included',
       },
     },
     additionalInfo: {
       preExisting: 'Yes',
-      preExistingText: 'Stability 180 days',
+      preExistingText: 'Included',
       maxAge: '90',
       keyFeatures: '<ul>\n<li>Comprehensive Plan</li>\n<li>Semi-private Hospital Cover Charges (Multiple follow-up visits during emergency &amp; 1 visit post-emergency)</li>\n<li>Prescription Drugs: Max 30-day supply up to coverage amt. </li>\n<li>Dental: Up to $2000 for accidental blow and $300 for emergency treatment</li>\n<li>Professional services: Up to $500</li>\n<li>AD&amp;D benefits: Not included</li>\n<li>Meals &amp; Accommodation Allowance (if hospitalized beyond scheduled return date): $150/day up to $1000</li>\n<li>Bedside Companion Allowance: Not available</li>\n</ul>\n',
       familyPlan: 'Family plans available',
@@ -252,13 +252,13 @@ const mockInsurancePlans: InsurancePlan[] = [
       'Dental Care': {
         description: 'Up to $4000 for accidental blow and $500 for emergency',
       },
-      'Vision Care': {
-        description: 'Not included',
+      'Pre-existing Conditions': {
+        description: 'Included',
       },
     },
     additionalInfo: {
       preExisting: 'Yes',
-      preExistingText: 'Stability 90 days for 0-70 age, Stability 180 days for 71-80 age',
+      preExistingText: 'Included',
       maxAge: '80',
       keyFeatures: '<ul>\n<li>Comprehensive Plan</li>\n<li>Semi-Private Hospital Cover Charges (Follow-up visit only if prescribed by the attending physician)</li>\n<li>Prescription Drugs: Max 30-day supply up to $2000</li>\n<li>Dental: Up to $4000 for accidental blow and $500 for emergency treatment</li>\n<li>Professional services: Up to $500/practitioner</li>\n<li>AD&amp;D benefits: Up to $50,000</li>\n<li>Meals &amp; Accommodation Allowance (if hospitalized beyond scheduled return date): $150/day up to $3000 </li>\n<li>Bedside Companion Allowance: Return economy class airfare + $150/day up to $5000</li>\n</ul>\n',
       familyPlan: 'Family plans available',
@@ -351,7 +351,7 @@ const convertApiQuotesToPlans = (quotes: any): InsurancePlan[] => {
       'Complementary care': { description: 'Not specified' },
       'Health Professional': { description: 'Not specified' },
       'Dental Care': { description: 'Not specified' },
-      'Vision Care': { description: 'Not specified' }
+      'Pre-existing Conditions': { description: 'Not specified' }
     };
 
     // Parse the trv_key_features HTML to extract feature details
@@ -380,14 +380,11 @@ const convertApiQuotesToPlans = (quotes: any): InsurancePlan[] => {
         keyFeatures['Dental Care'].description = quote.trv_key_features.includes('Not included') ? 
           'Not included' : (match ? htmlToMarkdown(match[1].trim()) : 'Included');
       }
-      
-      // Extract vision care if available (often not explicitly mentioned)
-      if (quote.trv_key_features.includes('Vision')) {
-        const match = quote.trv_key_features.match(/Vision(?:\s+Care)?:?\s*(.+?)(<\/li>|$)/i);
-        keyFeatures['Vision Care'].description = match ? htmlToMarkdown(match[1].trim()) : 'Included';
-      } else {
-        keyFeatures['Vision Care'].description = 'Not included';
-      }
+
+      // Extract pre-existing conditions info
+      keyFeatures['Pre-existing Conditions'].description = quote.trv_covers_pre_existing === "Yes" ? 
+        'Included' : 
+        'Not included';
 
       // Extract "Complementary care" - could be diagnostic services or other
       if (quote.trv_key_features.includes('diagnostic')) {
@@ -437,15 +434,17 @@ const convertApiQuotesToPlans = (quotes: any): InsurancePlan[] => {
     } else {
       logoPath = 'https://via.placeholder.com/150x50?text=Insurance';
     }
-    
     return {
       id: quote.product_code || `plan${index + 1}`,
       name: quote.product_name || 'Insurance Plan',
       provider: providerName,
       logo: logoPath,
-      price: quote.total_premium || '$0.00',
+      // price: quote.total_premium || '$0.00',
+      price: quote.monthly_option_premiums && quote.trv_monthly_option_available === "yes" ? 
+        `${typeof quote.monthly_option_premiums === 'object' ? '$' + quote.monthly_option_premiums.monthly_payment : quote.monthly_option_premiums}` : 
+        quote.total_premium || '$0.00',
       pricePerMonth: quote.monthly_option_premiums ? 
-        `${typeof quote.monthly_option_premiums === 'object' ? JSON.stringify(quote.monthly_option_premiums) : quote.monthly_option_premiums} per month` : 
+        `${typeof quote.monthly_option_premiums === 'object' ? '$' + quote.monthly_option_premiums.initial_payment : quote.monthly_option_premiums} initial payment` : 
         (quote.trv_monthly_option_available === "yes" ? "Monthly payment options available" : null),
       rating: starRating,
       recommended: false,
@@ -986,8 +985,8 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                             <h4 className="text-xl font-semibold text-gray-900 mb-2">Pre-existing conditions</h4>
                             <p className="text-gray-700 mb-2">
                               {plan.additionalInfo.preExisting === "Yes" ? 
-                                `Covered - ${plan.additionalInfo.preExistingText}` : 
-                                "Not covered"}
+                                'Included' : 
+                                'Not included'}
                             </p>
 
                             <h4 className="text-xl font-semibold text-gray-900 mb-2">Additional information</h4>
