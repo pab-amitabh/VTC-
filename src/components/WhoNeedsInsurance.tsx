@@ -1,117 +1,77 @@
 import React from 'react';
-import { Users, GraduationCap, Briefcase, FileCheck, Heart } from 'lucide-react';
+import { Users, Briefcase, FileCheck, Heart } from 'lucide-react';
 
 const WhoNeedsInsurance = () => {
   const visitorTypes = [
     {
-      title: "Visitor insurance for tourists",
-      description: "Insurance for tourists in Canada covers emergency medical care, so you can explore the country stress-free",
-      icon: <Users className="h-8 w-8 text-white" />,
-      color: "#17B3E4"
+      title: "Visitors to Canada",
+      icon: <Users className="w-6 h-6 text-[#3344DD]" />,
     },
     {
-      title: "Emergency medical insurance for international students",
-      description: "Before provincial health plans kick in (or if you're not eligible), international student insurance Canada provides essential protection for doctor visits and hospital care",
-      icon: <GraduationCap className="h-8 w-8 text-white" />,
-      color: "#17B3E4"
+      title: "International Students",
+      icon: <Briefcase className="w-6 h-6 text-[#3344DD]" />,
     },
     {
-      title: "Visitor to Canada insurance for temporary workers & IEC participants",
-      description: "Temporary worker insurance Canada and IEC (International Experience Canada) insurance protect those in Canada on work permits with plans designed for temporary stays",
-      icon: <Briefcase className="h-8 w-8 text-white" />,
-      color: "#17B3E4"
+      title: "Super Visa Insurance",
+      icon: <FileCheck className="w-6 h-6 text-[#3344DD]" />,
     },
     {
-      title: "Super Visa insurance in Canada",
-      description: "To qualify, you need Super Visa insurance Canada with at least $100,000 in coverage from a Canadian provider, valid for a year",
-      icon: <FileCheck className="h-8 w-8 text-white" />,
-      color: "#17B3E4"
-    },
-    {
-      title: "Visitor insurance for parents and grandparents",
-      description: "Reunions should be joyful, not stressful. Our visitor insurance for parents and grandparents in Canada covers both short trips and long Super Visa stays",
-      icon: <Heart className="h-8 w-8 text-white" />,
-      color: "#17B3E4"
+      title: "Foreign Workers",
+      icon: <Heart className="w-6 h-6 text-[#3344DD]" />,
     }
   ];
 
+  const renderVisitorTypePanel = (type: any, index: number, extraMarginClass: string = '') => (
+    <div key={index} className={`bg-white p-4 rounded-lg shadow-md flex items-center gap-4 ${extraMarginClass}`}>
+      <div className="flex-shrink-0">
+        <div className="bg-[#F0F9FF] w-10 h-10 rounded-lg flex items-center justify-center">
+          {type.icon}
+        </div>
+      </div>
+      <div>
+        <h3 className="text-lg font-semibold text-[#181B1F]">{type.title}</h3>
+      </div>
+    </div>
+  );
+
   return (
-    <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden" id="who-needs-insurance">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full opacity-30 transform translate-x-1/3 -translate-y-1/3"></div>
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-pink-100 rounded-full opacity-30 transform -translate-x-1/3 translate-y-1/3"></div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-            Who needs travel insurance for visitors to Canada?
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              We customize visitor insurance to protect every kind of traveller in Canada. Whether you're a 
-              tourist, international student, temporary worker, or simply visiting family, our plans cover 
-              emergency medical care so you can focus on your trip, not on unexpected bills.
-            </p>
+    <section className="py-8 md:py-12 bg-white" id="who-needs-insurance">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#181B1F] text-center mb-12">
+          Who needs travel insurance for visitors to Canada?
+        </h2>
+        
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <p className="text-base md:text-lg text-[#64748B]">
+            We customize visitor insurance to protect every kind of traveller in Canada. Whether you're a 
+            tourist, international student, temporary worker, or simply visiting family, our plans cover 
+            emergency medical care so you can focus on your trip, not on unexpected bills.
+          </p>
+        </div>
+        
+        <div className="flex flex-col lg:flex-row items-stretch gap-x-8">
+          {/* Left Column */}
+          <div className="w-full lg:w-1/3 flex flex-col gap-y-6 lg:gap-y-12 order-2 lg:order-1 justify-center">
+            {renderVisitorTypePanel(visitorTypes[0], 0)}
+            {renderVisitorTypePanel(visitorTypes[2], 2)} {/* Panel 3: Super Visa */}
           </div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {visitorTypes.slice(0, 3).map((type, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 border border-gray-100">
-              <div className="flex flex-col items-center text-center">
-                <div 
-                  className="w-16 h-16 rounded-full flex items-center justify-center mb-5"
-                  style={{ backgroundColor: type.color }}
-                >
-                  {type.icon}
-                </div>
-                <h3 className="font-bold text-xl text-gray-900 mb-3">{type.title}</h3>
-                <p className="text-gray-700">{type.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {visitorTypes.slice(3, 5).map((type, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 border border-gray-100">
-              <div className="flex flex-col items-center text-center">
-                <div 
-                  className="w-16 h-16 rounded-full flex items-center justify-center mb-5"
-                  style={{ backgroundColor: type.color }}
-                >
-                  {type.icon}
-                </div>
-                <h3 className="font-bold text-xl text-gray-900 mb-3">{type.title}</h3>
-                <p className="text-gray-700">{type.description}</p>
-              </div>
-            </div>
-          ))}
+
+          {/* Center Image Column */}
+          <div className="w-full lg:w-1/3 flex justify-center items-center order-1 lg:order-2 py-8 lg:py-0">
+            <img 
+              src="/images/family.png" 
+              alt="Family needing visitor insurance" 
+              className="max-w-xs md:max-w-sm lg:max-w-full h-auto object-contain rounded-lg shadow-lg"
+            />
+          </div>
+
+          {/* Right Column */}
+          <div className="w-full lg:w-1/3 flex flex-col gap-y-6 lg:gap-y-12 order-3 lg:order-3 justify-center">
+            {renderVisitorTypePanel(visitorTypes[1], 1, "lg:mt-24")} {/* Panel 2: Intl Students, increased lg:mt-16 to lg:mt-24 */}
+            {renderVisitorTypePanel(visitorTypes[3], 3)}
+          </div>
         </div>
 
-        <div className="mt-12 md:mt-16 bg-white p-8 rounded-xl shadow-md border border-gray-100">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="md:w-2/3 mb-6 md:mb-0 md:pr-8">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#17B3E4' }}>
-                Specialized coverage for every visitor
-              </h3>
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                No matter why you're visiting Canada, we have a plan tailored to your specific needs. Our specialized insurance options provide peace of mind for every type of traveler.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Compare plans instantly and find the perfect coverage for your Canadian journey.
-              </p>
-            </div>
-            <div className="md:w-1/3 flex justify-center">
-              <div className="w-full max-w-[200px] h-[200px] bg-[#17B3E4] rounded-full flex items-center justify-center text-white p-8">
-                <div className="text-center">
-                  <div className="text-4xl font-bold">100%</div>
-                  <div className="text-sm mt-2">Visitors protected with the right coverage</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
