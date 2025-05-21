@@ -1,132 +1,175 @@
 import React from 'react';
-import { Activity, Pill, Stethoscope, PlaneTakeoff, Skull, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Activity, Pill, Stethoscope, PlaneTakeoff, Skull, Heart } from 'lucide-react';
 
 const TypicalCoverage = () => {
-  // Coverage items included in a typical visitor insurance plan
-  const coverageItems = [
-    {
-      title: "Emergency medical expenses",
-      description: "Covers hospitalization, doctor visits, lab tests, and ambulance services for sudden illnesses or injuries",
-      icon: <Stethoscope className="w-8 h-8 text-white" />
-    },
-    {
-      title: "Prescription drugs",
-      description: "Provides medication coverage for emergencies included in your plan",
-      icon: <Pill className="w-8 h-8 text-white" />
-    },
-    {
-      title: "Emergency dental care",
-      description: "Offers immediate relief for dental pain or accidental injuries during your trip",
-      icon: <Activity className="w-8 h-8 text-white" />
-    },
-    {
-      title: "Medical evacuation & repatriation",
-      description: "Ensures safe transfer to a better medical facility or return home if treatment is unavailable locally",
-      icon: <PlaneTakeoff className="w-8 h-8 text-white" />
-    },
-    {
-      title: "Accidental Death & Dismemberment (AD&D)",
-      description: "Lump-sum protection in the event of accidental death or serious injury",
-      icon: <Skull className="w-8 h-8 text-white" />
-    },
-    {
-      title: "Coverage for pre-existing medical conditions",
-      description: "Includes stable pre-existing conditions with coverage eligibility typically after 90 to 180 days of stability",
-      icon: <Heart className="w-8 h-8 text-white" />
-    }
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
+  const gridVariants = {
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
-      transition: { 
-        duration: 0.6,
-        staggerChildren: 0.1,
-        ease: "easeOut"
-      }
-    }
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
   };
 
-  const itemVariants = {
+  const cardVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
-    }
+      transition: {
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden" id="typical-coverage">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full opacity-30 transform translate-x-1/3 -translate-y-1/3"></div>
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-pink-100 rounded-full opacity-30 transform -translate-x-1/3 translate-y-1/3"></div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative">
+    <section className="py-8 md:py-12 bg-[#F0F9FF]">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#181B1F] text-center mb-12">
+          What a typical visitor insurance plan covers
+        </h2>
+        
         <motion.div 
-          className="text-center mb-12 md:mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+          variants={gridVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={itemVariants}
+          viewport={{ once: true, amount: 0.1 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-            What a typical visitor insurance plan covers
-          </h2>
-        </motion.div>
-
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {coverageItems.map((item, index) => (
-            <motion.div 
-              key={index} 
-              variants={itemVariants}
-              className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 border border-gray-100"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-5" style={{ backgroundColor: '#17B3E4' }}>
-                  {item.icon}
+          {/* Card 1 */}
+          <motion.div className="relative" variants={cardVariants}>
+            <div className="bg-white rounded-lg shadow-sm flex flex-col border border-blue-200 h-full">
+              <div className="p-6 flex-grow">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+                    <Stethoscope className="w-7 h-7 text-gray-800" />
+                  </div>
+                  <h3 className="text-gray-900 text-xl font-bold mb-2">Emergency Medical Expenses</h3>
                 </div>
-                <h4 className="font-bold text-xl text-gray-900 mb-3">
-                  {item.title}
-                </h4>
-                <p className="text-gray-700">
-                  {item.description}
+                <p className="text-[#64748B] text-sm mb-4">
+                  Covers hospitalization, doctor visits, lab tests, and ambulance services for sudden illnesses or injuries.
                 </p>
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div 
-          className="mt-12 md:mt-16 bg-white p-8 rounded-xl shadow-md border border-gray-100"
-          variants={itemVariants}
-        >
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="md:w-2/3 mb-6 md:mb-0 md:pr-8">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#17B3E4' }}>
-                Optional add-ons to consider
-              </h3>
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Add-ons available include travel interruption insurance for Canada visitors and baggage loss insurance for Canada visitors.
-              </p>
-            </div>
-            <div className="md:w-1/3 flex justify-center">
-              <div className="w-full max-w-[200px] h-[200px] bg-[#17B3E4] rounded-full flex items-center justify-center text-white p-8">
-                <div className="text-center">
-                  <div className="text-4xl font-bold">100%</div>
-                  <div className="text-sm mt-2">Comprehensive protection for your Canadian visit</div>
-                </div>
+              <div className="bg-transparent py-3 px-6 rounded-b-lg flex justify-center items-center">
+                <p className="bg-slate-100 text-blue-700 text-base font-medium py-2 px-5 rounded-md">
+                  Up to $500,000 coverage
+                </p>
               </div>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Card 2 */}
+          <motion.div className="relative" variants={cardVariants}>
+            <div className="bg-white rounded-lg shadow-sm flex flex-col border border-blue-200 h-full">
+              <div className="p-6 flex-grow">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+                    <Pill className="w-7 h-7 text-gray-800" />
+                  </div>
+                  <h3 className="text-gray-900 text-xl font-bold mb-2">Prescription Drugs</h3>
+                </div>
+                <p className="text-[#64748B] text-sm mb-4">
+                  Provides medication coverage for emergencies included in your plan.
+                </p>
+              </div>
+              <div className="bg-transparent py-3 px-6 rounded-b-lg flex justify-center items-center">
+                <p className="bg-slate-100 text-blue-700 text-base font-medium py-2 px-5 rounded-md">
+                  No out-of-pocket costs
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Card 3 */}
+          <motion.div className="relative" variants={cardVariants}>
+            <div className="bg-white rounded-lg shadow-sm flex flex-col border border-blue-200 h-full">
+              <div className="p-6 flex-grow">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+                    <Activity className="w-7 h-7 text-gray-800" />
+                  </div>
+                  <h3 className="text-gray-900 text-xl font-bold mb-2">Emergency Dental Care</h3>
+                </div>
+                <p className="text-[#64748B] text-sm mb-4">
+                  Offers immediate relief for dental pain or accidental injuries during your trip.
+                </p>
+              </div>
+              <div className="bg-transparent py-3 px-6 rounded-b-lg flex justify-center items-center">
+                <p className="bg-slate-100 text-blue-700 text-base font-medium py-2 px-5 rounded-md">
+                  Up to $2,500 in coverage
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Card 4 */}
+          <motion.div className="relative" variants={cardVariants}>
+            <div className="bg-white rounded-lg shadow-sm flex flex-col border border-blue-200 h-full">
+              <div className="p-6 flex-grow">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+                    <PlaneTakeoff className="w-7 h-7 text-gray-800" />
+                  </div>
+                  <h3 className="text-gray-900 text-xl font-bold mb-2">Medical Evacuation & Repatriation</h3>
+                </div>
+                <p className="text-[#64748B] text-sm mb-4">
+                  Ensures safe transfer to a better medical facility or return home if treatment is unavailable locally.
+                </p>
+              </div>
+              <div className="bg-transparent py-3 px-6 rounded-b-lg flex justify-center items-center">
+                <p className="bg-slate-100 text-blue-700 text-base font-medium py-2 px-5 rounded-md">
+                  Full coverage for transport
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Card 5 */}
+          <motion.div className="relative" variants={cardVariants}>
+            <div className="bg-white rounded-lg shadow-sm flex flex-col border border-blue-200 h-full">
+              <div className="p-6 flex-grow">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+                    <Skull className="w-7 h-7 text-gray-800" />
+                  </div>
+                  <h3 className="text-gray-900 text-xl font-bold mb-2">Accidental Death & Dismemberment</h3>
+                </div>
+                <p className="text-[#64748B] text-sm mb-4">
+                  Lump-sum protection in the event of accidental death or serious injury.
+                </p>
+              </div>
+              <div className="bg-transparent py-3 px-6 rounded-b-lg flex justify-center items-center">
+                <p className="bg-slate-100 text-blue-700 text-base font-medium py-2 px-5 rounded-md">
+                  Benefits up to $50,000
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Card 6 */}
+          <motion.div className="relative" variants={cardVariants}>
+            <div className="bg-white rounded-lg shadow-sm flex flex-col border border-blue-200 h-full">
+              <div className="p-6 flex-grow">
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+                    <Heart className="w-7 h-7 text-gray-800" />
+                  </div>
+                  <h3 className="text-gray-900 text-xl font-bold mb-2">Pre-existing Medical Conditions</h3>
+                </div>
+                <p className="text-[#64748B] text-sm mb-4">
+                  Includes stable pre-existing conditions with coverage eligibility typically after 90 to 180 days of stability.
+                </p>
+              </div>
+              <div className="bg-transparent py-3 px-6 rounded-b-lg flex justify-center items-center">
+                <p className="bg-slate-100 text-blue-700 text-base font-medium py-2 px-5 rounded-md">
+                  Peace of mind for chronic conditions
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

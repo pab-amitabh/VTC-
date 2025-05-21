@@ -84,9 +84,11 @@ const FAQ = () => {
   ];
 
   // Filter FAQs based on active category only
-  const filteredFaqs = faqs.filter(faq => {
-    return activeCategory === 'all' || faq.category === activeCategory;
-  });
+  // const filteredFaqs = faqs.filter(faq => {
+  //   return activeCategory === 'all' || faq.category === activeCategory;
+  // });
+  // Display all FAQs since tabs are removed
+  const filteredFaqs = faqs;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -108,7 +110,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden bg-gradient-to-b from-gray-50 to-white" id="faq">
+    <section className="py-8 md:py-12 relative overflow-hidden bg-gradient-to-b from-gray-50 to-white" id="faq">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-lightBlue rounded-full opacity-50 blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-lightBlue rounded-full opacity-30 blur-3xl -z-10 transform -translate-x-1/2 translate-y-1/2"></div>
@@ -130,8 +132,8 @@ const FAQ = () => {
           </p>
         </motion.div>
 
-        {/* Category tabs */}
-        <motion.div
+        {/* Category tabs - REMOVED */}
+        {/* <motion.div
           className="max-w-4xl mx-auto mb-10 overflow-x-auto hide-scrollbar"
           variants={itemVariants}
           initial="hidden"
@@ -147,7 +149,7 @@ const FAQ = () => {
                   "flex items-center px-4 py-2 rounded-full text-sm transition-colors whitespace-nowrap",
                   activeCategory === category.id
                     ? "bg-deepBlue text-white shadow-md"
-                    : "bg-white text-magenta hover:bg-magenta/5 border border-gray-200"
+                    : "bg-white text-blue-600 hover:bg-blue-50 border border-gray-200"
                 )}
               >
                 <category.icon className="w-4 h-4 mr-2" />
@@ -155,7 +157,7 @@ const FAQ = () => {
               </button>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
         
         {/* FAQ accordion */}
         <motion.div 
@@ -171,6 +173,7 @@ const FAQ = () => {
               <Accordion type="single" collapsible className="w-full space-y-4">
                 {filteredFaqs.map((faq, index) => (
                   <motion.div 
+                    id={faq.id}
                     key={faq.id} 
                     variants={itemVariants}
                     custom={index}
@@ -179,15 +182,15 @@ const FAQ = () => {
                       value={faq.id} 
                       className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"
                     >
-                      <AccordionTrigger className="px-6 py-5 hover:no-underline group">
+                      <AccordionTrigger className="px-4 py-4 md:px-6 md:py-5 hover:no-underline group">
                         <div className="flex items-start gap-4 text-left">
-                          <span className="p-2 rounded-lg inline-flex bg-magenta/10 text-magenta">
+                          <span className="p-2 rounded-lg inline-flex bg-blue-100 text-blue-600">
                             <faq.icon className="w-5 h-5" />
                           </span>
                           <span className="text-lg font-medium text-neutral-800 group-hover:text-deepBlue transition-colors">{faq.question}</span>
                         </div>
                       </AccordionTrigger>
-                      <AccordionContent className="px-6 pb-6 pt-0 ml-14 text-neutral-600 leading-relaxed">
+                      <AccordionContent className="px-4 pb-4 md:px-6 md:pb-6 pt-0 ml-10 md:ml-14 text-neutral-600 leading-relaxed">
                         <div className="bg-gray-50 p-4 rounded-xl border border-gray-100">
                           {faq.answer}
                         </div>
@@ -208,11 +211,11 @@ const FAQ = () => {
           {/* Sidebar */}
           <div className="lg:col-span-4">
             <motion.div 
-              className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 sticky top-24"
+              className="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-200 sticky top-24"
               variants={itemVariants}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-magenta/10 text-magenta">
+                <div className="p-2 rounded-lg bg-blue-100 text-blue-600">
                   <MessageCircle className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-semibold text-neutral-800">Still have questions?</h3>
@@ -222,20 +225,12 @@ const FAQ = () => {
               </p>
               <div className="space-y-3">
                 <motion.a 
-                  href="#" 
+                  href="tel:1-888-601-9980" 
                   className="w-full py-2.5 px-4 bg-deepBlue hover:bg-deepBlue/90 text-white rounded-xl font-medium text-sm inline-flex items-center justify-center transition-colors"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   Talk to an Expert
-                </motion.a>
-                <motion.a 
-                  href="#" 
-                  className="w-full py-2.5 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-xl font-medium text-sm inline-flex items-center justify-center transition-colors"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  View Knowledge Base
                 </motion.a>
               </div>
 
@@ -250,8 +245,13 @@ const FAQ = () => {
                         className="text-sm text-deepBlue hover:text-deepBlue/80 flex items-start gap-2"
                         onClick={(e) => {
                           e.preventDefault();
-                          setActiveCategory('all');
-                          document.getElementById(faq.id)?.scrollIntoView({ behavior: 'smooth' });
+                          // setActiveCategory('all'); // No longer needed
+                          // Use a slight delay to allow state update and re-render if necessary before scrolling
+                          setTimeout(() => {
+                            const element = document.getElementById(faq.id);
+                            element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            // Optionally, open the accordion item if your Accordion component supports it programmatically
+                          }, 100); // 100ms delay, adjust if needed
                         }}
                       >
                         <span className="text-deepBlue mt-0.5">•</span>
