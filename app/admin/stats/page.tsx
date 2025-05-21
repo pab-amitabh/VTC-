@@ -9,6 +9,7 @@ interface ClickStat {
   province: string | null;
   ipAddress: string;
   customerName: string;
+  customerEmail: string | null;
   customerPhone: string;
   clickCount: number;
   trackingId: string;
@@ -123,29 +124,35 @@ export default function StatsPage() {
           <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
             <thead className="bg-gray-50 border-b">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Provider</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Plan Name</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer Name</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone Number</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Province</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IP Address</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer Name</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer Phone</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created On</th>
                 <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Clicks</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Updated</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Provider</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Plan Name</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
               {stats.map((stat) => (
                 <tr key={stat.id} className="hover:bg-gray-50">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{stat.providerName}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.planName}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.customerName}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.customerEmail || 'N/A'}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.customerPhone}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.province || 'N/A'}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.ipAddress}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.customerName}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.customerPhone}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {new Date(stat.createdAt).toLocaleString()}
+                  </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-bold text-gray-900">{stat.clickCount}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {new Date(stat.updatedAt).toLocaleString()}
                   </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{stat.providerName}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.planName}</td>
                 </tr>
               ))}
             </tbody>
