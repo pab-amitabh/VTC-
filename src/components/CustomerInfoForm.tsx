@@ -8,7 +8,7 @@ interface CustomerInfoFormProps {
   providerName: string;
   planName: string;
   insuranceUrl: string;
-  onSubmit: (name: string, phone: string) => Promise<void>;
+  onSubmit: (name: string, phone: string, email: string) => Promise<void>;
   onClose: () => void;
 }
 
@@ -21,8 +21,10 @@ const CustomerInfoForm = ({
 }: CustomerInfoFormProps) => {
   const [customerName, setCustomerName] = useState('');
   const [customerPhone, setCustomerPhone] = useState('');
+  const [customerEmail, setCustomerEmail] = useState('');
   const [nameError, setNameError] = useState('');
   const [phoneError, setPhoneError] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formTouched, setFormTouched] = useState(false);
 
@@ -39,16 +41,16 @@ const CustomerInfoForm = ({
       setNameError('');
     }
     
-    // Validate phone number - basic validation
-    const phoneRegex = /^[\d\s\-\(\)]{10,15}$/;
-    if (!customerPhone.trim()) {
-      setPhoneError('This field is required');
+    // Validate email
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!customerEmail.trim()) {
+      setEmailError('This field is required');
       isValid = false;
-    } else if (!phoneRegex.test(customerPhone)) {
-      setPhoneError('Please enter a valid phone number');
+    } else if (!emailRegex.test(customerEmail)) {
+      setEmailError('Please enter a valid email address');
       isValid = false;
     } else {
-      setPhoneError('');
+      setEmailError('');
     }
     
     return isValid;
@@ -62,7 +64,7 @@ const CustomerInfoForm = ({
       
       try {
         // Submit data to parent component
-        await onSubmit(customerName, customerPhone);
+        await onSubmit(customerName, customerPhone, customerEmail);
         
         // First close the form
         onClose();
@@ -91,8 +93,10 @@ const CustomerInfoForm = ({
     // Reset form state before closing
     setCustomerName('');
     setCustomerPhone('');
+    setCustomerEmail('');
     setNameError('');
     setPhoneError('');
+    setEmailError('');
     setIsSubmitting(false);
     setFormTouched(false);
     
@@ -117,16 +121,21 @@ const CustomerInfoForm = ({
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setCustomerPhone(value);
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setCustomerEmail(value);
     
     if (formTouched) {
-      const phoneRegex = /^[\d\s\-\(\)]{10,15}$/;
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       
       if (!value.trim()) {
-        setPhoneError('This field is required');
-      } else if (!phoneRegex.test(value)) {
-        setPhoneError('Please enter a valid phone number');
+        setEmailError('This field is required');
+      } else if (!emailRegex.test(value)) {
+        setEmailError('Please enter a valid email address');
       } else {
-        setPhoneError('');
+        setEmailError('');
       }
     }
   };
@@ -165,8 +174,23 @@ const CustomerInfoForm = ({
           </div>
           
           <div>
+            <label htmlFor="customerEmail" className="block text-sm font-medium text-gray-700 mb-1">
+              Email Address <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="customerEmail"
+              type="email"
+              value={customerEmail}
+              onChange={handleEmailChange}
+              className={`w-full px-3 py-2 border ${emailError ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-deepBlue focus:border-deepBlue outline-none transition-colors`}
+              placeholder="john.doe@example.com"
+            />
+            {emailError && <p className="mt-1 text-xs text-red-500">{emailError}</p>}
+          </div>
+          
+          <div>
             <label htmlFor="customerPhone" className="block text-sm font-medium text-gray-700 mb-1">
-              Phone Number <span className="text-red-500">*</span>
+              Phone Number
             </label>
             <input
               id="customerPhone"
@@ -175,10 +199,9 @@ const CustomerInfoForm = ({
               pattern="[0-9\s\-\(\)]*"
               value={customerPhone}
               onChange={handlePhoneChange}
-              className={`w-full px-3 py-2 border ${phoneError ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-deepBlue focus:border-deepBlue outline-none transition-colors`}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-deepBlue focus:border-deepBlue outline-none transition-colors"
               placeholder="(123) 456-7890"
             />
-            {phoneError && <p className="mt-1 text-xs text-red-500">{phoneError}</p>}
           </div>
           
           <div className="pt-3">

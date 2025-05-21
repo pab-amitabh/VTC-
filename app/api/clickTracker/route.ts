@@ -15,6 +15,7 @@ export async function POST(request: Request) {
       province = null, 
       customerName = null, 
       customerPhone = null,
+      customerEmail = null,
       trackingId = null // New field to link initial click with form submission
     } = body;
 
@@ -53,6 +54,7 @@ export async function POST(request: Request) {
       ipAddress,
       customerName,
       customerPhone,
+      customerEmail,
       trackingId,
       timestamp: new Date().toISOString() 
     });
@@ -95,7 +97,8 @@ export async function POST(request: Request) {
               updatedAt: new Date(),
               // Update with customer info
               ...(customerName && { customerName }),
-              ...(customerPhone && { customerPhone })
+              ...(customerPhone && { customerPhone }),
+              ...(customerEmail && { customerEmail })
             }
           },
           { 
@@ -125,6 +128,7 @@ export async function POST(request: Request) {
               ipAddress,
               ...(customerName && { customerName }),
               ...(customerPhone && { customerPhone }),
+              ...(customerEmail && { customerEmail }),
               trackingId: generatedTrackingId
             },
             $inc: { 
@@ -144,10 +148,11 @@ export async function POST(request: Request) {
       console.log('API Route: Click tracking result:', result);
       
       // Add verification for customer info update
-      if (customerName && customerPhone) {
+      if (customerName && customerPhone && customerEmail) {
         console.log('API Route: Verified customer info update:', {
           customerNameUpdated: result?.value?.customerName === customerName || result?.customerName === customerName,
           customerPhoneUpdated: result?.value?.customerPhone === customerPhone || result?.customerPhone === customerPhone,
+          customerEmailUpdated: result?.value?.customerEmail === customerEmail || result?.customerEmail === customerEmail,
           resultData: result?.value || result
         });
       }

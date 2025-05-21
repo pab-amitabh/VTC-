@@ -474,6 +474,7 @@ const trackBuyNowClick = async (
   isMockData: boolean,
   customerName?: string,
   customerPhone?: string,
+  customerEmail?: string,
   trackingId?: string,
   province?: string
 ) => {
@@ -491,6 +492,7 @@ const trackBuyNowClick = async (
       province,
       ...(customerName && { customerName }),
       ...(customerPhone && { customerPhone }),
+      ...(customerEmail && { customerEmail }),
       ...(trackingId && { trackingId })
     }));
     
@@ -505,6 +507,7 @@ const trackBuyNowClick = async (
         province,
         ...(customerName && { customerName }),
         ...(customerPhone && { customerPhone }),
+        ...(customerEmail && { customerEmail }),
         ...(trackingId && { trackingId })
       }),
     });
@@ -702,7 +705,7 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
     
     // Then track click in the background (non-blocking)
     const isMockData = false; // Real data, not mock
-    trackBuyNowClick(plan.provider, plan.name, isMockData, undefined, undefined, undefined, formProvinceContext)
+    trackBuyNowClick(plan.provider, plan.name, isMockData, undefined, undefined, undefined, undefined, formProvinceContext)
       .then(trackingId => {
         // Update the tracking ID once we have it
         if (trackingId) {
@@ -716,11 +719,11 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
   };
   
   // Handle form submission with customer data
-  const handleCustomerInfoSubmit = async (name: string, phone: string) => {
+  const handleCustomerInfoSubmit = async (name: string, phone: string, email: string) => {
     if (!selectedPlan) return;
     
     try {
-      console.log('Submitting customer info:', name, phone);
+      console.log('Submitting customer info:', name, phone, email);
       
       // Track click again with customer info and tracking ID
       await trackBuyNowClick(
@@ -729,6 +732,7 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
         false, // Not mock data
         name,
         phone,
+        email,
         selectedPlan.trackingId,
         formProvinceContext
       );
