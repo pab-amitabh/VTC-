@@ -6,7 +6,6 @@ import PlanComparison, { QuoteContext } from '../components/PlanComparison';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
-import InsuranceRequirements from '../components/InsuranceRequirements';
 import WhyNeedInsurance from '../components/WhyNeedInsurance';
 import CoverageRequirements from '../components/CoverageRequirements';
 import InsuranceProviders from '../components/InsuranceProviders';
@@ -38,8 +37,7 @@ const Index = ({ onQuoteUpdate }: IndexProps) => {
     companies: useRef(null),
     howToBuy: useRef(null),
     testimonials: useRef(null),
-    faq: useRef(null),
-    requirements: useRef(null)
+    faq: useRef(null)
   };
 
   // Initialize with null to show mock plans on component mount
@@ -200,14 +198,9 @@ const Index = ({ onQuoteUpdate }: IndexProps) => {
           <Testimonials />
         </div>
         
-        {/* 14. FAQs */}
+        {/* 14. FAQ */}
         <div ref={sectionRefs.faq} id="faq" className="section-visible">
           <FAQ />
-        </div>
-        
-        {/* 15. Visitors to Canada insurance requirements explained */}
-        <div ref={sectionRefs.requirements} id="insurance-requirements" className="section-visible">
-          <InsuranceRequirements />
         </div>
         
         <Footer />

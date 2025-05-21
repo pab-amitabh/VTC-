@@ -67,13 +67,6 @@ const InsuranceProviders = () => {
             </div>
           </div>
         </div>
-        
-        {/* Added tagline at the bottom */}
-        <div className="mt-12 md:mt-16 text-center max-w-3xl mx-auto">
-          <p className="text-lg font-medium text-sky-500">
-            InsureTravel gives you access to competitive rates and comprehensive coverage options from trusted providers—all in one place.
-          </p>
-        </div>
       </div>
     </section>
   );

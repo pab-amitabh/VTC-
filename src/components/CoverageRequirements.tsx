@@ -1,33 +1,29 @@
 import React from 'react';
-import { Check, Clock, Users, GraduationCap, Briefcase, ListOrdered, Settings, PieChart, CreditCard } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Check } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const CoverageRequirements = () => {
-  // Updated step process from the image
+  // Updated step process with simplified data
   const buyingSteps = [
     {
       number: 1,
-      title: 'Submit your details:',
-      description: 'Enter your age, trip dates, number of travellers, and destination',
-      icon: <ListOrdered className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      title: 'Submit your details',
+      description: 'Enter your age, trip dates, number of travellers, and destination'
     },
     {
       number: 2,
-      title: 'Pick coverage needs:',
-      description: 'Choose requirements like Super Visa insurance, pre-existing condition coverage, and policy limits',
-      icon: <Settings className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      title: 'Pick coverage needs',
+      description: 'Choose requirements like Super Visa insurance, pre-existing condition coverage, and policy limits'
     },
     {
       number: 3,
-      title: 'Compare quotes instantly:',
-      description: 'View multiple personalized options side-by-side',
-      icon: <PieChart className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      title: 'Compare quotes instantly',
+      description: 'View multiple personalized options side-by-side'
     },
     {
       number: 4,
-      title: 'Purchase your plan online:',
-      description: 'Purchase your chosen policy directly through InsureTravel in minutes',
-      icon: <CreditCard className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+      title: 'Purchase your plan online',
+      description: 'Purchase your chosen policy directly through InsureTravel in minutes'
     }
   ];
 
@@ -58,195 +54,224 @@ const CoverageRequirements = () => {
     'Ask about partial coverage options for conditions not meeting stability requirements'
   ];
 
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
-    <section className="py-6 md:py-12 bg-white" id="coverage">
-      <div className="container mx-auto px-3 sm:px-6 lg:px-8 max-w-6xl">
-        {/* Main heading with image and content in a 40/60 split */}
-        <div className="flex flex-col md:flex-row gap-4 md:gap-8 mb-6 md:mb-12">
-          {/* Image Section - 40% */}
-          <div className="w-full md:w-[40%]">
-            <div className="bg-lightBlue/20 rounded-lg md:rounded-xl h-full min-h-[180px] md:min-h-[300px] flex items-center justify-center relative overflow-hidden">
-              <img 
-                src="/images/Coverage.png" 
-                alt="Travel Insurance Coverage" 
-                className="object-cover w-full h-full rounded-lg md:rounded-xl"
-                onError={(e) => {
-                  e.currentTarget.src = "https://via.placeholder.com/600x400?text=Insurance+Coverage";
-                }}
-              />
-              <div className="absolute inset-0 bg-deepBlue/10 rounded-lg md:rounded-xl"></div>
+    <section className="py-16 md:py-24 bg-white" id="coverage">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        {/* Section 1: How to buy insurance */}
+        <motion.div 
+          className="mb-16 md:mb-24"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+            {/* Image */}
+            <div className="w-full lg:w-[65%] order-2 lg:order-1 -ml-10">
+              <div className="overflow-hidden">
+                <img 
+                  src="/images/Coverage.png" 
+                  alt="Travel Insurance Coverage" 
+                  className="w-[120%] h-auto object-cover scale-150 transform origin-center"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://via.placeholder.com/600x400?text=Insurance+Coverage";
+                  }}
+                />
+              </div>
             </div>
-          </div>
-          
-          {/* Content Section - 60% */}
-          <div className="w-full md:w-[60%]">
-            <h2 id="coverage-requirements" className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 md:mb-4" style={{ color: '#17B3E4' }}>
-              How to buy visitor insurance for Canada?
-            </h2>
-            <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-5 md:mb-6">
-              Simple 4-step process tailored to your trip.
-            </p>
             
-            {/* Steps to Buy Insurance */}
-            <div className="bg-white rounded-lg md:rounded-xl overflow-hidden shadow-sm md:shadow-md border border-gray-100">
-              <ul className="divide-y divide-gray-100">
+            {/* Content */}
+            <div className="w-full lg:w-[55%] order-1 lg:order-2">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-center lg:text-left text-gray-900">
+                How to buy visitor<br />
+                insurance for Canada?
+              </h2>
+              <p className="text-lg text-gray-700 mb-8 text-center lg:text-left">
+                Simple 4-step process tailored to your trip.
+              </p>
+              
+              {/* Steps */}
+              <div className="space-y-1">
                 {buyingSteps.map((step, index) => (
-                  <li key={index} className="p-4 md:p-5">
+                  <div key={index} className="py-2">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 mr-4">
-                        <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full text-white font-bold text-lg" style={{ backgroundColor: '#17B3E4' }}>
+                      <div className="flex-shrink-0 mr-3 mt-1">
+                        <div className="w-8 h-8 flex items-center justify-center rounded-full text-white font-bold text-base bg-magenta">
                           {step.number}
                         </div>
                       </div>
                       <div>
-                        <p className="font-bold text-base sm:text-lg text-gray-900 mb-1 flex items-center">
+                        <p className="font-semibold text-lg text-gray-900 mb-0.5 pt-0.5">
                           {step.title}
                         </p>
-                        <p className="text-sm sm:text-base text-gray-700">
+                        <p className="text-gray-600">
                           {step.description}
                         </p>
                       </div>
                     </div>
-                  </li>
+                  </div>
                 ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Two information boxes stacked vertically with images */}
-        <div className="space-y-6 sm:space-y-8 md:space-y-12">
-          {/* When to Purchase Your Insurance - Full width */}
-          <div>
-            <h3 id="when-to-purchase" className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 md:mb-4">When to purchase visitor to Canada</h3>
-            <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-3 md:mb-6">
-              For the best protection, buy your travel insurance as soon as you confirm your plans to visit Canada. Purchasing early offers significant advantages over waiting until after you arrive.
-            </p>
-
-            {/* Mobile version (stacked cards) */}
-            <div className="md:hidden space-y-4">
-              <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-                <div className="bg-gray-50 py-2 px-4 border-b border-gray-200">
-                  <h4 className="text-base font-semibold text-gray-800 text-center">Buying Before Arrival</h4>
-                </div>
-                <div className="p-3 sm:p-4">
-                  <ul className="space-y-2 sm:space-y-3">
-                    {buyingBeforePoints.map((point, index) => (
-                      <li key={index} className="flex items-start">
-                        <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-deepBlue flex items-center justify-center shrink-0 mr-2 md:mr-3 mt-0.5">
-                          <Check className="w-2 h-2 sm:w-3 sm:h-3 text-white" />
-                        </div>
-                        <span className="text-xs sm:text-sm text-gray-700">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-                <div className="bg-gray-50 py-2 px-4 border-b border-gray-200">
-                  <h4 className="text-base font-semibold text-gray-800 text-center">Buying After Arrival</h4>
-                </div>
-                <div className="p-3 sm:p-4">
-                  <ul className="space-y-2 sm:space-y-3">
-                    {buyingAfterPoints.map((point, index) => (
-                      <li key={index} className="flex items-start">
-                        <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-magenta flex items-center justify-center shrink-0 mr-2 md:mr-3 mt-0.5">
-                          <Check className="w-2 h-2 sm:w-3 sm:h-3 text-white" />
-                        </div>
-                        <span className="text-xs sm:text-sm text-gray-700">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Desktop version - Original style with updated content */}
-            <div className="hidden md:block bg-white rounded-xl overflow-hidden shadow-md border border-gray-100">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="bg-gray-50">
-                      <th className="py-4 md:py-6 px-4 md:px-6 text-gray-800 font-semibold text-center text-sm md:text-base border-b border-gray-200 w-1/2">Buying Before Arrival</th>
-                      <th className="py-4 md:py-6 px-4 md:px-6 text-gray-800 font-semibold text-center text-sm md:text-base border-b border-gray-200 w-1/2">Buying After Arrival</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="py-4 md:py-6 px-4 md:px-6 border-b border-gray-200 align-top">
-                        <ul className="space-y-3 md:space-y-4">
-                          {buyingBeforePoints.map((point, index) => (
-                            <li key={index} className="flex items-start">
-                              <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-deepBlue flex items-center justify-center shrink-0 mr-3 mt-0.5">
-                                <Check className="w-3 h-3 md:w-4 md:h-4 text-white" />
-                              </div>
-                              <span className="text-sm md:text-base text-gray-700">{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </td>
-                      <td className="py-4 md:py-6 px-4 md:px-6 border-b border-gray-200 align-top">
-                        <ul className="space-y-3 md:space-y-4">
-                          {buyingAfterPoints.map((point, index) => (
-                            <li key={index} className="flex items-start">
-                              <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-magenta flex items-center justify-center shrink-0 mr-3 mt-0.5">
-                                <Check className="w-3 h-3 md:w-4 md:h-4 text-white" />
-                              </div>
-                              <span className="text-sm md:text-base text-gray-700">{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
             </div>
           </div>
+        </motion.div>
 
-          {/* Pre-existing Conditions and Coverage */}
-          <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-            {/* Image - 40% */}
-            <div className="w-full md:w-[40%]">
-              <div className="bg-lightBlue/20 rounded-lg md:rounded-xl h-full min-h-[180px] md:min-h-[300px] flex items-center justify-center relative overflow-hidden">
-                <img 
-                  src="/images/pre-ex.png" 
-                  alt="Pre-existing Conditions Coverage" 
-                  className="object-cover w-full h-full rounded-lg md:rounded-xl"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://via.placeholder.com/600x400?text=Pre-existing+Conditions";
-                  }}
-                />
-                <div className="absolute inset-0 bg-deepBlue/10 rounded-lg md:rounded-xl"></div>
+        {/* Section 2: When to purchase */}
+        <motion.div 
+          className="mb-16 md:mb-24"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-center">
+            When to purchase visitor to Canada
+          </h3>
+          <p className="text-lg text-gray-700 mb-10 max-w-4xl mx-auto text-center">
+            For the best protection, buy your travel insurance as soon as you confirm your plans to visit Canada. 
+            Purchasing early offers significant advantages over waiting until after you arrive.
+          </p>
+
+          {/* Mobile version (stacked cards) */}
+          <div className="lg:hidden space-y-8">
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="bg-deepBlue py-3 px-4">
+                <h4 className="text-lg font-semibold text-white text-center">Buying Before Arrival</h4>
+              </div>
+              <div className="p-6">
+                <ul className="space-y-4">
+                  {buyingBeforePoints.map((point, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="w-6 h-6 rounded-full bg-deepBlue flex items-center justify-center shrink-0 mr-3 mt-0.5">
+                        <Check className="w-3 h-3 text-white" />
+                      </div>
+                      <span className="text-gray-700">{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
             
-            {/* Content - 60% */}
-            <div className="w-full md:w-[60%]">
-              <h3 id="pre-existing-conditions" className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 md:mb-4">Pre-existing Conditions and Coverage</h3>
-              <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-3 md:mb-6">
-                Many visitors worry about coverage for pre-existing medical conditions. While policies vary, most insurance providers will cover stable pre-existing conditions, with stability periods typically ranging from 90 to 180 days.
-              </p>
-
-              <div className="bg-lightBlue/30 p-3 sm:p-4 md:p-6 rounded-lg md:rounded-xl">
-                <h4 id="coverage-tips" className="text-base sm:text-lg md:text-xl font-semibold text-deepBlue mb-2 md:mb-4 text-center">
-                  Tips for Getting Coverage with Pre-existing Conditions
-                </h4>
-                <ul className="space-y-2 sm:space-y-3 md:space-y-4">
-                  {preExistingTips.map((tip, index) => (
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="bg-magenta py-3 px-4">
+                <h4 className="text-lg font-semibold text-white text-center">Buying After Arrival</h4>
+              </div>
+              <div className="p-6">
+                <ul className="space-y-4">
+                  {buyingAfterPoints.map((point, index) => (
                     <li key={index} className="flex items-start">
-                      <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full bg-deepBlue/20 flex items-center justify-center shrink-0 mr-2 sm:mr-3 mt-0.5">
-                        <Check className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 text-deepBlue" />
+                      <div className="w-6 h-6 rounded-full bg-magenta flex items-center justify-center shrink-0 mr-3 mt-0.5">
+                        <Check className="w-3 h-3 text-white" />
                       </div>
-                      <span className="text-xs sm:text-sm md:text-base text-gray-700">{tip}</span>
+                      <span className="text-gray-700">{point}</span>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
           </div>
-        </div>
+
+          {/* Desktop version - Side by side */}
+          <div className="hidden lg:grid grid-cols-2 gap-8">
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="bg-deepBlue py-3 px-4">
+                <h4 className="text-lg font-semibold text-white text-center">Buying Before Arrival</h4>
+              </div>
+              <div className="p-6">
+                <ul className="space-y-4">
+                  {buyingBeforePoints.map((point, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="w-6 h-6 rounded-full bg-deepBlue flex items-center justify-center shrink-0 mr-3 mt-0.5">
+                        <Check className="w-3 h-3 text-white" />
+                      </div>
+                      <span className="text-gray-700">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="bg-magenta py-3 px-4">
+                <h4 className="text-lg font-semibold text-white text-center">Buying After Arrival</h4>
+              </div>
+              <div className="p-6">
+                <ul className="space-y-4">
+                  {buyingAfterPoints.map((point, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="w-6 h-6 rounded-full bg-magenta flex items-center justify-center shrink-0 mr-3 mt-0.5">
+                        <Check className="w-3 h-3 text-white" />
+                      </div>
+                      <span className="text-gray-700">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Section 3: Pre-existing Conditions */}
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeIn}
+        >
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+            {/* Content */}
+            <div className="w-full lg:w-[55%]">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-center lg:text-left">
+                Pre-existing Conditions and Coverage
+              </h3>
+              <p className="text-lg text-gray-700 mb-8 text-center lg:text-left">
+                Many visitors worry about coverage for pre-existing medical conditions. While policies vary, 
+                most insurance providers will cover stable pre-existing conditions, with stability periods 
+                typically ranging from 90 to 180 days.
+              </p>
+
+              <div className="bg-blue-50 p-6 rounded-xl">
+                <h4 className="text-xl font-semibold text-deepBlue mb-6 text-center">
+                  Tips for Getting Coverage with Pre-existing Conditions
+                </h4>
+                <ul className="space-y-4">
+                  {preExistingTips.map((tip, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="w-6 h-6 rounded-full bg-deepBlue/20 flex items-center justify-center shrink-0 mr-3 mt-0.5">
+                        <Check className="w-3 h-3 text-deepBlue" />
+                      </div>
+                      <span className="text-gray-700">{tip}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            
+            {/* Image */}
+            <div className="w-full lg:w-[45%]">
+              <div className="rounded-xl overflow-hidden shadow-md">
+                <img 
+                  src="/images/pre-ex.png" 
+                  alt="Pre-existing Conditions Coverage" 
+                  className="w-full h-auto object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://via.placeholder.com/600x400?text=Pre-existing+Conditions";
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

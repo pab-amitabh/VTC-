@@ -7,7 +7,7 @@ const Testimonials = () => {
       id: 1,
       name: "Sarah Johnson",
       quote: "InsureTravel has transformed the way I think about travel safety. Their comprehensive coverage gave me complete peace of mind. Highly recommend!",
-      image: "/images/avatars/sarah.svg",
+      image: "/images/avatar1.png",
       role: "Frequent Traveller",
       rating: 5,
     },
@@ -15,7 +15,7 @@ const Testimonials = () => {
       id: 2,
       name: "Christina Matthews",
       quote: "InsureTravel has completely transformed my daily routine. The guided assistance are exactly what I need to start my journeys with clarity and focus.",
-      image: "/images/avatars/david.svg",
+      image: "/images/avatar2.png",
       role: "Digital Nomad",
       rating: 5,
     },
@@ -23,7 +23,7 @@ const Testimonials = () => {
       id: 3,
       name: "Sofia Marquez",
       quote: "I've tried many travel insurance providers, but InsureTravel stands out with its personalized programs and supportive service. It feels like it was made just for me.",
-      image: "/images/avatars/emma.svg",
+      image: "/images/avatar3.png",
       role: "Exchange Student",
       rating: 5,
     },
@@ -103,15 +103,10 @@ const Testimonials = () => {
   );
 
   return (
-    <section className="py-16 md:py-24 bg-slate-50" id="testimonials"> {/* Changed bg for subtle gradient feel */}
+    <section className="pt-0 pb-16 md:pb-20 bg-white" id="testimonials">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="text-center mb-4">
-          <p className="text-indigo-600 font-semibold text-sm tracking-wide uppercase">
-            2,157 people have said how good our services are
-          </p>
-        </div>
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold mb-16 text-gray-900 text-center"
+          className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -120,52 +115,61 @@ const Testimonials = () => {
           Our happy clients say about us
         </motion.h2>
         
-        <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          {testimonials.slice(0, 3).map((testimonial) => ( // Displaying first 3 for now
-            <motion.div 
-              key={testimonial.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col"
-              variants={cardVariants}
-              whileHover="hover"
-            >
-              <div className="p-6 md:p-8 flex-grow flex flex-col">
-                <StarRating rating={testimonial.rating} />
-                <p className="text-gray-600 leading-relaxed mb-6 flex-grow italic">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex items-center mt-auto pt-4 border-t border-gray-100">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=random&color=0D47A1&bold=true`;
-                    }}
-                  />
-                  <div>
-                    <h3 className="text-gray-900 font-semibold text-lg">{testimonial.name}</h3>
-                    <p className="text-gray-500 text-sm">{testimonial.role}</p>
+        {/* True glassmorphism effect with background gradient orbs */}
+        <div className="relative overflow-hidden mb-10">
+          {/* Colorful gradient background orbs */}
+          <div className="absolute w-[40%] h-[300px] rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 blur-3xl opacity-40 -left-[5%] top-1/4"></div>
+          <div className="absolute w-[40%] h-[300px] rounded-full bg-gradient-to-r from-magenta to-purple-500 blur-3xl opacity-40 -right-[5%] top-1/4"></div>
+          
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 relative z-10 py-6 px-4"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {testimonials.slice(0, 3).map((testimonial, index) => ( 
+              <motion.div 
+                key={testimonial.id}
+                className="bg-white/40 backdrop-blur-md rounded-xl overflow-hidden flex flex-col border border-white/50 shadow-lg"
+                variants={cardVariants}
+                whileHover="hover"
+              >
+                <div className="p-6 md:p-8 flex-grow flex flex-col">
+                  <StarRating rating={testimonial.rating} />
+                  <p className="text-gray-800 leading-relaxed mb-6 flex-grow italic">
+                    "{testimonial.quote}"
+                  </p>
+                  <div className="flex items-center mt-auto pt-4 border-t border-white/30">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover object-top mr-4 border-2 border-white/50"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=random&color=0D47A1&bold=true`;
+                      }}
+                    />
+                    <div>
+                      <h3 className="text-gray-900 font-semibold text-lg">{testimonial.name}</h3>
+                      <p className="text-gray-700 text-sm">{testimonial.role}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
 
-        {/* <div className="text-center mt-16">
+        <div className="text-center">
           <a 
-            href="#" // Placeholder for all reviews link
-            className="text-indigo-600 font-semibold hover:text-indigo-500 transition-colors underline"
+            href="https://www.reviews.io/company-reviews/store/www-policyadvisor-com" 
+            className="inline-flex items-center justify-center px-6 py-3 bg-magenta text-white font-medium rounded-lg hover:bg-magenta/90 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Check all {testimonials.length} reviews
+            Read all our reviews
           </a>
-        </div> */}
+        </div>
       </div>
     </section>
   );

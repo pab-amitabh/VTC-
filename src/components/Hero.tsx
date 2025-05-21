@@ -1190,7 +1190,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                     <div className="flex flex-col grow">
                     <motion.button 
                       type="submit" 
-                        className="w-full bg-deepBlue hover:bg-deepBlue/90 text-white flex items-center justify-center h-[42px] px-4 text-base font-semibold whitespace-nowrap shadow-md rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
+                        className="w-full bg-magenta/90 hover:bg-magenta/90 text-white flex items-center justify-center h-[42px] px-4 text-base font-semibold whitespace-nowrap shadow-md rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       disabled={loading}
