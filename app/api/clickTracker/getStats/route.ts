@@ -49,6 +49,7 @@ export async function GET() {
         ipAddress: stat.ipAddress || 'N/A',
         customerName: stat.customerName || 'N/A',
         customerPhone: stat.customerPhone || 'N/A',
+        customerEmail: stat.customerEmail || 'N/A',
         clickCount: stat.clickCount,
         trackingId: stat.trackingId || 'N/A',
         createdAt: stat.createdAt,
