@@ -17,18 +17,20 @@ const WhatIsVisitorInsurance = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-end">
-          {/* Left Column: Main Content */}
-          <div className="lg:w-3/5 space-y-8">
-            {/* MOVED HERE: Heading for the two types */}
-            <div className="mb-6">
-              <h3 className="text-xl md:text-3xl font-semibold text-[#181A1B]">
+        <div className='bg-[#F8F9FF] p-6 md:p-8 rounded-xl'>
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:items-end">
+            {/* Center aligned heading for the entire section */}
+            <div className="w-full">
+              <h3 className="text-xl md:text-3xl font-semibold text-[#181A1B] text-center">
                 There are two main types of visitor insurance:
               </h3>
             </div>
+          </div>
 
-            {/* Medical Insurance */}
-            <div>
+          {/* Card layout container */}
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mt-8 max-w-5xl mx-auto">
+            {/* Medical Insurance Card */}
+            <div className="bg-white rounded-xl shadow-md p-6 border">
               <h4 className="text-lg md:text-xl font-semibold text-[#181A1B] mb-3">
                 Medical insurance for visitors to Canada
               </h4>
@@ -37,39 +39,14 @@ const WhatIsVisitorInsurance = () => {
               </p>
             </div>
 
-            {/* Trip Cancellation */}
-            <div>
+            {/* Trip Cancellation Card */}
+            <div className="bg-white rounded-xl shadow-md p-6 border">
               <h4 className="text-lg md:text-xl font-semibold text-[#181A1B] mb-3">
                 Trip cancellation and interruption insurance
               </h4>
               <p className="text-base text-[#525A5B] leading-relaxed">
                 This insurance reimburses you for trip costs if you need to cancel or interrupt your travel due to unforeseen events like illness, severe weather, lost baggage, or transportation delays
               </p>
-            </div>
-          </div>
-
-          {/* Right Column: Why You Need It */}
-          <div className="lg:w-2/5">
-            <div className="bg-[#F8F9FF] p-4 md:p-6 rounded-lg">
-              <h4 className="text-xl md:text-2xl font-semibold text-[#181A1B] mb-6">Why You Need It</h4>
-              
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <DollarSign className="h-8 w-8 text-pink-600 mt-1 shrink-0" />
-                  <div>
-                    <h5 className="text-lg font-semibold text-[#181A1B] mb-1.5">Emergency Care Costs</h5>
-                    <p className="text-base md:text-lg text-[#525A5B]">ER visits can exceed $3,000</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <AlertTriangle className="h-8 w-8 text-pink-600 mt-1 shrink-0" />
-                  <div>
-                    <h5 className="text-lg font-semibold text-[#181A1B] mb-1.5">Non-Resident Healthcare</h5>
-                    <p className="text-base md:text-lg text-[#525A5B]">You're responsible for all healthcare costs</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
