@@ -333,9 +333,6 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
       needSupervisa: visaType === 'super' // Set this based on the visa type
     };
     
-    // Log the form data in the exact format requested
-    console.log(jsonData);
-    
     setFormData(jsonData);
     
     try {
@@ -359,7 +356,19 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
         // Process the quotes data to convert HTML entities to markdown
         const processedQuotes = {
           ...data.quote,
-          province, // Include province in the processed quotes
+          // Include the form data in the processed quotes
+          formData: {
+            province,
+            coverageAmount,
+            deductible,
+            adults,
+            children,
+            travellerDOBs,
+            preExisting,
+            monthlyPayment,
+            needSupervisa: visaType === 'super',
+            coverageDates: formatCoverageDates
+          },
           travel_quotes: {
             ...data.quote.travel_quotes,
             quotes: data.quote.travel_quotes.quotes.map((quote: any) => {
@@ -400,7 +409,8 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
           onQuoteDataReceived({
             travel_quotes: {
               quotes: []
-            }
+            },
+            formData: jsonData // Include form data even when no quotes are found
           });
         }
         
@@ -415,7 +425,8 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
         onQuoteDataReceived({
           travel_quotes: {
             quotes: []
-          }
+          },
+          formData: jsonData // Include form data even when there's an error
         });
       }
       

@@ -345,6 +345,10 @@ const convertApiQuotesToPlans = (quotes: any): InsurancePlan[] => {
     return [];
   }
 
+  // Get monthly payment preference from form data
+  const isMonthlyPayment = quotes.formData?.monthlyPayment || false;
+  console.log('Monthly payment preference:', isMonthlyPayment);
+
   console.log('Found quotes to convert:', quotes.travel_quotes.quotes.length);
   
   return quotes.travel_quotes.quotes.map((quote: any, index: number) => {
@@ -454,13 +458,40 @@ const convertApiQuotesToPlans = (quotes: any): InsurancePlan[] => {
       name: quote.product_name || 'Insurance Plan',
       provider: providerName,
       logo: logoPath,
-      // price: quote.total_premium || '$0.00',
-      price: quote.monthly_option_premiums && quote.trv_monthly_option_available === "yes" ? 
-        `${typeof quote.monthly_option_premiums === 'object' ? '$' + quote.monthly_option_premiums.monthly_payment : quote.monthly_option_premiums}` : 
-        quote.total_premium || '$0.00',
-      pricePerMonth: quote.monthly_option_premiums ? 
-        `${typeof quote.monthly_option_premiums === 'object' ? '$' + quote.monthly_option_premiums.initial_payment : quote.monthly_option_premiums} initial payment` : 
-        (quote.trv_monthly_option_available === "yes" ? "Monthly payment options available" : null),
+      price: (() => {
+        // Case 3: Monthly payment selected and available
+        if (isMonthlyPayment && quote.trv_monthly_option_available === "yes" && quote.monthly_option_premiums) {
+          return typeof quote.monthly_option_premiums === 'object' 
+            ? `$${quote.monthly_option_premiums.monthly_payment}`
+            : `$${quote.monthly_option_premiums}`;
+        }
+        
+        // Case 2: Monthly payment not selected but available
+        if (!isMonthlyPayment && quote.trv_monthly_option_available === "yes" && quote.monthly_option_premiums) {
+          return quote.total_premium || '$0.00';
+        }
+        
+        // Case 1: No monthly payment or not available
+        return quote.total_premium || '$0.00';
+      })(),
+      pricePerMonth: (() => {
+        // Case 3: Monthly payment selected and available
+        if (isMonthlyPayment && quote.trv_monthly_option_available === "yes" && quote.monthly_option_premiums) {
+          return typeof quote.monthly_option_premiums === 'object'
+            ? `$${quote.monthly_option_premiums.initial_payment} initial deposit`
+            : `${quote.monthly_option_premiums} initial deposit`;
+        }
+        
+        // Case 2: Monthly payment not selected but available
+        if (!isMonthlyPayment && quote.trv_monthly_option_available === "yes" && quote.monthly_option_premiums) {
+          return typeof quote.monthly_option_premiums === 'object'
+            ? `$${quote.monthly_option_premiums.monthly_payment}/month + setup charges`
+            : `${quote.monthly_option_premiums} + setup charges`;
+        }
+        
+        // Case 1: No monthly payment or not available
+        return null;
+      })(),
       rating: starRating,
       recommended: false,
       features: keyFeatures,
@@ -558,8 +589,21 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
   
   const quoteData = useContext(QuoteContext);
   
+  // Debug section to display form data
+  useEffect(() => {
+    if (quoteData?.formData) {
+      console.log('Form data in PlanComparison::::::::::', quoteData.formData);
+      // Access monthlyPayment value
+      const isMonthlyPayment = quoteData.formData.monthlyPayment;
+      console.log('Monthly Payment option selected:', isMonthlyPayment);
+    }
+  }, [quoteData]);
+
   // Access selected province from the form context
-  const formProvinceContext = quoteData?.province || 'Ontario';
+  const formProvinceContext = quoteData?.formData?.province || 'Ontario';
+  
+  // Access monthlyPayment value
+  const isMonthlyPayment = quoteData?.formData?.monthlyPayment || false;
   
   // Check if we have an actual search with empty quotes array (vs null initial state)
   const hasEmptyQuotes = quoteData && 
