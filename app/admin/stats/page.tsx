@@ -128,12 +128,12 @@ export default function StatsPage() {
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone Number</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Province</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IP Address</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created On</th>
                 <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Clicks</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Updated</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Provider</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Plan Name</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IP Address</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
@@ -143,7 +143,6 @@ export default function StatsPage() {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.customerEmail || 'N/A'}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.customerPhone}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.province || 'N/A'}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.ipAddress}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {new Date(stat.createdAt).toLocaleString()}
                   </td>
@@ -153,6 +152,7 @@ export default function StatsPage() {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{stat.providerName}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.planName}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.ipAddress}</td>
                 </tr>
               ))}
             </tbody>
