@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface ClickStat {
   id: string;
@@ -22,6 +23,39 @@ export default function StatsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [rawResponse, setRawResponse] = useState<string | null>(null);
+  const router = useRouter();
+
+  // Check authentication on component mount
+  useEffect(() => {
+    const checkAuth = async () => {
+      const auth = sessionStorage.getItem('adminAuth');
+      if (!auth) {
+        router.push('/admin/login?from=/admin/stats');
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/auth/verify', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Basic ${auth}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          sessionStorage.removeItem('adminAuth');
+          router.push('/admin/login?from=/admin/stats');
+        }
+      } catch (error) {
+        console.error('Auth check error:', error);
+        sessionStorage.removeItem('adminAuth');
+        router.push('/admin/login?from=/admin/stats');
+      }
+    };
+
+    checkAuth();
+  }, [router]);
 
   // Function to force a hard refresh
   const hardRefresh = () => {
@@ -33,12 +67,19 @@ export default function StatsPage() {
     try {
       console.log('Fetching stats from API...');
       
+      const auth = sessionStorage.getItem('adminAuth');
+      if (!auth) {
+        router.push('/admin/login?from=/admin/stats');
+        return;
+      }
+      
       // Add timestamp to prevent caching
       const timestamp = new Date().getTime();
       const response = await fetch(`/api/clickTracker/getStats?t=${timestamp}`, {
         headers: {
           'Cache-Control': 'no-cache',
-          'Pragma': 'no-cache'
+          'Pragma': 'no-cache',
+          'Authorization': `Basic ${auth}`
         }
       });
       
@@ -59,6 +100,11 @@ export default function StatsPage() {
       }
 
       if (!response.ok) {
+        if (response.status === 401) {
+          sessionStorage.removeItem('adminAuth');
+          router.push('/admin/login?from=/admin/stats');
+          return;
+        }
         throw new Error(data.error || `API returned ${response.status}: ${response.statusText}`);
       }
       
