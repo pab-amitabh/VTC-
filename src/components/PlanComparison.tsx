@@ -899,15 +899,29 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                           </div>
                           <div className="flex items-center mb-1 justify-center">
                             <div className="font-bold text-lg mr-1">{plan.rating}</div>
-                            {Array(5).fill(0).map((_, i) => (
-                              <Star 
-                                key={i} 
-                                className={cn(
-                                  "w-5 h-5", 
-                                  i < Math.floor(plan.rating) ? "text-yellow-400 fill-yellow-400" : "text-gray-200"
-                                )} 
-                              />
-                            ))}
+                            {Array(5).fill(0).map((_, i) => {
+                              const rating = plan.rating;
+                              const fullStar = i < Math.floor(rating);
+                              const halfStar = !fullStar && (i < Math.ceil(rating) && rating % 1 !== 0);
+                              
+                              return (
+                                <div key={i} className="relative">
+                                  <Star 
+                                    className={cn(
+                                      "w-5 h-5",
+                                      fullStar ? "text-yellow-400 fill-yellow-400" : "text-gray-200"
+                                    )}
+                                  />
+                                  {halfStar && (
+                                    <div className="absolute inset-0 overflow-hidden" style={{ width: '50%' }}>
+                                      <Star 
+                                        className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                                      />
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
                           </div>
                         </div>
                         
