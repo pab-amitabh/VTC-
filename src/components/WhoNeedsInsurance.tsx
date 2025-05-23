@@ -37,18 +37,18 @@ const WhoNeedsInsurance = () => {
   };
 
   const renderVisitorTypePanel = (type: any, index: number) => (
-    <div key={index} className="group bg-white hover:bg-blue-50 p-6 rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 hover:border-[#17B3E4]/30 transition-all duration-300 transform hover:-translate-y-1">
-      <div className="flex items-start gap-4">
+    <div key={index} className="group bg-white hover:bg-blue-50 p-4 rounded-xl shadow-sm hover:shadow-lg border border-gray-100 hover:border-[#17B3E4]/30 transition-all duration-300 transform hover:-translate-y-1">
+      <div className="flex items-start gap-3">
         <div className="flex-shrink-0">
-          <div className="bg-[#17B3E4]/10 w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            {type.icon}
+          <div className="bg-[#17B3E4]/10 w-10 h-10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            {React.cloneElement(type.icon, { className: "w-5 h-5 text-[#17B3E4]" })}
           </div>
         </div>
         <div className="flex-1">
-          <h3 className="text-xl font-bold text-[#181B1F] mb-2 group-hover:text-[#17B3E4] transition-colors duration-300">
+          <h3 className="text-lg font-bold text-[#181B1F] mb-1 group-hover:text-[#17B3E4] transition-colors duration-300">
             {type.title}
           </h3>
-          <p className="text-sm text-[#64748B] leading-relaxed">
+          <p className="text-xs text-[#64748B] leading-relaxed">
             {type.description}
           </p>
         </div>
@@ -79,34 +79,34 @@ const WhoNeedsInsurance = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-center mb-16 relative px-4 lg:px-8">
           {/* Left Column */}
-          <div className="space-y-6 order-2 lg:order-1 lg:col-span-2">
-            <div className="lg:-mt-24">
+          <div className="space-y-6 order-2 lg:order-1 lg:col-span-2 relative z-10">
+            <div className="lg:-mt-16">
               {renderVisitorTypePanel(visitorTypes[0], 0)}
             </div>
-            <div className="lg:mt-32">
+            <div className="lg:mt-8">
               {renderVisitorTypePanel(visitorTypes[2], 2)}
             </div>
           </div>
 
           {/* Center Image Column */}
-          <div className="flex justify-center items-center order-1 lg:order-2 py-8 lg:py-0 lg:col-span-1">
+          <div className="flex justify-center items-center order-1 lg:order-2 py-8 lg:py-0 lg:col-span-1 relative z-20">
             <div className="relative">
               <img 
                 src="/images/illustration.png" 
                 alt="Travel insurance illustration" 
-                className="relative max-w-xs md:max-w-md lg:max-w-xl h-auto object-contain transform hover:scale-105 transition-transform duration-500"
+                className="relative max-w-24 md:max-w-32 lg:max-w-md h-auto object-contain transform hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
 
           {/* Right Column */}
-          <div className="space-y-6 order-3 lg:col-span-2">
-            <div className="lg:mt-24">
+          <div className="space-y-6 order-3 lg:col-span-2 relative z-10">
+            <div className="lg:mt-8">
               {renderVisitorTypePanel(visitorTypes[1], 1)}
             </div>
-            <div className="lg:mt-48">
+            <div className="lg:mt-8 relative z-30">
               {renderVisitorTypePanel(visitorTypes[3], 3)}
             </div>
           </div>

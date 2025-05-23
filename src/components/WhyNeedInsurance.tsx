@@ -1,7 +1,73 @@
-import React, { memo } from 'react';
+import React, { memo, useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { DollarSign, Clock, Shield, Scale, Headphones, Globe } from 'lucide-react';
 import { fadeIn, simpleHover, VIEWPORT_CONFIG } from '../utils/motionConfig';
+
+// Counter animation component
+const AnimatedCounter = memo(({ 
+  target, 
+  prefix = '', 
+  suffix = '',
+  duration = 2000 
+}: { 
+  target: number; 
+  prefix?: string; 
+  suffix?: string;
+  duration?: number;
+}) => {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const startTime = Date.now();
+    const startValue = 0;
+
+    const animate = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing function that slows down near the end
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      
+      const currentValue = Math.floor(startValue + (target - startValue) * easeOut);
+      setCount(currentValue);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    animate();
+  }, [isVisible, target, duration]);
+
+  return (
+    <div ref={ref} className="text-4xl md:text-6xl lg:text-7xl mb-4" style={{ color: "#17B3E4", fontFamily: "'Abril Fatface', serif" }}>
+      {prefix}{count.toLocaleString()}{suffix}
+    </div>
+  );
+});
+
+AnimatedCounter.displayName = 'AnimatedCounter';
 
 // Simple benefit card component
 const BenefitCard = memo(({ 
@@ -109,23 +175,17 @@ const WhyNeedInsurance = memo(() => {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center max-w-5xl mx-auto">
             <div>
-              <div className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4" style={{ color: "#17B3E4" }}>
-                $3000+
-              </div>
+              <AnimatedCounter target={3000} prefix="$" suffix="+" duration={2000} />
               <div className="text-[#64748B] font-medium text-lg">Average ER Visit Cost</div>
             </div>
             
             <div className="md:border-l md:border-r md:border-gray-200 px-4">
-              <div className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4" style={{ color: "#DB2877" }}>
-                $5000
-              </div>
+              <AnimatedCounter target={5000} prefix="$" suffix="" duration={2200} />
               <div className="text-[#64748B] font-medium text-lg">Daily Hospital Stay</div>
             </div>
             
             <div>
-              <div className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4" style={{ color: "#17B3E4" }}>
-                $500+
-              </div>
+              <AnimatedCounter target={500} prefix="$" suffix="+" duration={1800} />
               <div className="text-[#64748B] font-medium text-lg">Ambulance Service</div>
             </div>
           </div>
