@@ -12,7 +12,6 @@ export const FALLBACK_URLS: Record<string, string> = {
   'Secure Travel': 'https://forms.rimiinsurance.com/en/rimivisitorstocanada?&sales_channel=online&tracking_code=POL102',
   '21st Century': 'https://www.manulife-travel.ca/dist/home.html?as=wljiten',
   'CENT': 'https://www.manulife-travel.ca/dist/home.html?as=wljiten',
-  'Allianz': 'https://b2c.advisormax.ca/fh316'
 };
 
 /**
@@ -27,8 +26,7 @@ export const COMPANY_CODE_MAP: Record<string, string> = {
   'MSH': 'MSH',
   'DEST': 'Destination',
   'TRVI': 'Travelance',
-  'SECU': 'Secure Travel',
-  'ALNZ': 'Allianz'
+  'SECU': 'Secure Travel'
 };
 
 /**
@@ -54,15 +52,6 @@ export const normalizeProviderName = (providerName: string): string => {
  * Returns the provided URL if valid, otherwise falls back to the default URL
  */
 export const getRedirectionUrl = (providerName: string, providedUrl?: string): string => {
-  console.log('getRedirectionUrl called with:', { providerName, providedUrl });
-  
-  // Always return Allianz URL for Allianz plans
-  const normalizedProvider = normalizeProviderName(providerName);
-  if (normalizedProvider === 'Allianz') {
-    console.log('Allianz plan detected, using fixed URL');
-    return 'https://b2c.advisormax.ca/fh316';
-  }
-  
   // Use provided URL if it exists and is valid
   if (providedUrl && providedUrl !== '#') {
     console.log(`Using provided URL for ${providerName}:`, providedUrl);
@@ -70,11 +59,11 @@ export const getRedirectionUrl = (providerName: string, providedUrl?: string): s
   }
   
   // Otherwise try to use fallback URL
-  console.log(`Normalized provider name: "${normalizedProvider}"`);
-  console.log('Available fallback URLs:', Object.keys(FALLBACK_URLS));
+  const normalizedProvider = normalizeProviderName(providerName);
+  console.log(`Looking for fallback URL for: "${normalizedProvider}"`);
   
   if (FALLBACK_URLS[normalizedProvider]) {
-    console.log(`Found exact match fallback URL for ${normalizedProvider}:`, FALLBACK_URLS[normalizedProvider]);
+    console.log(`Found fallback URL for ${normalizedProvider}:`, FALLBACK_URLS[normalizedProvider]);
     return FALLBACK_URLS[normalizedProvider];
   }
   

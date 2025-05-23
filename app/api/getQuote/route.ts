@@ -81,8 +81,7 @@ export async function POST(req: Request) {
         deductible: parseInt(body.deductible),
         show_pre_existing_condition_only: body.preExisting ? "yes" : "no",
         show_monthly_payment_options_only: body.monthlyPayment ? "yes" : "no",
-        quote_type: "",
-        province: body.province
+        quote_type: ""
       },
       traveller_profile: travellerProfiles,
       vtc_type: "for_all"

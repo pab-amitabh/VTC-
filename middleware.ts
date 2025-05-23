@@ -21,6 +21,14 @@ export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   console.log('Middleware running for path:', pathname);
   
+  // Create response to be modified
+  let response = NextResponse.next();
+  
+  // Always add cache control headers to prevent browser caching
+  response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+  response.headers.set('Pragma', 'no-cache');
+  response.headers.set('Expires', '-1');
+  
   // If it's an admin route, handle authentication
   if (pathname.startsWith('/admin')) {
     console.log('Admin route detected:', pathname);
@@ -31,29 +39,49 @@ export function middleware(request: NextRequest) {
     // Generate a random nonce to prevent caching of auth headers
     const nonce = crypto.randomBytes(8).toString('hex');
     
-    // If no auth header or invalid auth, redirect to login
-    if (!authHeader || !isValidAuth(authHeader)) {
-      console.log('Authentication required or failed for admin route:', pathname);
-      
-      // Create a new URL for the login page
-      const loginUrl = new URL('/admin/login', request.url);
-      loginUrl.searchParams.set('from', pathname);
-      
-      // Return a redirect response
-      return NextResponse.redirect(loginUrl);
+    if (!authHeader) {
+      console.log('No authorization header found for admin route:', pathname);
+      // If no auth, return a 401 with WWW-Authenticate header to trigger browser auth
+      return new NextResponse('Authentication required', {
+        status: 401,
+        headers: {
+          // Add nonce to realm to force browsers to re-prompt
+          'WWW-Authenticate': `Basic realm="Admin Area ${nonce}"`,
+          'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+          'Pragma': 'no-cache',
+          'Expires': '-1',
+          // Clear any existing auth
+          'Clear-Site-Data': '"cookies", "storage"'
+        },
+      });
+    }
+    
+    if (!isValidAuth(authHeader)) {
+      console.log('Invalid authentication for admin route:', pathname);
+      // If invalid auth, return a 401 with WWW-Authenticate header to trigger browser auth
+      return new NextResponse('Authentication failed', {
+        status: 401,
+        headers: {
+          // Add nonce to realm to force browsers to re-prompt
+          'WWW-Authenticate': `Basic realm="Admin Area ${nonce}"`,
+          'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+          'Pragma': 'no-cache',
+          'Expires': '-1',
+          // Clear any existing auth
+          'Clear-Site-Data': '"cookies", "storage"'
+        },
+      });
     }
     
     console.log('Authentication successful for:', pathname);
+    
+    // Add no-cache headers to the successful response as well
+    response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+    response.headers.set('Pragma', 'no-cache');
+    response.headers.set('Expires', '-1');
   }
   
-  // For non-admin routes or authenticated admin routes, proceed with cache control
-  const response = NextResponse.next();
-  
-  // Add cache control headers
-  response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
-  response.headers.set('Pragma', 'no-cache');
-  response.headers.set('Expires', '-1');
-  
+  // Return the response with cache headers for all routes
   return response;
 }
 
