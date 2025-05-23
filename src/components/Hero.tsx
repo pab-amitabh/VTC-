@@ -333,9 +333,6 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
       needSupervisa: visaType === 'super' // Set this based on the visa type
     };
     
-    // Log the form data in the exact format requested
-    console.log(jsonData);
-    
     setFormData(jsonData);
     
     try {
@@ -359,6 +356,19 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
         // Process the quotes data to convert HTML entities to markdown
         const processedQuotes = {
           ...data.quote,
+          // Include the form data in the processed quotes
+          formData: {
+            province,
+            coverageAmount,
+            deductible,
+            adults,
+            children,
+            travellerDOBs,
+            preExisting,
+            monthlyPayment,
+            needSupervisa: visaType === 'super',
+            coverageDates: formatCoverageDates
+          },
           travel_quotes: {
             ...data.quote.travel_quotes,
             quotes: data.quote.travel_quotes.quotes.map((quote: any) => {
@@ -399,7 +409,8 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
           onQuoteDataReceived({
             travel_quotes: {
               quotes: []
-            }
+            },
+            formData: jsonData // Include form data even when no quotes are found
           });
         }
         
@@ -414,7 +425,8 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
         onQuoteDataReceived({
           travel_quotes: {
             quotes: []
-          }
+          },
+          formData: jsonData // Include form data even when there's an error
         });
       }
       
@@ -718,7 +730,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                   {/* Travelling to - 2 columns */}
                   <div className="md:col-span-2 flex flex-col w-full">
                     <label className="block text-xs font-medium text-gray-700 mb-1">
-                      Travelling to
+                      Place of Purchase
                     </label>
                     <div className="flex flex-col grow">
                       <Popover open={provincePickerOpen} onOpenChange={setProvincePickerOpen}>
@@ -739,7 +751,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                         </div>
                         <PopoverContent className="w-[calc(100vw-40px)] md:w-64 p-3" align="start" side="bottom" sideOffset={5}>
                           <div className="space-y-1">
-                            {['Ontario', 'Manitoba', 'British Columbia', 'Alberta'].map((prov) => (
+                            {['Ontario', 'Manitoba', 'British Columbia', 'Alberta', 'Outside Canada'].map((prov) => (
                               <div 
                                 key={prov}
                                 onClick={() => {
