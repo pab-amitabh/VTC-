@@ -22,7 +22,7 @@ import { getRedirectionUrl } from '@/constants/redirectLinks';
 export const QuoteContext = React.createContext<any>(null);
 
 type PlanFeature = {
-  type: 'Medication' | 'Hospitalization' | 'Complementary care' | 'Health Professional' | 'Dental Care' | 'Pre-existing Conditions';
+  type: 'Medication' | 'Hospitalization' | 'Complementary care' | 'Health Professional' | 'Dental Care' | 'Stable Pre-existing Conditions';
   description: string;
   icon: React.ElementType;
 };
@@ -67,7 +67,7 @@ const iconMapping = {
   'Complementary care': Stethoscope,
   'Health Professional': UserRound,
   'Dental Care': Smile,
-  'Pre-existing Conditions': UserRound
+  'Stable Pre-existing Conditions': UserRound
 };
 
 // Mock insurance plans data for default display
@@ -99,7 +99,7 @@ const mockInsurancePlans: InsurancePlan[] = [
       'Dental Care': {
         description: 'Up to $4000 for accidental blow and $300 for emergency',
       },
-      'Pre-existing Conditions': {
+      'Stable Pre-existing Conditions': {
         description: 'Included',
       },
     },
@@ -125,53 +125,53 @@ const mockInsurancePlans: InsurancePlan[] = [
   },
   {
     id: 'plan2',
-    name: 'Standard',
-    provider: 'Secure Travel',
-    logo: '/images/Secure_Travel_Logo.png',
+    name: 'Visitors to Canada',
+    provider: 'Allianz',
+    logo: 'https://qa.policyadvisor.ca/uploads/core/company/logo/39/ALNZ.png',
     price: '$XXX',
     pricePerMonth: '$XX per month',
-    rating: 3.5,
+    rating: 5,
     recommended: false,
-    brochure_url: '',
-    policy_document_url: '',
+    brochure_url: 'https://content.policyadvisor.com/uploads/Allianz_VTC_Product_Brochure_29_May2023_7f159be026.pdf',
+    policy_document_url: 'https://content.policyadvisor.com/uploads/Allianz_VTC_Policy_Wording_29_May2023_9401d92005.pdf',
     features: {
       'Medication': {
-        description: 'Max 30-day supply up to $500',
+        description: 'Max 30-day supply up to $1000',
       },
       'Hospitalization': {
-        description: 'Hospital Ward Cover',
+        description: 'Semi-Private Cover',
       },
       'Complementary care': {
-        description: '3 follow-up visits if pre-approved',
+        description: 'Included',
       },
       'Health Professional': {
-        description: 'Up to $300/practitioner',
+        description: 'Up to $500/practitioner',
       },
       'Dental Care': {
-        description: 'Up to $1000 for accidental blow and $300 for emergency',
+        description: 'Up to $4000 for accidental blow and $500 for emergency',
       },
-      'Pre-existing Conditions': {
-        description: 'Not included',
+      'Stable Pre-existing Conditions': {
+        description: 'Included (Stability 90 days for 0-59 age, Stability 180 days for 60-89)',
       },
     },
     additionalInfo: {
-      preExisting: 'No',
-      preExistingText: 'Not included',
-      maxAge: '69',
-      keyFeatures: '<ul>\n<li>Comprehensive Plan</li>\n<li>Hospital Ward Cover Charges (3 follow-up visits if pre-approved)</li>\n<li>Prescription Drugs: Max 30-day supply up to $500</li>\n<li>Dental: Up to $1000 for accidental blow and $300 for emergency treatment</li>\n<li>Professional services: Up to $300/practitioner</li>\n<li>AD&amp;D benefits: Up to $50,000</li>\n<li>Meals &amp; Accommodation Allowance (if hospitalized beyond scheduled return date): Not included</li>\n<li>Bedside Companion Allowance: Not included</li>\n</ul>\n',
+      preExisting: 'Yes',
+      preExistingText: 'Stability 90 days for 0-59 age, Stability 180 days for 60-89',
+      maxAge: '59',
+      keyFeatures: '<ul>\n<li>Comprehensive Plan</li>\n<li>Semi-Private Cover Charges (Follow-up visits as prescribed by the attending physician)</li>\n<li>Prescription Drugs: Max 30-day supply up to $1000 </li>\n<li>Dental: Up to $4000 for accidental blow and $500 for emergency treatment</li>\n<li>Professional services: Up to $500/practitioner</li>\n<li>AD&amp;D benefits: Up to coverage amount</li>\n<li>Meals &amp; Accommodation Allowance (if hospitalized beyond scheduled return date): $150/day up to $1500 or 10 days max</li>\n<li>Bedside Companion Allowance: Return economy class airfare up to $3000 + upto $1000</li>\n</ul>\n',
       familyPlan: 'No family plans',
       extractedKeyFeatures: [
         'Comprehensive Plan',
-        'Hospital Ward Cover Charges (3 follow-up visits if pre-approved)',
-        'Prescription Drugs: Max 30-day supply up to $500',
-        'Dental: Up to $1000 for accidental blow and $300 for emergency treatment',
-        'Professional services: Up to $300/practitioner',
-        'AD&amp;D benefits: Up to $50,000',
-        'Meals & Accommodation Allowance (if hospitalized beyond scheduled return date): Not included',
-        'Bedside Companion Allowance: Not included'
+        'Semi-Private Cover Charges (Follow-up visits as prescribed by the attending physician)',
+        'Prescription Drugs: Max 30-day supply up to $1000',
+        'Dental: Up to $4000 for accidental blow and $500 for emergency treatment',
+        'Professional services: Up to $500/practitioner',
+        'AD&amp;D benefits: Up to coverage amount',
+        'Meals & Accommodation Allowance (if hospitalized beyond scheduled return date): $150/day up to $1500 or 10 days max',
+        'Bedside Companion Allowance: Return economy class airfare up to $3000 + upto $1000'
       ],
-      underwrittenBy: 'Industrial Alliance/ MSH Assistance',
-      maxDependentAge: '25'
+      underwrittenBy: 'CUMIS/ Allianz',
+      maxDependentAge: '21'
     }
   },
   {
@@ -193,7 +193,7 @@ const mockInsurancePlans: InsurancePlan[] = [
         description: 'Semi-private Hospital Cover',
       },
       'Complementary care': {
-        description: 'Multiple follow-up visits during emergency & 1 visit post-emergency',
+        description: 'Included',
       },
       'Health Professional': {
         description: 'Up to $500',
@@ -201,7 +201,7 @@ const mockInsurancePlans: InsurancePlan[] = [
       'Dental Care': {
         description: 'Up to $2000 for accidental blow and $300 for emergency',
       },
-      'Pre-existing Conditions': {
+      'Stable Pre-existing Conditions': {
         description: 'Included',
       },
     },
@@ -227,55 +227,56 @@ const mockInsurancePlans: InsurancePlan[] = [
   },
   {
     id: 'plan4',
-    name: 'Visitors to Canada',
-    provider: 'MSH International',
-    logo: '/images/MSH.png',
+    name: 'Destination: Canada Visitors Plan - Option 2',
+    provider: 'Destination Canada',
+    logo: 'https://qa.policyadvisor.ca/uploads/core/company/logo/43/DSTN.png',
     price: '$XXX',
     pricePerMonth: '$XX per month',
     rating: 4,
     recommended: false,
-    brochure_url: '',
-    policy_document_url: '',
+    brochure_url: 'https://content.policyadvisor.com/uploads/Destination_Canada_Product_Brochure_0125_80767c4995.pdf',
+    policy_document_url: 'https://content.policyadvisor.com/uploads/Destination_Canada_Sample_Policy_EN_0125_8ca721a6a2.pdf',
     features: {
       'Medication': {
-        description: 'Max 30-day supply up to $2000',
+        description: 'Max 30-day supply up to $1000',
       },
       'Hospitalization': {
-        description: 'Semi-Private Hospital Cover',
+        description: 'Semi-Private Cover',
       },
       'Complementary care': {
-        description: 'Follow-up visit only if prescribed by the attending physician',
+        description: 'Included',
       },
       'Health Professional': {
         description: 'Up to $500/practitioner',
       },
       'Dental Care': {
-        description: 'Up to $4000 for accidental blow and $500 for emergency',
+        description: 'Up to $3000 for accidental blow and $500 for emergency',
       },
-      'Pre-existing Conditions': {
-        description: 'Included',
-      },
+      'Stable Pre-existing Conditions': {
+        description: 'Not included',
+      },  
     },
     additionalInfo: {
-      preExisting: 'Yes',
-      preExistingText: 'Included',
-      maxAge: '80',
-      keyFeatures: '<ul>\n<li>Comprehensive Plan</li>\n<li>Semi-Private Hospital Cover Charges (Follow-up visit only if prescribed by the attending physician)</li>\n<li>Prescription Drugs: Max 30-day supply up to $2000</li>\n<li>Dental: Up to $4000 for accidental blow and $500 for emergency treatment</li>\n<li>Professional services: Up to $500/practitioner</li>\n<li>AD&amp;D benefits: Up to $50,000</li>\n<li>Meals &amp; Accommodation Allowance (if hospitalized beyond scheduled return date): $150/day up to $3000 </li>\n<li>Bedside Companion Allowance: Return economy class airfare + $150/day up to $5000</li>\n</ul>\n',
+      preExisting: 'No',
+      preExistingText: 'Not included',
+      maxAge: '59',
+      keyFeatures: '<ul>\n<li>Comprehensive Plan</li>\n<li>Semi-Private Cover Charges (Follow-up visits if prescribed up to $3,000 to monitor the effects of earlier treatment directly related to an initial emergency, except while hospitalized)</li>\n<li>Prescription Drugs: Max 30-day supply up to $1000 </li>\n<li>Dental: Up to $3000 for accidental blow and $500 for emergency treatment</li>\n<li>Professional services: Up to $500/practitioner</li>\n<li>AD&amp;D benefits: Up to $150,000</li>\n<li>Meals &amp; Accommodation Allowance (if hospitalized beyond scheduled return date): $150/day up to $1,500 or 10 days max </li>\n<li>Bedside Companion Allowance: Return economy class airfare up to $3,000 + upto $1,000</li>\n</ul>\n',
       familyPlan: 'Family plans available',
       extractedKeyFeatures: [
         'Comprehensive Plan',
-        'Semi-Private Hospital Cover Charges (Follow-up visit only if prescribed by the attending physician)',
-        'Prescription Drugs: Max 30-day supply up to $2000',
-        'Dental: Up to $4000 for accidental blow and $500 for emergency treatment',
+        'Semi-Private Cover Charges (Follow-up visits if prescribed up to $3,000 to monitor the effects of earlier treatment directly related to an initial emergency, except while hospitalized)',
+        'Prescription Drugs: Max 30-day supply up to $1000',
+        'Dental: Up to $3000 for accidental blow and $500 for emergency treatment',
         'Professional services: Up to $500/practitioner',
-        'AD&amp;D benefits: Up to $50,000',
-        'Meals & Accommodation Allowance (if hospitalized beyond scheduled return date): $150/day up to $3000',
-        'Bedside Companion Allowance: Return economy class airfare + $150/day up to $5000'
+        'AD&amp;D benefits: Up to $150,000',
+        'Meals & Accommodation Allowance (if hospitalized beyond scheduled return date): $150/day up to $1,500 or 10 days max',
+        'Bedside Companion Allowance: Return economy class airfare up to $3,000 + upto $1,000'
       ],
-      underwrittenBy: 'Lloyd\'s/ Intrepid 24/7',
-      maxDependentAge: '22'
+      underwrittenBy: 'Zurich Travel Assist',
+      maxDependentAge: '25'
     }
-  }
+  },
+  
 ];
 
 // Utility function to convert HTML entities to plain text
@@ -305,6 +306,16 @@ const htmlToMarkdown = (html: string): string => {
     .replace(/&ndash;/g, '–')
     .replace(/&mdash;/g, '—')
     .replace(/&nbsp;/g, ' ');
+
+  markdown = markdown.replace(/<br\s*\/?>/gi, '\n');
+
+  markdown = markdown.replace(/<p[^>]*>.*?<\/p>/gi, '');
+
+  markdown = markdown.replace(/<[^>]*>/g, '');
+
+  markdown = markdown.replace(/\n\s*\n/g, '\n\n');
+
+  markdown = markdown.trim();
     
   return markdown;
 };
@@ -313,6 +324,11 @@ const htmlToMarkdown = (html: string): string => {
 const formatFeatureDescription = (description: string): string => {
   // Add comma after numbers only if they're not at the end of the string
   return description.replace(/(\d+)(?!\s*,)(?=\s+\w)/g, '$1,');
+};
+
+// Utility function to format provider name for URL
+const formatProviderUrl = (provider: string): string => {
+  return provider.toLowerCase().replace(/\s+/g, '-');
 };
 
 // Function to convert API quotes to InsurancePlan format
@@ -329,6 +345,10 @@ const convertApiQuotesToPlans = (quotes: any): InsurancePlan[] => {
     return [];
   }
 
+  // Get monthly payment preference from form data
+  const isMonthlyPayment = quotes.formData?.monthlyPayment || false;
+  console.log('Monthly payment preference:', isMonthlyPayment);
+
   console.log('Found quotes to convert:', quotes.travel_quotes.quotes.length);
   
   return quotes.travel_quotes.quotes.map((quote: any, index: number) => {
@@ -344,14 +364,13 @@ const convertApiQuotesToPlans = (quotes: any): InsurancePlan[] => {
     console.log(`Provider for plan ${quote.product_name}: ${providerName}, websiteUrl: ${quote.trv_redirection_companywebsite_url || 'null/undefined'}`);
     
     // Parse the key features HTML to extract specific features
-    // This helps us map the HTML content to structured data for our UI
     let keyFeatures: Record<string, { description: string }> = {
       'Medication': { description: 'Not specified' },
       'Hospitalization': { description: 'Not specified' },
       'Complementary care': { description: 'Not specified' },
       'Health Professional': { description: 'Not specified' },
       'Dental Care': { description: 'Not specified' },
-      'Pre-existing Conditions': { description: 'Not specified' }
+      'Stable Pre-existing Conditions': { description: 'Not specified' }
     };
 
     // Parse the trv_key_features HTML to extract feature details
@@ -382,7 +401,7 @@ const convertApiQuotesToPlans = (quotes: any): InsurancePlan[] => {
       }
 
       // Extract pre-existing conditions info
-      keyFeatures['Pre-existing Conditions'].description = quote.trv_covers_pre_existing === "Yes" ? 
+      keyFeatures['Stable Pre-existing Conditions'].description = quote.trv_covers_pre_existing === "Yes" ? 
         'Included' : 
         'Not included';
 
@@ -439,13 +458,40 @@ const convertApiQuotesToPlans = (quotes: any): InsurancePlan[] => {
       name: quote.product_name || 'Insurance Plan',
       provider: providerName,
       logo: logoPath,
-      // price: quote.total_premium || '$0.00',
-      price: quote.monthly_option_premiums && quote.trv_monthly_option_available === "yes" ? 
-        `${typeof quote.monthly_option_premiums === 'object' ? '$' + quote.monthly_option_premiums.monthly_payment : quote.monthly_option_premiums}` : 
-        quote.total_premium || '$0.00',
-      pricePerMonth: quote.monthly_option_premiums ? 
-        `${typeof quote.monthly_option_premiums === 'object' ? '$' + quote.monthly_option_premiums.initial_payment : quote.monthly_option_premiums} initial payment` : 
-        (quote.trv_monthly_option_available === "yes" ? "Monthly payment options available" : null),
+      price: (() => {
+        // Case 3: Monthly payment selected and available
+        if (isMonthlyPayment && quote.trv_monthly_option_available === "yes" && quote.monthly_option_premiums) {
+          return typeof quote.monthly_option_premiums === 'object' 
+            ? `$${quote.monthly_option_premiums.monthly_payment}`
+            : `$${quote.monthly_option_premiums}`;
+        }
+        
+        // Case 2: Monthly payment not selected but available
+        if (!isMonthlyPayment && quote.trv_monthly_option_available === "yes" && quote.monthly_option_premiums) {
+          return quote.total_premium || '$0.00';
+        }
+        
+        // Case 1: No monthly payment or not available
+        return quote.total_premium || '$0.00';
+      })(),
+      pricePerMonth: (() => {
+        // Case 3: Monthly payment selected and available
+        if (isMonthlyPayment && quote.trv_monthly_option_available === "yes" && quote.monthly_option_premiums) {
+          return typeof quote.monthly_option_premiums === 'object'
+            ? `$${quote.monthly_option_premiums.initial_payment} initial deposit`
+            : `${quote.monthly_option_premiums} initial deposit`;
+        }
+        
+        // Case 2: Monthly payment not selected but available
+        if (!isMonthlyPayment && quote.trv_monthly_option_available === "yes" && quote.monthly_option_premiums) {
+          return typeof quote.monthly_option_premiums === 'object'
+            ? `$${quote.monthly_option_premiums.monthly_payment}/month + setup charges`
+            : `${quote.monthly_option_premiums} + setup charges`;
+        }
+        
+        // Case 1: No monthly payment or not available
+        return null;
+      })(),
       rating: starRating,
       recommended: false,
       features: keyFeatures,
@@ -543,8 +589,21 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
   
   const quoteData = useContext(QuoteContext);
   
+  // Debug section to display form data
+  useEffect(() => {
+    if (quoteData?.formData) {
+      console.log('Form data in PlanComparison::::::::::', quoteData.formData);
+      // Access monthlyPayment value
+      const isMonthlyPayment = quoteData.formData.monthlyPayment;
+      console.log('Monthly Payment option selected:', isMonthlyPayment);
+    }
+  }, [quoteData]);
+
   // Access selected province from the form context
-  const formProvinceContext = quoteData?.province || 'Ontario';
+  const formProvinceContext = quoteData?.formData?.province || 'Ontario';
+  
+  // Access monthlyPayment value
+  const isMonthlyPayment = quoteData?.formData?.monthlyPayment || false;
   
   // Check if we have an actual search with empty quotes array (vs null initial state)
   const hasEmptyQuotes = quoteData && 
@@ -773,7 +832,9 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
     <>
       <section className="pt-6 md:pt-8 py-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto" id="plans">
         <div className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900">Compare Insurance Plans</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900">
+            {quoteData === null ? 'Top Insurance Providers' : 'Compare Insurance Plans'}
+          </h2>
         </div>
         
         {hasError ? (
@@ -823,27 +884,44 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                         {/* Logo and rating column */}
                         <div className="w-full md:w-48 flex flex-col items-center md:items-center mb-6 md:mb-0 md:pr-6">
                           <div className="w-full h-40 flex items-center justify-center mb-4">
-                            <img 
-                              src={plan.logo} 
-                              alt={`${plan.provider} logo`} 
-                              className="max-h-full w-auto object-contain px-2" 
-                              style={{ 
-                                maxWidth: '100%',
-                                transform: 'scale(1.26)'
-                              }}
-                            />
+                            <a href={`/${formatProviderUrl(plan.provider)}`} target="_blank" rel="noopener noreferrer">
+                              <img 
+                                src={plan.logo} 
+                                alt={`${plan.provider} logo`} 
+                                className="max-h-full w-auto object-contain px-2" 
+                                style={{ 
+                                  maxWidth: '100%',
+                                  transform: 'scale(1.26)'
+                                }}
+                              />
+                            </a>
+                            
                           </div>
                           <div className="flex items-center mb-1 justify-center">
                             <div className="font-bold text-lg mr-1">{plan.rating}</div>
-                            {Array(5).fill(0).map((_, i) => (
-                              <Star 
-                                key={i} 
-                                className={cn(
-                                  "w-5 h-5", 
-                                  i < Math.floor(plan.rating) ? "text-yellow-400 fill-yellow-400" : "text-gray-200"
-                                )} 
-                              />
-                            ))}
+                            {Array(5).fill(0).map((_, i) => {
+                              const rating = plan.rating;
+                              const fullStar = i < Math.floor(rating);
+                              const halfStar = !fullStar && (i < Math.ceil(rating) && rating % 1 !== 0);
+                              
+                              return (
+                                <div key={i} className="relative">
+                                  <Star 
+                                    className={cn(
+                                      "w-5 h-5",
+                                      fullStar ? "text-yellow-400 fill-yellow-400" : "text-gray-200"
+                                    )}
+                                  />
+                                  {halfStar && (
+                                    <div className="absolute inset-0 overflow-hidden" style={{ width: '50%' }}>
+                                      <Star 
+                                        className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                                      />
+                                    </div>
+                                  )}
+                                </div>
+                              );
+                            })}
                           </div>
                         </div>
                         
@@ -963,12 +1041,14 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                         </div>
                       </div>
                       
-                      <button 
-                        className="flex items-center justify-center w-full py-3 bg-gray-100 rounded-lg text-deepBlue hover:text-deepBlue/80 text-sm font-medium mt-6"
-                        onClick={() => togglePlanDetails(plan.id)}
-                      >
-                        {expandedPlans[plan.id] ? 'Hide details' : 'Show details'} <ChevronDown className={`ml-1 transition-transform ${expandedPlans[plan.id] ? 'rotate-180' : ''}`} size={16} />
-                      </button>
+                      {quoteData !== null && (
+                        <button 
+                          className="flex items-center justify-center w-full py-3 bg-gray-100 rounded-lg text-deepBlue hover:text-deepBlue/80 text-sm font-medium mt-6"
+                          onClick={() => togglePlanDetails(plan.id)}
+                        >
+                          {expandedPlans[plan.id] ? 'Hide details' : 'Show details'} <ChevronDown className={`ml-1 transition-transform ${expandedPlans[plan.id] ? 'rotate-180' : ''}`} size={16} />
+                        </button>
+                      )}
                       
                       {expandedPlans[plan.id] && (
                         <div className="mt-4 pt-4 border-t border-gray-100">
@@ -986,7 +1066,7 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                               ))}
                             </ul>
                             
-                            <h4 className="text-xl font-semibold text-gray-900 mb-2">Pre-existing conditions</h4>
+                            <h4 className="text-xl font-semibold text-gray-900 mb-2">Stable Pre-existing conditions</h4>
                             <p className="text-gray-700 mb-2">
                               {plan.additionalInfo.preExisting === "Yes" ? 
                                 'Included' : 
@@ -1097,6 +1177,7 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
               providerName={selectedPlan.provider}
               planName={selectedPlan.name}
               insuranceUrl={selectedPlan.url || '#'}
+              placeOfPurchase={formProvinceContext}
               onSubmit={handleCustomerInfoSubmit}
               onClose={handleCloseForm}
             />
