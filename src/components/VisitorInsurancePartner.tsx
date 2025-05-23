@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const VisitorInsurancePartner = () => {
@@ -49,34 +49,39 @@ const VisitorInsurancePartner = () => {
   ];
   
   return (
-    <section className="py-8 md:py-12 bg-white" id="trusted-partner">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden" id="trusted-partner">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-pink-50/30"></div>
+      <div className="absolute top-0 left-0 w-64 h-64 bg-[#17B3E4]/10 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#DB2877]/10 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse delay-1000"></div>
+      
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12 mb-16">
           {/* Left Column - Image */}
           <div className="w-full lg:w-5/12 flex items-center justify-center">
             <img 
               src="/images/header-4.png" 
               alt="Trusted Partner Info - Canada skyline in maple leaf" 
-              className="w-full max-w-md h-auto object-contain"
+              className="w-full max-w-md h-auto object-contain transform hover:scale-105 transition-transform duration-500"
             />
           </div>
           
           {/* Right Column - Content */}
           <div className="w-full lg:w-7/12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-[#141428]">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#181B1F] mb-2 leading-tight">
               Your trusted partner for Visitor to Canada Insurance
             </h2>
             
-            <div className="border-t border-gray-100 pt-8 mb-6"></div>
+            <div className="border-t border-gray-200 pt-2 mb-3"></div>
             
-            <p className="text-lg text-[#181B1F] leading-relaxed mb-6">
-              At <span className="font-semibold">[domain name]</span>, we promise you the best visitor insurance plans for Canada within minutes, 
+            <p className="text-lg md:text-xl text-[#64748B] leading-relaxed mb-6">
+              At <span className="font-semibold text-[#181B1F]">[domain name]</span>, we promise you the best visitor insurance plans for Canada within minutes, 
               and at affordable rates. We specialize in customized Visitor to Canada insurance plans to meet 
               the unique needs of tourists, international students, temporary workers, Super Visa applicants, 
               and more.
             </p>
             
-            <p className="text-lg text-[#181B1F] leading-relaxed">
+            <p className="text-lg md:text-xl text-[#64748B] leading-relaxed">
               Our easy-to-use platform helps you compare plans from trusted Canadian providers and find the 
               best coverage, so you can travel with complete peace of mind.
             </p>
@@ -84,32 +89,34 @@ const VisitorInsurancePartner = () => {
         </div>
         
         {/* CTA Section */}
-        <div className="bg-[#DB2877] rounded-xl p-6 md:p-10 relative overflow-visible mb-0 mt-20">
-          <div className="w-1/2 flex flex-col justify-center" style={{ minHeight: "180px" }}>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 whitespace-nowrap">
+        <div className="bg-[#DB2877] rounded-3xl p-4 md:p-6 lg:p-8 text-center text-white max-w-5xl w-full relative mb-0 mt-20 mx-auto">
+          <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left" style={{ minHeight: "180px" }}>
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3">
               Start protecting your trip today
-            </h2>
-            
-            <p className="text-base text-white mb-6">
+            </h3>
+            <p className="text-sm md:text-base mb-3 md:mb-4 opacity-90">
               Don't wait until the last minute. Secure your peace of mind with comprehensive visitor insurance coverage.
             </p>
-            
             <button 
               onClick={scrollToTop}
-              className="bg-[#CEF2FC] hover:bg-[#CEF2FC] text-black font-semibold py-3 px-8 rounded-md w-fit transition-all duration-300"
+              className="bg-white text-[#DB2877] px-3 md:px-4 py-2 md:py-2.5 rounded-lg font-bold text-xs md:text-sm hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-1.5 group mx-auto md:mx-0 w-fit"
             >
               GET QUOTE NOW
+              <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
+            <p className="text-xs md:text-sm opacity-75 mt-3 md:mt-4">
+              ✓ No hidden fees  ✓ Instant coverage
+            </p>
           </div>
           
-          {/* Background Image - properly positioned */}
+          {/* Background Image - properly positioned - desktop only */}
           <div 
-            className="absolute right-1 bottom-0 w-1/2 h-full md:h-[140%] z-20"
+            className="hidden md:block absolute right-1 -top-16 w-1/2 h-[calc(100%+4rem)] z-20"
           >
             <img 
               src="/images/family.png" 
               alt="Family" 
-              className="w-full h-full object-contain object-right scale-x-[-1]"
+              className="w-full h-full object-cover object-top object-right scale-x-[-1]"
             />
           </div>
         </div>
@@ -118,4 +125,6 @@ const VisitorInsurancePartner = () => {
   );
 };
 
-export default VisitorInsurancePartner; 
+VisitorInsurancePartner.displayName = 'VisitorInsurancePartner';
+
+export default memo(VisitorInsurancePartner); 

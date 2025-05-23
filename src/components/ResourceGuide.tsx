@@ -1,3 +1,4 @@
+import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
@@ -80,7 +81,7 @@ const ResourceGuide = () => {
 
   return (
     <section className="py-12 md:py-32 bg-gray-50" id="resources">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Mobile-optimized header section */}
         <motion.div 
           className="text-center mb-10 md:mb-16"
@@ -226,4 +227,6 @@ const ResourceGuide = () => {
   );
 };
 
-export default ResourceGuide;
+ResourceGuide.displayName = 'ResourceGuide';
+
+export default memo(ResourceGuide);
