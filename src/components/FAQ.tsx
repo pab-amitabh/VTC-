@@ -1,4 +1,3 @@
-import React, { memo } from 'react';
 import { useState } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { motion } from 'framer-motion';
@@ -116,7 +115,7 @@ const FAQ = () => {
       <div className="absolute top-0 right-0 w-64 h-64 bg-lightBlue rounded-full opacity-50 blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-lightBlue rounded-full opacity-30 blur-3xl -z-10 transform -translate-x-1/2 translate-y-1/2"></div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <motion.div 
           className="text-center mb-12"
           initial="hidden"
@@ -270,6 +269,4 @@ const FAQ = () => {
   );
 };
 
-FAQ.displayName = 'FAQ';
-
-export default memo(FAQ);
+export default FAQ;

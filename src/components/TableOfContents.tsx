@@ -1,4 +1,3 @@
-import React, { memo } from 'react';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { List, ChevronUp } from 'lucide-react';
@@ -178,7 +177,7 @@ const TableOfContents = ({ containerRef, sectionId, className, items }: TableOfC
           >
             <div className="p-4">
               <h3 className="text-sm font-semibold text-gray-700 mb-3">On this page</h3>
-              <ul className="space-y-2 max-h-[60vh] overflow-hidden disable-scroll">
+              <ul className="space-y-2 max-h-[60vh] overflow-y-auto">
                 {tocItems.map((item, index) => (
                   <li 
                     key={index} 
@@ -206,6 +205,4 @@ const TableOfContents = ({ containerRef, sectionId, className, items }: TableOfC
   );
 };
 
-TableOfContents.displayName = 'TableOfContents';
-
-export default memo(TableOfContents); 
+export default TableOfContents; 

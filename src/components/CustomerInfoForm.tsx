@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, memo } from 'react';
+import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { getRedirectionUrl } from '@/constants/redirectLinks';
 
@@ -223,6 +223,4 @@ const CustomerInfoForm = ({
   );
 };
 
-CustomerInfoForm.displayName = 'CustomerInfoForm';
-
-export default memo(CustomerInfoForm); 
+export default CustomerInfoForm; 
