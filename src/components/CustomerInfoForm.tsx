@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, memo } from 'react';
+import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { getRedirectionUrl } from '@/constants/redirectLinks';
 
@@ -8,6 +8,7 @@ interface CustomerInfoFormProps {
   providerName: string;
   planName: string;
   insuranceUrl: string;
+  placeOfPurchase: string;
   onSubmit: (name: string, phone: string, email: string) => Promise<void>;
   onClose: () => void;
 }
@@ -16,6 +17,7 @@ const CustomerInfoForm = ({
   providerName, 
   planName, 
   insuranceUrl,
+  placeOfPurchase,
   onSubmit,
   onClose
 }: CustomerInfoFormProps) => {
@@ -159,6 +161,19 @@ const CustomerInfoForm = ({
       <form onSubmit={handleSubmit}>
         <div className="space-y-3">
           <div>
+            <label htmlFor="placeOfPurchase" className="block text-sm font-medium text-gray-700 mb-1">
+              Place of Purchase
+            </label>
+            <input
+              id="placeOfPurchase"
+              type="text"
+              value={placeOfPurchase}
+              disabled
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-gray-50 cursor-not-allowed"
+            />
+          </div>
+
+          <div>
             <label htmlFor="customerName" className="block text-sm font-medium text-gray-700 mb-1">
               Your Name <span className="text-red-500">*</span>
             </label>
@@ -223,6 +238,4 @@ const CustomerInfoForm = ({
   );
 };
 
-CustomerInfoForm.displayName = 'CustomerInfoForm';
-
-export default memo(CustomerInfoForm); 
+export default CustomerInfoForm; 

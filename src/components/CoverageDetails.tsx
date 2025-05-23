@@ -1,4 +1,3 @@
-import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Umbrella, Plane, Luggage, Clock, Headphones } from 'lucide-react';
 
@@ -124,6 +123,4 @@ const CoverageDetails = () => {
   );
 };
 
-CoverageDetails.displayName = 'CoverageDetails';
-
-export default memo(CoverageDetails);
+export default CoverageDetails;

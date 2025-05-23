@@ -1,4 +1,3 @@
-import React, { memo } from 'react';
 import { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Calendar } from "@/components/ui/calendar";
@@ -334,9 +333,6 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
       needSupervisa: visaType === 'super' // Set this based on the visa type
     };
     
-    // Log the form data in the exact format requested
-    console.log(jsonData);
-    
     setFormData(jsonData);
     
     try {
@@ -360,6 +356,19 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
         // Process the quotes data to convert HTML entities to markdown
         const processedQuotes = {
           ...data.quote,
+          // Include the form data in the processed quotes
+          formData: {
+            province,
+            coverageAmount,
+            deductible,
+            adults,
+            children,
+            travellerDOBs,
+            preExisting,
+            monthlyPayment,
+            needSupervisa: visaType === 'super',
+            coverageDates: formatCoverageDates
+          },
           travel_quotes: {
             ...data.quote.travel_quotes,
             quotes: data.quote.travel_quotes.quotes.map((quote: any) => {
@@ -400,7 +409,8 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
           onQuoteDataReceived({
             travel_quotes: {
               quotes: []
-            }
+            },
+            formData: jsonData // Include form data even when no quotes are found
           });
         }
         
@@ -415,7 +425,8 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
         onQuoteDataReceived({
           travel_quotes: {
             quotes: []
-          }
+          },
+          formData: jsonData // Include form data even when there's an error
         });
       }
       
@@ -598,14 +609,16 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
       `}</style>
       
       <motion.div
-        className="container mx-auto px-4 sm:px-6 lg:px-8 pt-10 max-w-6xl"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 pt-10"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Hero content - centered at the top */}
-        <motion.div variants={itemVariants} className="text-center max-w-4xl mx-auto mb-2 mt-6 md:mt-12 px-4">
-          <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">Travel Smart. Protect Your Visit to Canada.</h1>
+        <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto mb-2 mt-6 md:mt-12">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            Visitor to Canada Insurance: Compare Quotes & Find the Best Coverage
+          </h1>
           <p className="text-lg text-gray-800 leading-relaxed max-w-2xl mx-auto font-semibold">
             Protect your visit to Canada with affordable, customized visitor insurance plans from 30+ trusted providers.
           </p>
@@ -713,11 +726,11 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
               </div>
               
               <form onSubmit={handleSubmit} className="w-full p-4 md:p-6" aria-label="Travel Insurance Quote Form">
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-x-2 gap-y-2 md:gap-y-3 items-start">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-x-2 gap-y-3 items-start">
                   {/* Travelling to - 2 columns */}
                   <div className="md:col-span-2 flex flex-col w-full">
-                    <label className="block text-base md:text-sm font-semibold md:font-medium text-gray-700 mb-1">
-                      Travelling to
+                    <label className="block text-xs font-medium text-gray-700 mb-1">
+                      Place of Purchase
                     </label>
                     <div className="flex flex-col grow">
                       <Popover open={provincePickerOpen} onOpenChange={setProvincePickerOpen}>
@@ -733,12 +746,12 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                             <ChevronDown className="h-4 w-4 opacity-50" />
                           </Button>
                         </PopoverTrigger>
-                        <div className="h-4">
+                        <div className="h-5">
                           {/* Error placeholder for consistency */}
                         </div>
                         <PopoverContent className="w-[calc(100vw-40px)] md:w-64 p-3" align="start" side="bottom" sideOffset={5}>
                           <div className="space-y-1">
-                            {['Ontario', 'Manitoba', 'British Columbia', 'Alberta'].map((prov) => (
+                            {['Ontario', 'Manitoba', 'British Columbia', 'Alberta', 'Outside Canada'].map((prov) => (
                               <div 
                                 key={prov}
                                 onClick={() => {
@@ -758,7 +771,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                   
                   {/* Coverage Dates - 3 columns */}
                   <div className="md:col-span-3 flex flex-col w-full">
-                    <label htmlFor="coverage-dates" className="block text-base md:text-sm font-semibold md:font-medium text-gray-700 mb-1">
+                    <label htmlFor="coverage-dates" className="block text-xs font-medium text-gray-700 mb-1">
                       Coverage Dates
                     </label>
                     <div className="flex flex-col grow">
@@ -793,7 +806,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                             <ChevronDown className="h-4 w-4 opacity-50 flex-shrink-0 ml-2" />
                           </Button>
                       </PopoverTrigger>
-                        <div className="h-4">
+                        <div className="h-5">
                           {(errors.startDate || errors.endDate) && (
                             <p className="mt-1 text-xs text-red-500">{errors.startDate || errors.endDate}</p>
                           )}
@@ -965,7 +978,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                   
                   {/* Number of Travellers - comfortable width */}
                   <div className="md:col-span-3 flex flex-col w-full">
-                    <label className="block text-base md:text-sm font-semibold md:font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 mb-1">
                       Number of Travellers
                     </label>
                     <div className="flex flex-col grow">
@@ -982,7 +995,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                           <ChevronDown className="h-4 w-4 opacity-50" />
                         </Button>
                       </PopoverTrigger>
-                        <div className="h-4">
+                        <div className="h-5">
                           {Object.keys(errors).some(key => key.includes('adult') || key.includes('child')) && (
                             <p className="mt-1 text-xs text-red-500">All traveller ages are required</p>
                           )}
@@ -1045,7 +1058,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                           {(adults > 0 || children > 0) && (
                               <div className="border-t pt-3 mt-3">
                               <h3 className="text-sm font-medium text-gray-700 mb-3">Traveller Ages</h3>
-                                <div className="space-y-3 max-h-[30vh] md:max-h-[40vh] overflow-hidden disable-scroll pr-1 pb-2">
+                                <div className="space-y-3 max-h-[30vh] md:max-h-[40vh] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 pb-2">
                                   {travellerDOBs.map((traveller) => {
                                     const isAdult = traveller.type === 'Adult';
                                     const travellerIndex = parseInt(traveller.id.split('-')[1]);
@@ -1094,7 +1107,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                   
                   {/* Coverage Amount - adequate width */}
                   <div className="md:col-span-2 flex flex-col w-full">
-                    <label className="block text-base md:text-sm font-semibold md:font-medium text-gray-700 mb-1">
+                    <label className="block text-xs font-medium text-gray-700 mb-1">
                       Coverage Amount
                     </label>
                     <div className="flex flex-col grow">
@@ -1111,7 +1124,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                           <ChevronDown className="h-4 w-4 opacity-50" />
                         </Button>
                       </PopoverTrigger>
-                        <div className="h-4">
+                        <div className="h-5">
                           {(errors.coverageAmount) && (
                             <p className="mt-1 text-xs text-red-500">{errors.coverageAmount}</p>
                           )}
@@ -1183,8 +1196,8 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                     </div>
                   </div>
                   
-                  {/* Submit Button - Desktop: right of coverage amount, Mobile: after checkboxes */}
-                  <div className="hidden md:flex md:col-span-2 flex-col w-full">
+                  {/* Submit Button - 2 columns */}
+                  <div className="md:col-span-2 flex flex-col w-full">
                     <div className="h-[21px]"></div>
                     <div className="flex flex-col grow">
                     <motion.button 
@@ -1205,62 +1218,34 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                         </>
                       )}
                     </motion.button>
-                      <div className="h-4"></div>
+                      <div className="h-5"></div>
                     </div>
                   </div>
-                  
-                  {/* Checkboxes - full width across 12 columns */}
-                  <div className="md:col-span-12 flex flex-col w-full">
-                    <div className="flex flex-wrap gap-x-6 gap-y-2 mt-1 mb-1">
-                      <div className="flex items-center cursor-pointer group" onClick={() => setPreExisting(!preExisting)}>
-                        <div className={cn(
-                          "w-4 h-4 rounded flex items-center justify-center mr-2 border transition-all duration-200",
-                          preExisting ? "bg-deepBlue border-deepBlue" : "bg-white border-gray-300 group-hover:border-deepBlue/50"
-                        )}>
-                          {preExisting && <Check className="h-3 w-3 text-white" />}
-                        </div>
-                        <label className="text-base md:text-sm text-gray-700 cursor-pointer select-none hover:text-gray-900 transition-colors">
-                          Show coverages with Pre-existing conditions
-                        </label>
-                      </div>
-                      <div className="flex items-center cursor-pointer group" onClick={() => setMonthlyPayment(!monthlyPayment)}>
-                        <div className={cn(
-                          "w-4 h-4 rounded flex items-center justify-center mr-2 border transition-all duration-200",
-                          monthlyPayment ? "bg-deepBlue border-deepBlue" : "bg-white border-gray-300 group-hover:border-deepBlue/50"
-                        )}>
-                          {monthlyPayment && <Check className="h-3 w-3 text-white" />}
-                        </div>
-                        <label className="text-base md:text-sm text-gray-700 cursor-pointer select-none hover:text-gray-900 transition-colors">
-                          Monthly payment options only
-                        </label>
-                      </div>
+                </div>
+                
+                {/* Checkboxes below the form in a single row */}
+                <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4">
+                  <div className="flex items-center cursor-pointer group" onClick={() => setPreExisting(!preExisting)}>
+                    <div className={cn(
+                      "w-4 h-4 rounded flex items-center justify-center mr-2 border transition-all duration-200",
+                      preExisting ? "bg-deepBlue border-deepBlue" : "bg-white border-gray-300 group-hover:border-deepBlue/50"
+                    )}>
+                      {preExisting && <Check className="h-3 w-3 text-white" />}
                     </div>
+                    <label className="text-xs text-gray-700 cursor-pointer select-none hover:text-gray-900 transition-colors">
+                      Show coverages with Pre-existing conditions
+                    </label>
                   </div>
-                  
-                  {/* Submit Button - Mobile only: appears after checkboxes */}
-                  <div className="md:hidden md:col-span-2 flex flex-col w-full">
-                    <div className="h-[21px]"></div>
-                    <div className="flex flex-col grow">
-                    <motion.button 
-                      type="submit" 
-                        className="w-full bg-magenta/90 hover:bg-magenta/90 text-white flex items-center justify-center h-[42px] px-4 text-base font-semibold whitespace-nowrap shadow-md rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      disabled={loading}
-                    >
-                      {loading ? (
-                        <div className="flex items-center justify-center">
-                            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                          Getting Quotes...
-                        </div>
-                      ) : (
-                        <>
-                          {quotes ? 'Refresh Quotes' : 'Get Quote Now'}
-                        </>
-                      )}
-                    </motion.button>
-                      <div className="h-4"></div>
+                  <div className="flex items-center cursor-pointer group" onClick={() => setMonthlyPayment(!monthlyPayment)}>
+                    <div className={cn(
+                      "w-4 h-4 rounded flex items-center justify-center mr-2 border transition-all duration-200",
+                      monthlyPayment ? "bg-deepBlue border-deepBlue" : "bg-white border-gray-300 group-hover:border-deepBlue/50"
+                    )}>
+                      {monthlyPayment && <Check className="h-3 w-3 text-white" />}
                     </div>
+                    <label className="text-xs text-gray-700 cursor-pointer select-none hover:text-gray-900 transition-colors">
+                      Monthly payment options only
+                    </label>
                   </div>
                 </div>
               </form>
@@ -1272,6 +1257,4 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
   );
 };
 
-Hero.displayName = 'Hero';
-
-export default memo(Hero);
+export default Hero;

@@ -84,70 +84,23 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+}
 
-  /* Only hide scrollbars on containers and specific elements, not all elements */
-  .scrollbar-hide,
-  .container,
-  .container-section,
-  section,
-  main,
-  article,
-  nav,
-  header,
-  footer {
-    scrollbar-width: none !important; /* Firefox */
-    -ms-overflow-style: none !important; /* IE and Edge */
-  }
-
-  .scrollbar-hide::-webkit-scrollbar,
-  .container::-webkit-scrollbar,
-  .container-section::-webkit-scrollbar,
-  section::-webkit-scrollbar,
-  main::-webkit-scrollbar,
-  article::-webkit-scrollbar,
-  nav::-webkit-scrollbar,
-  header::-webkit-scrollbar,
-  footer::-webkit-scrollbar {
-    display: none !important; /* Chrome, Safari, and Opera */
-    width: 0 !important;
-    height: 0 !important;
-  }
-
-  /* Apply border-border to common elements instead of globally */
-  div, section, main, article, aside, header, footer, nav, 
-  button, input, textarea, select, form {
+@layer base {
+  * {
     @apply border-border;
   }
 
-  /* Allow main page scrolling */
   html {
-    @apply scroll-smooth overflow-x-hidden;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-    overflow-y: auto !important;
-  }
-
-  html::-webkit-scrollbar {
-    display: none !important;
+    @apply scroll-smooth;
   }
 
   body {
-    @apply bg-background text-foreground font-sans selection:bg-deepBlue/20 selection:text-deepBlue overflow-x-hidden;
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-    overflow-y: auto !important;
-  }
-
-  body::-webkit-scrollbar {
-    display: none !important;
+    @apply bg-background text-foreground font-sans selection:bg-deepBlue/20 selection:text-deepBlue;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold tracking-tight;
-    /* Ensure headings allow normal touch interactions */
-    touch-action: auto;
-    user-select: text;
-    pointer-events: auto;
   }
   
   h1 {
@@ -166,95 +119,18 @@
     @apply outline-none ring-2 ring-deepBlue ring-offset-2;
   }
   
-  /* Custom scrollbar for specific elements only */
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-    display: none;
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
   }
   
-  .custom-scrollbar::-webkit-scrollbar-track {
-    display: none;
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-100;
   }
   
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    display: none;
-  }
-
-  /* Custom utility class for hiding scrollbars - use specifically */
-  .scrollbar-none {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-  }
-
-  .scrollbar-none::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, and Opera */
-  }
-
-  /* Disable scrolling on specific components only - more targeted */
-  .disable-scroll {
-    overflow: hidden !important;
-    -webkit-overflow-scrolling: auto !important;
-    overscroll-behavior: none !important;
-  }
-
-  .disable-scroll:hover {
-    overflow: hidden !important;
-  }
-
-  /* Utility to prevent scrolling in specific containers */
-  .prevent-scroll {
-    overflow: hidden !important;
-    overscroll-behavior: none !important;
-  }
-
-  /* Completely disable all scrolling - use sparingly */
-  .no-scroll {
-    overflow: hidden !important;
-    -webkit-overflow-scrolling: auto !important;
-    overscroll-behavior: none !important;
-  }
-
-  .no-scroll-x {
-    overflow-x: hidden !important;
-    overscroll-behavior-x: none !important;
-  }
-
-  .no-scroll-y {
-    overflow-y: hidden !important;
-    overscroll-behavior-y: none !important;
-  }
-
-  /* Ensure text elements allow normal interactions */
-  p, span, div, h1, h2, h3, h4, h5, h6 {
-    touch-action: auto;
-    user-select: text;
-    pointer-events: auto;
-  }
-
-  /* Price display elements should allow normal touch interactions */
-  .price-display,
-  .price-text,
-  [class*="text-5xl"],
-  [class*="text-4xl"],
-  [class*="font-bold"] {
-    touch-action: auto;
-    user-select: text;
-    pointer-events: auto;
-  }
-
-  /* Plan comparison specific fixes */
-  #plans .text-xl,
-  #plans .text-5xl,
-  #plans .text-4xl,
-  #plans .font-bold,
-  #plans h3,
-  #plans .text-magenta,
-  #plans .text-deepBlue {
-    touch-action: auto !important;
-    user-select: text !important;
-    pointer-events: auto !important;
-    -webkit-touch-callout: default !important;
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300 rounded-full hover:bg-neutral-400 transition-colors;
   }
 }
 
@@ -401,6 +277,7 @@
   .container-section {
     padding-left: 20px;
     padding-right: 20px;
+    
   }
 
   .btn-primary, .btn-secondary {
@@ -409,9 +286,7 @@
   }
 
   body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
+    margin: 4px;
   }
 }
 
@@ -429,212 +304,4 @@
   right: 0;
   bottom: 0;
   left: 0;
-}
-
-/* Mobile responsiveness fixes - more targeted */
-html, body {
-  overflow-x: hidden !important;
-  width: 100%;
-  position: relative;
-}
-
-body {
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Container elements should respect viewport width */
-.container,
-section,
-main,
-article,
-aside,
-header,
-footer,
-nav {
-  max-width: 100vw;
-  box-sizing: border-box;
-}
-
-.overflow-fix {
-  overflow-x: hidden !important;
-  max-width: 100vw;
-}
-
-/* Hide horizontal scrollbars completely on containers only */
-.container::-webkit-scrollbar:horizontal,
-section::-webkit-scrollbar:horizontal,
-main::-webkit-scrollbar:horizontal {
-  display: none;
-}
-
-/* Mobile-only scroll optimizations - more targeted */
-@media (max-width: 768px) {
-  /* Enable smooth scrolling on mobile */
-  html {
-    touch-action: pan-y pan-x;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
-  body {
-    touch-action: pan-y pan-x;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
-  /* Only prevent horizontal overflow on layout containers */
-  .container,
-  [class*="container"],
-  section:not(.text-section),
-  main,
-  article,
-  aside,
-  header,
-  footer,
-  nav {
-    overflow-x: hidden;
-    max-width: 100vw;
-  }
-
-  /* Ensure text elements allow normal touch interactions */
-  h1, h2, h3, h4, h5, h6, p, span, div {
-    touch-action: auto;
-    user-select: text;
-    pointer-events: auto;
-  }
-
-  /* Price and heading elements should allow normal interactions */
-  .text-5xl, .text-4xl, .text-3xl, .text-2xl, .text-xl,
-  .font-bold, .font-semibold, .font-medium,
-  [class*="text-"],
-  [class*="font-"] {
-    touch-action: auto;
-    user-select: text;
-    pointer-events: auto;
-  }
-
-  /* Allow normal scrolling behavior for scrollable elements */
-  .modal-content,
-  .popup-content,
-  .dropdown-menu,
-  textarea,
-  input,
-  select,
-  [data-scroll="true"] {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    touch-action: auto;
-  }
-
-  /* Prevent only problematic elements from scrolling */
-  .disable-scroll,
-  .prevent-scroll,
-  .no-scroll {
-    overflow: hidden;
-    overscroll-behavior: none;
-  }
-
-  /* Fix horizontal overflow issues only on media elements */
-  img, svg, video {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Maintain responsive layout without breaking positioning */
-  .grid,
-  .flex {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-
-  /* Fix for absolute positioned elements that might cause horizontal scroll */
-  .absolute, .fixed {
-    max-width: calc(100vw - 2rem);
-  }
-}
-
-@media (max-width: 640px) {
-  .container, 
-  .container-fluid,
-  [class^="container-"],
-  section:not(.text-section),
-  .section-container,
-  .container-section,
-  div[class*="container"] {
-    width: 100% !important;
-    max-width: 100vw !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    overflow-x: hidden !important;
-  }
-  
-  img, svg, video {
-    max-width: 100% !important;
-  }
-  
-  body {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-
-  /* Force layout elements to respect mobile viewport */
-  .grid {
-    overflow-x: hidden !important;
-  }
-
-  .flex {
-    overflow-x: hidden !important;
-  }
-
-  /* Fix for any transforms that might cause overflow */
-  [style*="transform"] {
-    max-width: 100vw !important;
-  }
-
-  /* Fix for any absolute positioned elements */
-  .absolute, .fixed {
-    max-width: 100vw !important;
-  }
-
-  /* Ensure text elements work normally on mobile */
-  h1, h2, h3, h4, h5, h6, p, span, div,
-  .text-5xl, .text-4xl, .text-3xl, .text-2xl, .text-xl,
-  .font-bold, .font-semibold, .font-medium {
-    touch-action: auto !important;
-    user-select: text !important;
-    pointer-events: auto !important;
-  }
-}
-
-/* Mobile logo scaling for API data */
-@media (max-width: 768px) {
-  .mobile-logo-scaling {
-    width: var(--mobile-width, auto) !important;
-    height: var(--mobile-height, auto) !important;
-    max-width: var(--mobile-max-width, 100%) !important;
-    max-height: var(--mobile-max-height, 100%) !important;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-html.lenis, html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
 } 

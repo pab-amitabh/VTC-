@@ -1,4 +1,3 @@
-import React, { memo } from 'react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
@@ -42,9 +41,9 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Compare Plans', href: '/compare-plans' },
-    { name: 'Insurance', href: '/insurance' },
-    { name: 'Reviews', href: '/reviews' },
+    { name: 'Claims', href: '/claims' },
+    { name: 'Our Reviews', href: '/insurance' },
+    // { name: 'Reviews', href: '/reviews' },
     { name: 'FAQ', href: '/faq' }
   ];
 
@@ -52,7 +51,7 @@ const Navbar = () => {
     <header className="fixed w-full z-50 transition-all duration-300 sticky-nav bg-white shadow-sm py-3"
       style={{ position: 'fixed', top: 0, left: 0, right: 0, width: '100%', zIndex: 1000 }}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-deepBlue">InsureTravel</Link>
           
@@ -66,7 +65,7 @@ const Navbar = () => {
           
           {/* Desktop navigation - scrolling horizontal menu */}
           <nav className="hidden md:block">
-            <div className="overflow-hidden whitespace-nowrap py-2 disable-scroll">
+            <div className="overflow-x-auto whitespace-nowrap py-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
               <div className="flex items-center">
                 {navLinks.map((link, index) => (
                   <div key={link.name} className="flex items-center">
@@ -123,6 +122,4 @@ const Navbar = () => {
   );
 };
 
-Navbar.displayName = 'Navbar';
-
-export default memo(Navbar);
+export default Navbar;

@@ -120,12 +120,7 @@ exports.Prisma.BuyNowClickScalarFieldEnum = {
   province: 'province',
   clickCount: 'clickCount',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  customerName: 'customerName',
-  customerEmail: 'customerEmail',
-  customerPhone: 'customerPhone',
-  ipAddress: 'ipAddress',
-  trackingId: 'trackingId'
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {

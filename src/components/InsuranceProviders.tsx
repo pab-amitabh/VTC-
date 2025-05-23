@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -29,9 +29,9 @@ const InsuranceProviders = () => {
             </p>
             
             {/* Partners and Image container */}
-            <div className="flex flex-col md:flex-row gap-0 max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
               {/* Partners List - Left */}
-              <div className="md:w-1/3">
+              <div className="md:w-1/2">
                 <p id="partners" className="text-lg font-semibold text-[#181B1F] mb-4">Some of our partners include:</p>
                 <ul className="space-y-3">
                   {partners.map((partner, index) => (
@@ -53,7 +53,7 @@ const InsuranceProviders = () => {
               </div>
               
               {/* Image - Right */}
-              <div className="md:w-2/3">
+              <div className="md:w-1/2">
                 <div className="relative">
                   <div className="absolute -top-6 -right-6 w-16 h-16 md:w-24 md:h-24 bg-blue-100 rounded-full"></div>
                   <div className="absolute -bottom-6 -left-6 w-12 h-12 md:w-16 md:h-16 bg-sky-100 rounded-full"></div>
@@ -62,7 +62,7 @@ const InsuranceProviders = () => {
                     <img 
                       src="/images/compare-insurance.png" 
                       alt="Travel Insurance Mobile App" 
-                      className="w-full object-contain mx-auto h-auto max-h-[600px]"
+                      className="w-full object-contain max-w-[550px] mx-auto"
                       style={{ filter: 'drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.1))' }}
                     />
                   </div>
@@ -77,6 +77,4 @@ const InsuranceProviders = () => {
   );
 };
 
-InsuranceProviders.displayName = 'InsuranceProviders';
-
-export default memo(InsuranceProviders); 
+export default InsuranceProviders; 
