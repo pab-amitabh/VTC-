@@ -16,13 +16,18 @@ datasource db {
 }
 
 model BuyNowClick {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
-  providerName String
-  planName     String
-  province     String?
-  clickCount   Int      @default(1)
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  providerName  String
+  planName      String
+  province      String?
+  clickCount    Int      @default(1)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  customerName  String?
+  customerEmail String?
+  customerPhone String?
+  ipAddress     String?
+  trackingId    String?
 
-  @@unique([providerName, planName, province])
+  @@unique([customerEmail, customerPhone, planName, providerName])
 }

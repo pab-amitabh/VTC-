@@ -851,6 +851,11 @@ export namespace Prisma {
     clickCount: number | null
     createdAt: Date | null
     updatedAt: Date | null
+    customerName: string | null
+    customerEmail: string | null
+    customerPhone: string | null
+    ipAddress: string | null
+    trackingId: string | null
   }
 
   export type BuyNowClickMaxAggregateOutputType = {
@@ -861,6 +866,11 @@ export namespace Prisma {
     clickCount: number | null
     createdAt: Date | null
     updatedAt: Date | null
+    customerName: string | null
+    customerEmail: string | null
+    customerPhone: string | null
+    ipAddress: string | null
+    trackingId: string | null
   }
 
   export type BuyNowClickCountAggregateOutputType = {
@@ -871,6 +881,11 @@ export namespace Prisma {
     clickCount: number
     createdAt: number
     updatedAt: number
+    customerName: number
+    customerEmail: number
+    customerPhone: number
+    ipAddress: number
+    trackingId: number
     _all: number
   }
 
@@ -891,6 +906,11 @@ export namespace Prisma {
     clickCount?: true
     createdAt?: true
     updatedAt?: true
+    customerName?: true
+    customerEmail?: true
+    customerPhone?: true
+    ipAddress?: true
+    trackingId?: true
   }
 
   export type BuyNowClickMaxAggregateInputType = {
@@ -901,6 +921,11 @@ export namespace Prisma {
     clickCount?: true
     createdAt?: true
     updatedAt?: true
+    customerName?: true
+    customerEmail?: true
+    customerPhone?: true
+    ipAddress?: true
+    trackingId?: true
   }
 
   export type BuyNowClickCountAggregateInputType = {
@@ -911,6 +936,11 @@ export namespace Prisma {
     clickCount?: true
     createdAt?: true
     updatedAt?: true
+    customerName?: true
+    customerEmail?: true
+    customerPhone?: true
+    ipAddress?: true
+    trackingId?: true
     _all?: true
   }
 
@@ -1008,6 +1038,11 @@ export namespace Prisma {
     clickCount: number
     createdAt: Date
     updatedAt: Date
+    customerName: string | null
+    customerEmail: string | null
+    customerPhone: string | null
+    ipAddress: string | null
+    trackingId: string | null
     _count: BuyNowClickCountAggregateOutputType | null
     _avg: BuyNowClickAvgAggregateOutputType | null
     _sum: BuyNowClickSumAggregateOutputType | null
@@ -1037,6 +1072,11 @@ export namespace Prisma {
     clickCount?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerPhone?: boolean
+    ipAddress?: boolean
+    trackingId?: boolean
   }, ExtArgs["result"]["buyNowClick"]>
 
 
@@ -1049,9 +1089,14 @@ export namespace Prisma {
     clickCount?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    customerName?: boolean
+    customerEmail?: boolean
+    customerPhone?: boolean
+    ipAddress?: boolean
+    trackingId?: boolean
   }
 
-  export type BuyNowClickOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "providerName" | "planName" | "province" | "clickCount" | "createdAt" | "updatedAt", ExtArgs["result"]["buyNowClick"]>
+  export type BuyNowClickOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "providerName" | "planName" | "province" | "clickCount" | "createdAt" | "updatedAt" | "customerName" | "customerEmail" | "customerPhone" | "ipAddress" | "trackingId", ExtArgs["result"]["buyNowClick"]>
 
   export type $BuyNowClickPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "BuyNowClick"
@@ -1064,6 +1109,11 @@ export namespace Prisma {
       clickCount: number
       createdAt: Date
       updatedAt: Date
+      customerName: string | null
+      customerEmail: string | null
+      customerPhone: string | null
+      ipAddress: string | null
+      trackingId: string | null
     }, ExtArgs["result"]["buyNowClick"]>
     composites: {}
   }
@@ -1463,6 +1513,11 @@ export namespace Prisma {
     readonly clickCount: FieldRef<"BuyNowClick", 'Int'>
     readonly createdAt: FieldRef<"BuyNowClick", 'DateTime'>
     readonly updatedAt: FieldRef<"BuyNowClick", 'DateTime'>
+    readonly customerName: FieldRef<"BuyNowClick", 'String'>
+    readonly customerEmail: FieldRef<"BuyNowClick", 'String'>
+    readonly customerPhone: FieldRef<"BuyNowClick", 'String'>
+    readonly ipAddress: FieldRef<"BuyNowClick", 'String'>
+    readonly trackingId: FieldRef<"BuyNowClick", 'String'>
   }
     
 
@@ -1822,7 +1877,12 @@ export namespace Prisma {
     province: 'province',
     clickCount: 'clickCount',
     createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+    updatedAt: 'updatedAt',
+    customerName: 'customerName',
+    customerEmail: 'customerEmail',
+    customerPhone: 'customerPhone',
+    ipAddress: 'ipAddress',
+    trackingId: 'trackingId'
   };
 
   export type BuyNowClickScalarFieldEnum = (typeof BuyNowClickScalarFieldEnum)[keyof typeof BuyNowClickScalarFieldEnum]
@@ -1919,6 +1979,11 @@ export namespace Prisma {
     clickCount?: IntFilter<"BuyNowClick"> | number
     createdAt?: DateTimeFilter<"BuyNowClick"> | Date | string
     updatedAt?: DateTimeFilter<"BuyNowClick"> | Date | string
+    customerName?: StringNullableFilter<"BuyNowClick"> | string | null
+    customerEmail?: StringNullableFilter<"BuyNowClick"> | string | null
+    customerPhone?: StringNullableFilter<"BuyNowClick"> | string | null
+    ipAddress?: StringNullableFilter<"BuyNowClick"> | string | null
+    trackingId?: StringNullableFilter<"BuyNowClick"> | string | null
   }
 
   export type BuyNowClickOrderByWithRelationInput = {
@@ -1929,11 +1994,16 @@ export namespace Prisma {
     clickCount?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerPhone?: SortOrder
+    ipAddress?: SortOrder
+    trackingId?: SortOrder
   }
 
   export type BuyNowClickWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    providerName_planName_province?: BuyNowClickProviderNamePlanNameProvinceCompoundUniqueInput
+    customerEmail_customerPhone_planName_providerName?: BuyNowClickCustomerEmailCustomerPhonePlanNameProviderNameCompoundUniqueInput
     AND?: BuyNowClickWhereInput | BuyNowClickWhereInput[]
     OR?: BuyNowClickWhereInput[]
     NOT?: BuyNowClickWhereInput | BuyNowClickWhereInput[]
@@ -1943,7 +2013,12 @@ export namespace Prisma {
     clickCount?: IntFilter<"BuyNowClick"> | number
     createdAt?: DateTimeFilter<"BuyNowClick"> | Date | string
     updatedAt?: DateTimeFilter<"BuyNowClick"> | Date | string
-  }, "id" | "providerName_planName_province">
+    customerName?: StringNullableFilter<"BuyNowClick"> | string | null
+    customerEmail?: StringNullableFilter<"BuyNowClick"> | string | null
+    customerPhone?: StringNullableFilter<"BuyNowClick"> | string | null
+    ipAddress?: StringNullableFilter<"BuyNowClick"> | string | null
+    trackingId?: StringNullableFilter<"BuyNowClick"> | string | null
+  }, "id" | "customerEmail_customerPhone_planName_providerName">
 
   export type BuyNowClickOrderByWithAggregationInput = {
     id?: SortOrder
@@ -1953,6 +2028,11 @@ export namespace Prisma {
     clickCount?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerPhone?: SortOrder
+    ipAddress?: SortOrder
+    trackingId?: SortOrder
     _count?: BuyNowClickCountOrderByAggregateInput
     _avg?: BuyNowClickAvgOrderByAggregateInput
     _max?: BuyNowClickMaxOrderByAggregateInput
@@ -1971,6 +2051,11 @@ export namespace Prisma {
     clickCount?: IntWithAggregatesFilter<"BuyNowClick"> | number
     createdAt?: DateTimeWithAggregatesFilter<"BuyNowClick"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"BuyNowClick"> | Date | string
+    customerName?: StringNullableWithAggregatesFilter<"BuyNowClick"> | string | null
+    customerEmail?: StringNullableWithAggregatesFilter<"BuyNowClick"> | string | null
+    customerPhone?: StringNullableWithAggregatesFilter<"BuyNowClick"> | string | null
+    ipAddress?: StringNullableWithAggregatesFilter<"BuyNowClick"> | string | null
+    trackingId?: StringNullableWithAggregatesFilter<"BuyNowClick"> | string | null
   }
 
   export type BuyNowClickCreateInput = {
@@ -1981,6 +2066,11 @@ export namespace Prisma {
     clickCount?: number
     createdAt?: Date | string
     updatedAt?: Date | string
+    customerName?: string | null
+    customerEmail?: string | null
+    customerPhone?: string | null
+    ipAddress?: string | null
+    trackingId?: string | null
   }
 
   export type BuyNowClickUncheckedCreateInput = {
@@ -1991,6 +2081,11 @@ export namespace Prisma {
     clickCount?: number
     createdAt?: Date | string
     updatedAt?: Date | string
+    customerName?: string | null
+    customerEmail?: string | null
+    customerPhone?: string | null
+    ipAddress?: string | null
+    trackingId?: string | null
   }
 
   export type BuyNowClickUpdateInput = {
@@ -2000,6 +2095,11 @@ export namespace Prisma {
     clickCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    customerName?: NullableStringFieldUpdateOperationsInput | string | null
+    customerEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    customerPhone?: NullableStringFieldUpdateOperationsInput | string | null
+    ipAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    trackingId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type BuyNowClickUncheckedUpdateInput = {
@@ -2009,6 +2109,11 @@ export namespace Prisma {
     clickCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    customerName?: NullableStringFieldUpdateOperationsInput | string | null
+    customerEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    customerPhone?: NullableStringFieldUpdateOperationsInput | string | null
+    ipAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    trackingId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type BuyNowClickCreateManyInput = {
@@ -2019,6 +2124,11 @@ export namespace Prisma {
     clickCount?: number
     createdAt?: Date | string
     updatedAt?: Date | string
+    customerName?: string | null
+    customerEmail?: string | null
+    customerPhone?: string | null
+    ipAddress?: string | null
+    trackingId?: string | null
   }
 
   export type BuyNowClickUpdateManyMutationInput = {
@@ -2028,6 +2138,11 @@ export namespace Prisma {
     clickCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    customerName?: NullableStringFieldUpdateOperationsInput | string | null
+    customerEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    customerPhone?: NullableStringFieldUpdateOperationsInput | string | null
+    ipAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    trackingId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type BuyNowClickUncheckedUpdateManyInput = {
@@ -2037,6 +2152,11 @@ export namespace Prisma {
     clickCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    customerName?: NullableStringFieldUpdateOperationsInput | string | null
+    customerEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    customerPhone?: NullableStringFieldUpdateOperationsInput | string | null
+    ipAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    trackingId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -2092,10 +2212,11 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
-  export type BuyNowClickProviderNamePlanNameProvinceCompoundUniqueInput = {
-    providerName: string
+  export type BuyNowClickCustomerEmailCustomerPhonePlanNameProviderNameCompoundUniqueInput = {
+    customerEmail: string
+    customerPhone: string
     planName: string
-    province: string
+    providerName: string
   }
 
   export type BuyNowClickCountOrderByAggregateInput = {
@@ -2106,6 +2227,11 @@ export namespace Prisma {
     clickCount?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerPhone?: SortOrder
+    ipAddress?: SortOrder
+    trackingId?: SortOrder
   }
 
   export type BuyNowClickAvgOrderByAggregateInput = {
@@ -2120,6 +2246,11 @@ export namespace Prisma {
     clickCount?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerPhone?: SortOrder
+    ipAddress?: SortOrder
+    trackingId?: SortOrder
   }
 
   export type BuyNowClickMinOrderByAggregateInput = {
@@ -2130,6 +2261,11 @@ export namespace Prisma {
     clickCount?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    customerName?: SortOrder
+    customerEmail?: SortOrder
+    customerPhone?: SortOrder
+    ipAddress?: SortOrder
+    trackingId?: SortOrder
   }
 
   export type BuyNowClickSumOrderByAggregateInput = {

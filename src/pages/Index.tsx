@@ -14,6 +14,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import WhatIsVisitorInsurance from '../components/WhatIsVisitorInsurance';
 import WhoNeedsInsurance from '../components/WhoNeedsInsurance';
 import TypicalCoverage from '../components/TypicalCoverage';
+import MobileFooter from '../components/MobileFooter';
 import { ArrowUp } from 'lucide-react';
 
 interface IndexProps {
@@ -126,7 +127,7 @@ const Index = ({ onQuoteUpdate }: IndexProps) => {
 
   return (
     <QuoteContext.Provider value={quoteData}>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white overflow-x-hidden w-full max-w-[100vw] overflow-fix">
         <motion.div
           style={{
             backgroundColor: "white",
@@ -138,7 +139,7 @@ const Index = ({ onQuoteUpdate }: IndexProps) => {
             zIndex: 1000,
             width: '100%'
           }}
-          className="transition-all duration-200 sticky-nav"
+          className="transition-all duration-200 sticky-nav overflow-x-hidden"
         >
           <Navbar />
         </motion.div>
@@ -205,6 +206,9 @@ const Index = ({ onQuoteUpdate }: IndexProps) => {
         
         <Footer />
 
+        {/* Mobile Footer */}
+        <MobileFooter />
+
         {/* Scroll to top button */}
         <ScrollToTopButton />
       </div>
@@ -224,7 +228,7 @@ const ScrollToTopButton = () => {
   return (
     <motion.button
       style={{ opacity }}
-      className="fixed md:bottom-8 bottom-20 right-8 bg-deepBlue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-medium z-50 hover:bg-deepBlueHover transition-colors"
+      className="fixed md:bottom-8 bottom-24 right-8 bg-deepBlue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-medium z-40 hover:bg-deepBlueHover transition-colors"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       onClick={scrollToTop}

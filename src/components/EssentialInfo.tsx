@@ -1,4 +1,5 @@
 
+import React, { memo } from 'react';
 import { Check, Shield, Umbrella, MapPin, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -180,4 +181,6 @@ const EssentialInfo = () => {
   );
 };
 
-export default EssentialInfo;
+EssentialInfo.displayName = 'EssentialInfo';
+
+export default memo(EssentialInfo);

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import { cn } from '@/lib/utils'
 
 interface OptimizedImageProps {
@@ -49,4 +49,6 @@ const OptimizedImage = ({
   )
 }
 
-export default OptimizedImage 
+OptimizedImage.displayName = 'OptimizedImage';
+
+export default memo(OptimizedImage); 
