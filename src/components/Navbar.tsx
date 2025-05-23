@@ -41,9 +41,9 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Claims', href: '/claims' },
-    { name: 'Our Reviews', href: '/insurance' },
-    // { name: 'Reviews', href: '/reviews' },
+    { name: 'Compare Plans', href: '/compare-plans' },
+    { name: 'Insurance', href: '/insurance' },
+    { name: 'Reviews', href: '/reviews' },
     { name: 'FAQ', href: '/faq' }
   ];
 

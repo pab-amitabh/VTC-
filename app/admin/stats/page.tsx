@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 
 interface ClickStat {
   id: string;
@@ -23,39 +22,6 @@ export default function StatsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [rawResponse, setRawResponse] = useState<string | null>(null);
-  const router = useRouter();
-
-  // Check authentication on component mount
-  useEffect(() => {
-    const checkAuth = async () => {
-      const auth = sessionStorage.getItem('adminAuth');
-      if (!auth) {
-        router.push('/admin/login?from=/admin/stats');
-        return;
-      }
-
-      try {
-        const response = await fetch('/api/auth/verify', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Basic ${auth}`,
-            'Content-Type': 'application/json',
-          },
-        });
-
-        if (!response.ok) {
-          sessionStorage.removeItem('adminAuth');
-          router.push('/admin/login?from=/admin/stats');
-        }
-      } catch (error) {
-        console.error('Auth check error:', error);
-        sessionStorage.removeItem('adminAuth');
-        router.push('/admin/login?from=/admin/stats');
-      }
-    };
-
-    checkAuth();
-  }, [router]);
 
   // Function to force a hard refresh
   const hardRefresh = () => {
@@ -67,19 +33,12 @@ export default function StatsPage() {
     try {
       console.log('Fetching stats from API...');
       
-      const auth = sessionStorage.getItem('adminAuth');
-      if (!auth) {
-        router.push('/admin/login?from=/admin/stats');
-        return;
-      }
-      
       // Add timestamp to prevent caching
       const timestamp = new Date().getTime();
       const response = await fetch(`/api/clickTracker/getStats?t=${timestamp}`, {
         headers: {
           'Cache-Control': 'no-cache',
-          'Pragma': 'no-cache',
-          'Authorization': `Basic ${auth}`
+          'Pragma': 'no-cache'
         }
       });
       
@@ -100,11 +59,6 @@ export default function StatsPage() {
       }
 
       if (!response.ok) {
-        if (response.status === 401) {
-          sessionStorage.removeItem('adminAuth');
-          router.push('/admin/login?from=/admin/stats');
-          return;
-        }
         throw new Error(data.error || `API returned ${response.status}: ${response.statusText}`);
       }
       
@@ -174,12 +128,12 @@ export default function StatsPage() {
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone Number</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Province</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IP Address</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created On</th>
                 <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Clicks</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Updated</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Provider</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Plan Name</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IP Address</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
@@ -189,6 +143,7 @@ export default function StatsPage() {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.customerEmail || 'N/A'}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.customerPhone}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.province || 'N/A'}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.ipAddress}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {new Date(stat.createdAt).toLocaleString()}
                   </td>
@@ -198,7 +153,6 @@ export default function StatsPage() {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{stat.providerName}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.planName}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{stat.ipAddress}</td>
                 </tr>
               ))}
             </tbody>
