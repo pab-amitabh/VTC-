@@ -14,6 +14,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import WhatIsVisitorInsurance from '../components/WhatIsVisitorInsurance';
 import WhoNeedsInsurance from '../components/WhoNeedsInsurance';
 import TypicalCoverage from '../components/TypicalCoverage';
+import MobileFooter from '../components/MobileFooter';
 import { ArrowUp } from 'lucide-react';
 
 interface IndexProps {
@@ -205,6 +206,9 @@ const Index = ({ onQuoteUpdate }: IndexProps) => {
         
         <Footer />
 
+        {/* Mobile Footer */}
+        <MobileFooter />
+
         {/* Scroll to top button */}
         <ScrollToTopButton />
       </div>
@@ -224,7 +228,7 @@ const ScrollToTopButton = () => {
   return (
     <motion.button
       style={{ opacity }}
-      className="fixed md:bottom-8 bottom-20 right-8 bg-deepBlue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-medium z-50 hover:bg-deepBlueHover transition-colors"
+      className="fixed md:bottom-8 bottom-24 right-8 bg-deepBlue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-medium z-40 hover:bg-deepBlueHover transition-colors"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       onClick={scrollToTop}
