@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { MapPin, Mail, Phone } from 'lucide-react';
 
@@ -64,6 +64,4 @@ const Footer = () => {
   );
 };
 
-Footer.displayName = 'Footer';
-
-export default memo(Footer);
+export default Footer;

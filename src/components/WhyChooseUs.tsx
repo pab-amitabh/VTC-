@@ -1,7 +1,5 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { BarChart3, DollarSign, Settings, CheckCircle, Lock, Users } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { fadeIn, simpleHover, VIEWPORT_CONFIG } from '../utils/motionConfig';
 
 const WhyChooseUs = () => {
   const reasonsItems = [
@@ -38,60 +36,41 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50" id="why-choose-us">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="pt-8 pb-8 md:pt-12 md:pb-12 bg-white" id="why-choose-us">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header Content */}
-        <motion.div 
-          className="text-center max-w-4xl mx-auto mb-16 md:mb-20"
-          variants={fadeIn}
-          initial="initial"
-          whileInView="animate"
-          viewport={VIEWPORT_CONFIG}
-        >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#181B1F] leading-tight">
+        <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-[#181A1B]">
             Why choose us
           </h2>
-          <p className="text-lg md:text-xl text-[#64748B] max-w-3xl mx-auto">
-            We make finding the right visitor insurance for Canada simple, fast, and reliable with our innovative platform.
+          <p className="text-lg text-[#525A5B]">
+            We make finding the right visitor insurance for Canada simple, fast, and reliable.
           </p>
-        </motion.div>
+        </div>
         
-        {/* Grid */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-          variants={fadeIn}
-          initial="initial"
-          whileInView="animate"
-          viewport={VIEWPORT_CONFIG}
-        >
+        {/* Grid with Lines */}
+        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 md:gap-y-12 lg:gap-y-16">
+          {/* Horizontal Line */}
+          <div className="absolute top-1/2 left-0 right-0 h-px bg-[#E4E4E7] hidden lg:block"></div>
+          
+          {/* Vertical Lines */}
+          <div className="absolute top-0 bottom-0 left-1/3 w-px bg-[#E4E4E7] hidden lg:block"></div>
+          <div className="absolute top-0 bottom-0 left-2/3 w-px bg-[#E4E4E7] hidden lg:block"></div>
+
+          {/* Feature Items */}
           {reasonsItems.map((reason, index) => (
-            <motion.div 
-              key={index} 
-              className="group bg-white rounded-2xl p-6 md:p-8 border border-gray-100"
-              whileHover={simpleHover}
-            >
-              {/* Icon container */}
-              <div className="mb-6 md:mb-8 flex justify-center">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gray-50 flex items-center justify-center">
-                  {reason.icon}
-                </div>
+            <div key={index} className="flex flex-col items-center text-center px-4 md:px-6">
+              <div className="mb-6 md:mb-8">
+                {reason.icon}
               </div>
-              
-              <h3 className="text-xl md:text-2xl font-semibold text-[#181B1F] mb-4 text-center">
-                {reason.title}
-              </h3>
-              
-              <p className="text-[#64748B] leading-relaxed text-base md:text-lg text-center">
-                {reason.description}
-              </p>
-            </motion.div>
+              <h3 className="text-xl font-semibold text-[#181A1B] mb-4">{reason.title}</h3>
+              <p className="text-[#525A5B] leading-relaxed">{reason.description}</p>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
-WhyChooseUs.displayName = 'WhyChooseUs';
-
-export default memo(WhyChooseUs); 
+export default WhyChooseUs; 
