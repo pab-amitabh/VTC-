@@ -1013,7 +1013,7 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                         </div>
                         
                         {/* Features grid - main content */}
-                        <div className="w-full md:flex-1 grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-3 md:pl-8 md:pr-4 md:border-r border-gray-100">
+                        <div className="w-full md:flex-1 grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-3 md:pl-8 md:pr-6 md:border-r border-gray-100">
                           {/* Essential categories shown by default */}
                           {plan?.features && Object.entries(plan.features)
                             .filter(([type]) => essentialCategories.includes(type))
@@ -1022,11 +1022,11 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                               
                               return (
                                 <div key={i} className="flex items-start">
-                                  <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center mr-2 shrink-0 border border-gray-100">
+                                  <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center mr-3 shrink-0 border border-gray-100">
                                     <IconComponent size={16} className="text-deepBlue" />
                                   </div>
-                                  <div>
-                                    <div className="text-sm font-bold text-gray-700">{type}</div>
+                                  <div className="min-w-0 flex-1">
+                                    <div className={`text-sm font-bold text-gray-700 ${type === 'Stable Pre-existing Conditions' ? '' : 'whitespace-nowrap'}`}>{type}</div>
                                     <div className="text-sm text-gray-600">{formatFeatureDescription(feature.description)}</div>
                                   </div>
                                 </div>
@@ -1057,11 +1057,11 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                                   
                                   return (
                                     <div key={`extra-${i}`} className="flex items-start">
-                                      <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center mr-2 shrink-0 border border-gray-100">
+                                      <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center mr-3 shrink-0 border border-gray-100">
                                         <IconComponent size={16} className="text-deepBlue" />
                                       </div>
-                                      <div>
-                                        <div className="text-sm font-bold text-gray-700">{type}</div>
+                                      <div className="min-w-0 flex-1">
+                                        <div className={`text-sm font-bold text-gray-700 ${type === 'Stable Pre-existing Conditions' ? '' : 'whitespace-nowrap'}`}>{type}</div>
                                         <div className="text-sm text-gray-600">{formatFeatureDescription(feature.description)}</div>
                                       </div>
                                     </div>
@@ -1091,11 +1091,11 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                                 
                                 return (
                                   <div key={`desktop-${i}`} className="flex items-start">
-                                    <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center mr-2 shrink-0 border border-gray-100">
+                                    <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center mr-3 shrink-0 border border-gray-100">
                                       <IconComponent size={16} className="text-deepBlue" />
                                     </div>
-                                    <div>
-                                      <div className="text-sm font-bold text-gray-700">{type}</div>
+                                    <div className="min-w-0 flex-1">
+                                      <div className={`text-sm font-bold text-gray-700 ${type === 'Stable Pre-existing Conditions' ? '' : 'whitespace-nowrap'}`}>{type}</div>
                                       <div className="text-sm text-gray-600">{formatFeatureDescription(feature.description)}</div>
                                     </div>
                                   </div>
@@ -1128,13 +1128,16 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                         </div>
                       </div>
                     
-                      <button 
-                        className="flex items-center justify-center w-full py-3 bg-gray-100 rounded-lg text-deepBlue hover:text-deepBlue/80 text-sm font-medium mt-6"
-                        onClick={() => togglePlanDetails(plan.id)}
-                      >
-                        {expandedPlans[plan.id] ? 'Hide details' : 'Show details'}
-                        <ChevronDown className={`ml-1 transition-transform md:${expandedPlans[plan.id] ? 'rotate-180' : ''}`} size={16} />
-                      </button>
+                      {/* Show details button - hidden for mock plans */}
+                      {quoteData !== null && (
+                        <button 
+                          className="flex items-center justify-center w-full py-3 bg-gray-100 rounded-lg text-deepBlue hover:text-deepBlue/80 text-sm font-medium mt-6"
+                          onClick={() => togglePlanDetails(plan.id)}
+                        >
+                          {expandedPlans[plan.id] ? 'Hide details' : 'Show details'}
+                          <ChevronDown className={`ml-1 transition-transform md:${expandedPlans[plan.id] ? 'rotate-180' : ''}`} size={16} />
+                        </button>
+                      )}
                       
                       {/* Only show expanded content on desktop */}
                       {expandedPlans[plan.id] && (
@@ -1143,7 +1146,7 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                             <h3 className="text-2xl font-medium text-gray-900 mb-4">What is included in your policy</h3>
                             
                             <p className="text-gray-700 mb-4">
-                              Travel medical insurance provides coverage for emergency medical expenses during your trip, which includes doctor's visits, hospital stays, emergency transportation, and prescription medication. It can also protect you from financial loss if you have to cancel or interrupt your trip.
+                              Travel medical insurance provides coverage for emergency medical expenses during your trip, which includes doctor's visits, hospital stays, emergency transportation, and prescription medication.
                             </p>
                             
                             <h4 className="text-xl font-semibold text-gray-900 mb-4">Key features</h4>
@@ -1153,66 +1156,48 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                               ))}
                             </ul>
                             
-                            <h4 className="text-xl font-semibold text-gray-900 mb-2">Stable Pre-existing conditions</h4>
-                            <p className="text-gray-700 mb-2">
+                            <h4 className="text-xl font-semibold text-gray-900 mb-2">Pre-existing conditions</h4>
+                            <p className="text-gray-700 mb-6">
                               {plan.additionalInfo.preExisting === "Yes" ? 
                                 'Included' : 
                                 'Not included'}
                             </p>
-
-                            <h4 className="text-xl font-semibold text-gray-900 mb-2">Additional information</h4>
-                            <ul className="list-none space-y-1 mb-6">
-                              <li className="text-gray-700">
-                                <span className="font-semibold">Claims administered by:</span> {plan.additionalInfo.underwrittenBy}
-                              </li>
-                              {plan.additionalInfo.maxAge && (
-                                <li className="text-gray-700">
-                                  <span className="font-semibold">Maximum age:</span> {plan.additionalInfo.maxAge}
-                                </li>
-                              )}
-                              {plan.additionalInfo.maxDependentAge && plan.additionalInfo.maxDependentAge !== "0" && plan.additionalInfo.maxDependentAge !== "N/A" && (
-                                <li className="text-gray-700">
-                                  <span className="font-semibold">Maximum dependent age:</span> {plan.additionalInfo.maxDependentAge}
-                                </li>
-                              )}
-                              <li className="text-gray-700">
-                                <span className="font-semibold">Family plan:</span> {plan.additionalInfo.familyPlan}
-                              </li>
-                            </ul>
                             
-                            <div className="border rounded-lg p-4 bg-gray-50">
-                              <div className="flex flex-wrap items-center">
-                                <div className="font-medium text-gray-700 mr-4">Downloads:</div>
-                                <div className="flex flex-wrap gap-4">
-                                  {plan.policy_document_url && (
-                                    <a 
-                                      href={plan.policy_document_url} 
-                                      target="_blank" 
-                                      rel="noopener noreferrer"
-                                      className="inline-flex items-center text-blue-400 hover:text-blue-500"
-                                    >
-                                      <div className="w-8 h-8 flex items-center justify-center bg-red-100 rounded-md mr-2">
-                                        <span className="text-xs font-medium text-red-500">PDF</span>
-                                      </div>
-                                      Policy Wordings
-                                    </a>
-                                  )}
-                                  {plan.brochure_url && (
-                                    <a 
-                                      href={plan.brochure_url} 
-                                      target="_blank" 
-                                      rel="noopener noreferrer"
-                                      className="inline-flex items-center text-blue-400 hover:text-blue-500"
-                                    >
-                                      <div className="w-8 h-8 flex items-center justify-center bg-red-100 rounded-md mr-2">
-                                        <span className="text-xs font-medium text-red-500">PDF</span>
-                                      </div>
-                                      Product Brochure
-                                    </a>
-                                  )}
+                            {(plan.policy_document_url || plan.brochure_url) && (
+                              <div className="border rounded-lg p-4 bg-gray-50">
+                                <div className="flex flex-wrap items-center">
+                                  <div className="font-medium text-gray-700 mr-4">Downloads:</div>
+                                  <div className="flex flex-wrap gap-4">
+                                    {plan.policy_document_url && (
+                                      <a 
+                                        href={plan.policy_document_url} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center text-blue-400 hover:text-blue-500"
+                                      >
+                                        <div className="w-8 h-8 flex items-center justify-center bg-red-100 rounded-md mr-2">
+                                          <span className="text-xs font-medium text-red-500">PDF</span>
+                                        </div>
+                                        Policy Wordings
+                                      </a>
+                                    )}
+                                    {plan.brochure_url && (
+                                      <a 
+                                        href={plan.brochure_url} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center text-blue-400 hover:text-blue-500"
+                                      >
+                                        <div className="w-8 h-8 flex items-center justify-center bg-red-100 rounded-md mr-2">
+                                          <span className="text-xs font-medium text-red-500">PDF</span>
+                                        </div>
+                                        Product Brochure
+                                      </a>
+                                    )}
+                                  </div>
                                 </div>
                               </div>
-                            </div>
+                            )}
                           </div>
                         </div>
                       )}
@@ -1287,12 +1272,9 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
           }}
         >
           <div 
-            className="bg-white rounded-xl shadow-lg max-w-lg w-full max-h-[90vh] overflow-y-auto modal-content"
+            className="bg-white rounded-xl shadow-lg w-full max-w-sm max-h-[85vh] overflow-y-auto modal-content mx-4"
             style={{ 
-              position: 'fixed',
-              top: '50%', 
-              left: '50%', 
-              transform: 'translate(-50%, -50%)'
+              position: 'relative'
             }}
           >
             <div className="p-6">
@@ -1310,68 +1292,46 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
               </div>
 
               {/* Content */}
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div>
-                  <h4 className="text-lg font-medium text-gray-900 mb-3">What is included in your policy</h4>
-                  <p className="text-gray-700 mb-4 text-sm">
-                    Travel medical insurance provides coverage for emergency medical expenses during your trip, which includes doctor's visits, hospital stays, emergency transportation, and prescription medication. It can also protect you from financial loss if you have to cancel or interrupt your trip.
+                  <h4 className="text-md font-medium text-gray-900 mb-2">What is included in your policy</h4>
+                  <p className="text-gray-700 mb-3 text-xs">
+                    Emergency medical coverage including doctor visits, hospital stays, emergency transportation, and prescription medication.
                   </p>
                 </div>
                 
                 <div>
-                  <h5 className="text-md font-semibold text-gray-900 mb-3">Key features</h5>
-                  <ul className="list-disc pl-5 space-y-1 mb-4">
+                  <h5 className="text-sm font-semibold text-gray-900 mb-2">Key features</h5>
+                  <ul className="list-disc pl-4 space-y-1 mb-3">
                     {selectedMobileDetailsPlan.additionalInfo.extractedKeyFeatures.map((feature, i) => (
-                      <li key={i} className="text-gray-700 text-sm">{feature}</li>
+                      <li key={i} className="text-gray-700 text-xs">{feature}</li>
                     ))}
                   </ul>
                 </div>
                 
                 <div>
-                  <h5 className="text-md font-semibold text-gray-900 mb-2">Pre-existing conditions</h5>
-                  <p className="text-gray-700 text-sm mb-4">
+                  <h5 className="text-sm font-semibold text-gray-900 mb-1">Pre-existing conditions</h5>
+                  <p className="text-gray-700 text-xs mb-3">
                     {selectedMobileDetailsPlan.additionalInfo.preExisting === "Yes" ? 
                       'Included' : 
                       'Not included'}
                   </p>
                 </div>
 
-                <div>
-                  <h5 className="text-md font-semibold text-gray-900 mb-2">Additional information</h5>
-                  <ul className="list-none space-y-2 mb-4">
-                    <li className="text-gray-700 text-sm">
-                      <span className="font-semibold">Claims administered by:</span> {selectedMobileDetailsPlan.additionalInfo.underwrittenBy}
-                    </li>
-                    {selectedMobileDetailsPlan.additionalInfo.maxAge && (
-                      <li className="text-gray-700 text-sm">
-                        <span className="font-semibold">Maximum age:</span> {selectedMobileDetailsPlan.additionalInfo.maxAge}
-                      </li>
-                    )}
-                    {selectedMobileDetailsPlan.additionalInfo.maxDependentAge && selectedMobileDetailsPlan.additionalInfo.maxDependentAge !== "0" && selectedMobileDetailsPlan.additionalInfo.maxDependentAge !== "N/A" && (
-                      <li className="text-gray-700 text-sm">
-                        <span className="font-semibold">Maximum dependent age:</span> {selectedMobileDetailsPlan.additionalInfo.maxDependentAge}
-                      </li>
-                    )}
-                    <li className="text-gray-700 text-sm">
-                      <span className="font-semibold">Family plan:</span> {selectedMobileDetailsPlan.additionalInfo.familyPlan}
-                    </li>
-                  </ul>
-                </div>
-                
                 {/* Downloads */}
                 {(selectedMobileDetailsPlan.policy_document_url || selectedMobileDetailsPlan.brochure_url) && (
-                  <div className="border rounded-lg p-4 bg-gray-50">
-                    <div className="space-y-3">
-                      <div className="font-medium text-gray-700 text-sm">Downloads:</div>
-                      <div className="space-y-2">
+                  <div className="border rounded-lg p-3 bg-gray-50">
+                    <div className="space-y-2">
+                      <div className="font-medium text-gray-700 text-xs mb-2">Downloads:</div>
+                      <div className="flex flex-col gap-2">
                         {selectedMobileDetailsPlan.policy_document_url && (
                           <a 
                             href={selectedMobileDetailsPlan.policy_document_url} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="flex items-center text-blue-400 hover:text-blue-500 text-sm"
+                            className="flex items-center text-blue-400 hover:text-blue-500 text-xs"
                           >
-                            <div className="w-6 h-6 flex items-center justify-center bg-red-100 rounded-md mr-2">
+                            <div className="w-5 h-5 flex items-center justify-center bg-red-100 rounded-md mr-2">
                               <span className="text-xs font-medium text-red-500">PDF</span>
                             </div>
                             Policy Wordings
@@ -1382,9 +1342,9 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                             href={selectedMobileDetailsPlan.brochure_url} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="flex items-center text-blue-400 hover:text-blue-500 text-sm"
+                            className="flex items-center text-blue-400 hover:text-blue-500 text-xs"
                           >
-                            <div className="w-6 h-6 flex items-center justify-center bg-red-100 rounded-md mr-2">
+                            <div className="w-5 h-5 flex items-center justify-center bg-red-100 rounded-md mr-2">
                               <span className="text-xs font-medium text-red-500">PDF</span>
                             </div>
                             Product Brochure

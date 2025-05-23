@@ -827,12 +827,10 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                           </div>
                             
                             <Calendar
-                              mode="range"
-                              selected={{
-                                from: startDate,
-                                to: endDate
-                              }}
-                              defaultMonth={startDate || new Date()}
+                              mode="single"
+                              selected={startDate}
+                              defaultMonth={new Date()}
+                              numberOfMonths={2}
                               onDayMouseEnter={(date) => {
                                 console.log("Mouse enter on date:", date);
                                 setHoverDate(date);
@@ -844,20 +842,25 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                               modifiers={{
                                 range_start: startDate ? [startDate] : [],
                                 range_end: endDate ? [endDate] : [],
-                                range_middle: startDate && (endDate || hoverDate) ? {
-                                  from: startDate,
-                                  to: endDate || hoverDate || startDate
+                                range_middle: startDate && endDate ? {
+                                  from: addDays(startDate, 1),
+                                  to: subDays(endDate, 1)
                                 } : [],
-                                preview_end: !endDate && startDate && hoverDate && hoverDate > startDate ? [hoverDate] : []
+                                preview_range: startDate && hoverDate && !endDate && hoverDate > startDate ? {
+                                  from: addDays(startDate, 1),
+                                  to: subDays(hoverDate, 1)
+                                } : [],
+                                preview_end: startDate && hoverDate && !endDate && hoverDate > startDate ? [hoverDate] : []
                               }}
                               modifiersClassNames={{
                                 range_start: "range-start",
-                                range_end: "range-end",
+                                range_end: "range-end", 
                                 range_middle: "range-middle",
+                                preview_range: "range-middle",
                                 preview_end: "preview-end"
                               }}
-                              onSelect={(range) => {
-                                console.log("Calendar onSelect called with:", range);
+                              onSelect={(date) => {
+                                console.log("Calendar onSelect called with:", date);
                                 
                                 // Clear any existing errors
                                 if (errors.startDate || errors.endDate) {
@@ -869,39 +872,43 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                                   });
                                 }
 
-                                if (!range || !range.from) {
-                                  console.log("Clearing dates");
-                                  setStartDate(undefined);
-                                  setEndDate(undefined);
+                                // Booking.com style behavior
+                                if (!date) {
+                                  // Clicked on empty space or invalid date
                                   return;
                                 }
 
-                                // For Super Visa
+                                // For Super Visa - always set 1 year coverage
                                 if (visaType === 'super') {
                                   console.log("Super visa selection");
-                                  setStartDate(range.from);
-                                  const fullYearDate = addYears(range.from, 1);
+                                  setStartDate(date);
+                                  const fullYearDate = addYears(date, 1);
                                   const superVisaEndDate = subDays(fullYearDate, 1);
                                   setEndDate(superVisaEndDate);
-                                  console.log("Setting super visa dates:", range.from, superVisaEndDate);
-                                  setTimeout(() => {
-                                    console.log("Closing date picker after selection");
-                                    setDatePickerOpen(false);
-                                  }, 150);
+                                  setTimeout(() => setDatePickerOpen(false), 150);
                                   return;
                                 }
 
-                                // Regular visa selection logic
-                                console.log("Setting dates - from:", range.from, "to:", range.to);
-                                setStartDate(range.from);
-                                if (range.to) {
-                                  setEndDate(range.to);
-                                  setTimeout(() => {
-                                    console.log("Closing date picker after selection");
-                                    setDatePickerOpen(false);
-                                  }, 150);
-                                } else {
+                                // Booking.com style logic for regular visa
+                                if (!startDate || (startDate && endDate)) {
+                                  // Case 1: No start date OR both dates already selected
+                                  // Set new start date and clear end date
+                                  console.log("Setting new start date:", date);
+                                  setStartDate(date);
                                   setEndDate(undefined);
+                                } else if (startDate && !endDate) {
+                                  // Case 2: Have start date, need end date
+                                  if (date < startDate) {
+                                    // User clicked date before start date - make it the new start date
+                                    console.log("New start date (before current):", date);
+                                    setStartDate(date);
+                                    setEndDate(undefined);
+                                  } else {
+                                    // User clicked date after start date - make it the end date
+                                    console.log("Setting end date:", date);
+                                    setEndDate(date);
+                                    setTimeout(() => setDatePickerOpen(false), 150);
+                                  }
                                 }
                               }}
                               disabled={(date) => {
@@ -1082,7 +1089,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                                       max={120}
                                       value={traveller.age || ''}
                                       onChange={(e) => updateAge(traveller.id, e.target.value)}
-                                                placeholder={isAdult ? "Age" : "Age"}
+                                                placeholder={isAdult ? "18+" : "0-17"}
                                                 className="w-24 h-10 border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-deepBlue focus:border-deepBlue text-center font-medium"
                                     />
                                             </div>
@@ -1229,7 +1236,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                           "w-4 h-4 rounded flex items-center justify-center mr-2 border transition-all duration-200",
                           preExisting ? "bg-deepBlue border-deepBlue" : "bg-white border-gray-300 group-hover:border-deepBlue/50"
                         )}>
-                          {preExisting && <Check className="h-3 w-3 text-white" />}
+                          {preExisting && <Check className="h-4 w-4 text-white" />}
                         </div>
                         <label className="text-base md:text-sm text-gray-700 cursor-pointer select-none hover:text-gray-900 transition-colors">
                           Show coverages with Pre-existing conditions
@@ -1240,7 +1247,7 @@ const Hero = ({ onQuoteDataReceived }: HeroProps) => {
                           "w-4 h-4 rounded flex items-center justify-center mr-2 border transition-all duration-200",
                           monthlyPayment ? "bg-deepBlue border-deepBlue" : "bg-white border-gray-300 group-hover:border-deepBlue/50"
                         )}>
-                          {monthlyPayment && <Check className="h-3 w-3 text-white" />}
+                          {monthlyPayment && <Check className="h-4 w-4 text-white" />}
                         </div>
                         <label className="text-base md:text-sm text-gray-700 cursor-pointer select-none hover:text-gray-900 transition-colors">
                           Monthly payment options only
