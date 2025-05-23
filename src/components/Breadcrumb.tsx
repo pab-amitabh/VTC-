@@ -1,3 +1,4 @@
+import React, { memo } from 'react';
 import Link from 'next/link';
 import { ChevronRight, Home } from 'lucide-react';
 
@@ -67,4 +68,6 @@ const Breadcrumb = ({ items }: BreadcrumbProps) => {
   );
 };
 
-export default Breadcrumb; 
+Breadcrumb.displayName = 'Breadcrumb';
+
+export default memo(Breadcrumb); 

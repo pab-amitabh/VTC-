@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -66,7 +66,7 @@ const CoverageRequirements = () => {
 
   return (
     <section className="py-16 md:py-24 bg-white" id="coverage">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section 1: How to buy insurance */}
         <motion.div 
           className="mb-16 md:mb-24"
@@ -77,12 +77,12 @@ const CoverageRequirements = () => {
         >
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
             {/* Image */}
-            <div className="w-full lg:w-[65%] order-2 lg:order-1 -ml-10">
-              <div className="overflow-hidden">
+            <div className="w-full lg:w-[65%] order-2 lg:order-1 lg:-ml-10">
+              <div className="overflow-hidden rounded-xl">
                 <img 
                   src="/images/Coverage.png" 
                   alt="Travel Insurance Coverage" 
-                  className="w-[120%] h-auto object-cover scale-150 transform origin-center"
+                  className="w-full lg:w-[120%] h-auto object-cover lg:scale-100 lg:transform lg:origin-center"
                   onError={(e) => {
                     e.currentTarget.src = "https://via.placeholder.com/600x400?text=Insurance+Coverage";
                   }}
@@ -277,4 +277,6 @@ const CoverageRequirements = () => {
   );
 };
 
-export default CoverageRequirements; 
+CoverageRequirements.displayName = 'CoverageRequirements';
+
+export default memo(CoverageRequirements); 

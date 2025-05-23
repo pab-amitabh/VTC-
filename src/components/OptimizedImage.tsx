@@ -49,4 +49,6 @@ const OptimizedImage = ({
   )
 }
 
-export default OptimizedImage 
+OptimizedImage.displayName = 'OptimizedImage';
+
+export default memo(OptimizedImage); 

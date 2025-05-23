@@ -2,6 +2,7 @@ import React from 'react';
 import './globals.css';
 import { Metadata } from 'next';
 import { IMAGES } from '@/config/images';
+import SmoothScroll from '../src/components/SmoothScroll';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://insuretravel.com'),
@@ -117,13 +118,17 @@ export default function RootLayout({
           type="image/jpeg"
         />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, shrink-to-fit=no" />
         <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta httpEquiv="Pragma" content="no-cache" />
         <meta httpEquiv="Expires" content="0" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="theme-color" content="#0ea5e9" />
       </head>
-      <body>
-        {children}
+      <body className="overflow-x-hidden">
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

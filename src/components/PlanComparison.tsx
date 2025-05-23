@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, memo } from 'react';
 import { motion } from 'framer-motion';
 import { 
   ChevronDown, 
@@ -529,6 +529,44 @@ const trackBuyNowClick = async (
   }
 };
 
+// Add function to get logo dimensions based on company name
+const getLogoDimensions = (provider: string, isApiData: boolean) => {
+  if (!isApiData) {
+    // Mock data - use original sizing
+    return {
+      maxWidth: '100%',
+      maxHeight: '100%'
+    };
+  }
+  
+  // Base API dimensions (previously 189px x 68px)
+  const baseDimensions = { width: 189, height: 68 };
+  
+  // Company-specific scaling factors - MOBILE ONLY
+  const scalingFactors: { [key: string]: number } = {
+    'travelance': 1.25,    // 25% increase
+    'secure travel': 1.15, // 15% increase  
+    'manulife': 1.12,      // 12% increase
+    'gms': 1.10           // 10% increase
+  };
+  
+  const providerKey = provider.toLowerCase();
+  const scaleFactor = scalingFactors[providerKey] || 1.0; // Default to no scaling for other providers
+  
+  return {
+    // Desktop: Use original API dimensions
+    width: `${baseDimensions.width}px`,
+    height: `${baseDimensions.height}px`,
+    maxWidth: `${baseDimensions.width}px`,
+    maxHeight: `${baseDimensions.height}px`,
+    // Mobile: Use scaled dimensions via CSS custom properties
+    '--mobile-width': `${Math.round(baseDimensions.width * scaleFactor)}px`,
+    '--mobile-height': `${Math.round(baseDimensions.height * scaleFactor)}px`,
+    '--mobile-max-width': `${Math.round(baseDimensions.width * scaleFactor)}px`,
+    '--mobile-max-height': `${Math.round(baseDimensions.height * scaleFactor)}px`
+  };
+};
+
 const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
   const [expandedPlans, setExpandedPlans] = useState<Record<string, boolean>>({});
   const [expandedFeatures, setExpandedFeatures] = useState<Record<string, boolean>>({});
@@ -540,6 +578,8 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
     url?: string;
     trackingId?: string;
   } | null>(null);
+  const [showMobileDetailsPopup, setShowMobileDetailsPopup] = useState(false);
+  const [selectedMobileDetailsPlan, setSelectedMobileDetailsPlan] = useState<InsurancePlan | null>(null);
   
   const quoteData = useContext(QuoteContext);
   
@@ -587,10 +627,32 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
   const hasMorePlans = allInsurancePlans.length > 6;
 
   const togglePlanDetails = (planId: string) => {
-    setExpandedPlans(prev => ({
-      ...prev,
-      [planId]: !prev[planId]
-    }));
+    // Check if we're on mobile (screen width less than 768px)
+    const isMobile = window.innerWidth < 768;
+    
+    if (isMobile) {
+      // On mobile, show popup instead of expanding
+      const plan = allInsurancePlans.find(p => p.id === planId);
+      if (plan) {
+        setSelectedMobileDetailsPlan(plan);
+        setShowMobileDetailsPopup(true);
+        document.body.style.overflow = 'hidden';
+      }
+    } else {
+      // On desktop, keep the original expand behavior
+      setExpandedPlans(prev => ({
+        ...prev,
+        [planId]: !prev[planId]
+      }));
+    }
+  };
+
+  const closeMobileDetailsPopup = () => {
+    document.body.style.overflow = '';
+    setShowMobileDetailsPopup(false);
+    setTimeout(() => {
+      setSelectedMobileDetailsPlan(null);
+    }, 100);
   };
 
   const toggleFeatures = (planId: string) => {
@@ -769,6 +831,35 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
     setPortalRoot(document.body);
   }, []);
 
+  // Clean up scroll lock when component unmounts or when modals change
+  useEffect(() => {
+    const restoreScroll = () => {
+      document.body.style.overflow = '';
+    };
+
+    // Cleanup on unmount
+    return restoreScroll;
+  }, []);
+
+  // Restore scroll when modals close
+  useEffect(() => {
+    if (!showMobileDetailsPopup && !showCustomerInfoForm) {
+      document.body.style.overflow = '';
+    }
+  }, [showMobileDetailsPopup, showCustomerInfoForm]);
+
+  // Handle window resize - close mobile popup if screen becomes desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (showMobileDetailsPopup && window.innerWidth >= 768) {
+        closeMobileDetailsPopup();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [showMobileDetailsPopup]);
+
   return (
     <>
       <section className="pt-6 md:pt-8 py-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto" id="plans">
@@ -817,20 +908,17 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                   <div className="relative">
                     <div className="p-5">
                       {/* Plan name at the top */}
-                      <h3 className="text-xl font-bold text-deepBlue mb-4 pl-2">{plan.name}</h3>
+                      <h3 className="text-xl font-bold text-deepBlue mb-4 md:mb-2 pl-2">{plan.name}</h3>
                       
                       <div className="flex flex-wrap md:flex-nowrap">
                         {/* Logo and rating column */}
                         <div className="w-full md:w-48 flex flex-col items-center md:items-center mb-6 md:mb-0 md:pr-6">
-                          <div className="w-full h-40 flex items-center justify-center mb-4">
+                          <div className="w-full h-40 flex items-center justify-center mb-0 md:mb-4">
                             <img 
                               src={plan.logo} 
                               alt={`${plan.provider} logo`} 
-                              className="max-h-full w-auto object-contain px-2" 
-                              style={{ 
-                                maxWidth: '100%',
-                                transform: 'scale(1.26)'
-                              }}
+                              className="object-contain px-2 mobile-logo-scaling" 
+                              style={getLogoDimensions(plan.provider, quoteData !== null)}
                             />
                           </div>
                           <div className="flex items-center mb-1 justify-center">
@@ -942,7 +1030,7 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                         
                         {/* Price and buy column */}
                         <div className="w-full md:w-56 flex flex-col items-center text-center md:items-center mt-4 md:mt-0 md:pl-6">
-                          <div className="text-4xl font-bold text-magenta mb-1">{plan.price}</div>
+                          <div className="text-5xl md:text-4xl font-bold text-magenta mb-1">{plan.price}</div>
                           {plan.pricePerMonth && <div className="text-sm text-gray-500 mb-4">{plan.pricePerMonth}</div>}
                           {plan.provider !== "21st Century" ?  
                             <button 
@@ -967,11 +1055,14 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
                         className="flex items-center justify-center w-full py-3 bg-gray-100 rounded-lg text-deepBlue hover:text-deepBlue/80 text-sm font-medium mt-6"
                         onClick={() => togglePlanDetails(plan.id)}
                       >
-                        {expandedPlans[plan.id] ? 'Hide details' : 'Show details'} <ChevronDown className={`ml-1 transition-transform ${expandedPlans[plan.id] ? 'rotate-180' : ''}`} size={16} />
+                        <span className="md:hidden">View details</span>
+                        <span className="hidden md:inline">{expandedPlans[plan.id] ? 'Hide details' : 'Show details'}</span>
+                        <ChevronDown className={`ml-1 transition-transform md:${expandedPlans[plan.id] ? 'rotate-180' : ''}`} size={16} />
                       </button>
                       
+                      {/* Only show expanded content on desktop */}
                       {expandedPlans[plan.id] && (
-                        <div className="mt-4 pt-4 border-t border-gray-100">
+                        <div className="hidden md:block mt-4 pt-4 border-t border-gray-100">
                           <div className="bg-white rounded-lg p-6 mb-4">
                             <h3 className="text-2xl font-medium text-gray-900 mb-4">What is included in your policy</h3>
                             
@@ -1104,8 +1195,138 @@ const PlanComparison = ({ onModifySearch }: PlanComparisonProps) => {
         </div>,
         portalRoot
       )}
+
+      {/* Mobile details popup modal */}
+      {showMobileDetailsPopup && selectedMobileDetailsPlan && portalRoot && createPortal(
+        <div 
+          className="fixed inset-0 z-[9998] flex items-center justify-center p-4"
+          style={{
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              closeMobileDetailsPopup();
+            }
+          }}
+        >
+          <div 
+            className="bg-white rounded-xl shadow-lg max-w-lg w-full max-h-[90vh] overflow-y-auto modal-content"
+            style={{ 
+              position: 'fixed',
+              top: '50%', 
+              left: '50%', 
+              transform: 'translate(-50%, -50%)'
+            }}
+          >
+            <div className="p-6">
+              {/* Header */}
+              <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-100">
+                <h3 className="text-xl font-bold text-deepBlue">{selectedMobileDetailsPlan.name}</h3>
+                <button 
+                  onClick={closeMobileDetailsPopup}
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Content */}
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-medium text-gray-900 mb-3">What is included in your policy</h4>
+                  <p className="text-gray-700 mb-4 text-sm">
+                    Travel medical insurance provides coverage for emergency medical expenses during your trip, which includes doctor's visits, hospital stays, emergency transportation, and prescription medication. It can also protect you from financial loss if you have to cancel or interrupt your trip.
+                  </p>
+                </div>
+                
+                <div>
+                  <h5 className="text-md font-semibold text-gray-900 mb-3">Key features</h5>
+                  <ul className="list-disc pl-5 space-y-1 mb-4">
+                    {selectedMobileDetailsPlan.additionalInfo.extractedKeyFeatures.map((feature, i) => (
+                      <li key={i} className="text-gray-700 text-sm">{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h5 className="text-md font-semibold text-gray-900 mb-2">Pre-existing conditions</h5>
+                  <p className="text-gray-700 text-sm mb-4">
+                    {selectedMobileDetailsPlan.additionalInfo.preExisting === "Yes" ? 
+                      'Included' : 
+                      'Not included'}
+                  </p>
+                </div>
+
+                <div>
+                  <h5 className="text-md font-semibold text-gray-900 mb-2">Additional information</h5>
+                  <ul className="list-none space-y-2 mb-4">
+                    <li className="text-gray-700 text-sm">
+                      <span className="font-semibold">Claims administered by:</span> {selectedMobileDetailsPlan.additionalInfo.underwrittenBy}
+                    </li>
+                    {selectedMobileDetailsPlan.additionalInfo.maxAge && (
+                      <li className="text-gray-700 text-sm">
+                        <span className="font-semibold">Maximum age:</span> {selectedMobileDetailsPlan.additionalInfo.maxAge}
+                      </li>
+                    )}
+                    {selectedMobileDetailsPlan.additionalInfo.maxDependentAge && selectedMobileDetailsPlan.additionalInfo.maxDependentAge !== "0" && selectedMobileDetailsPlan.additionalInfo.maxDependentAge !== "N/A" && (
+                      <li className="text-gray-700 text-sm">
+                        <span className="font-semibold">Maximum dependent age:</span> {selectedMobileDetailsPlan.additionalInfo.maxDependentAge}
+                      </li>
+                    )}
+                    <li className="text-gray-700 text-sm">
+                      <span className="font-semibold">Family plan:</span> {selectedMobileDetailsPlan.additionalInfo.familyPlan}
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Downloads */}
+                {(selectedMobileDetailsPlan.policy_document_url || selectedMobileDetailsPlan.brochure_url) && (
+                  <div className="border rounded-lg p-4 bg-gray-50">
+                    <div className="space-y-3">
+                      <div className="font-medium text-gray-700 text-sm">Downloads:</div>
+                      <div className="space-y-2">
+                        {selectedMobileDetailsPlan.policy_document_url && (
+                          <a 
+                            href={selectedMobileDetailsPlan.policy_document_url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center text-blue-400 hover:text-blue-500 text-sm"
+                          >
+                            <div className="w-6 h-6 flex items-center justify-center bg-red-100 rounded-md mr-2">
+                              <span className="text-xs font-medium text-red-500">PDF</span>
+                            </div>
+                            Policy Wordings
+                          </a>
+                        )}
+                        {selectedMobileDetailsPlan.brochure_url && (
+                          <a 
+                            href={selectedMobileDetailsPlan.brochure_url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center text-blue-400 hover:text-blue-500 text-sm"
+                          >
+                            <div className="w-6 h-6 flex items-center justify-center bg-red-100 rounded-md mr-2">
+                              <span className="text-xs font-medium text-red-500">PDF</span>
+                            </div>
+                            Product Brochure
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>,
+        portalRoot
+      )}
     </>
   );
 };
 
-export default PlanComparison;
+PlanComparison.displayName = 'PlanComparison';
+
+export default memo(PlanComparison);

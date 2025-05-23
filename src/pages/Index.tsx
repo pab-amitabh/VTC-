@@ -126,7 +126,7 @@ const Index = ({ onQuoteUpdate }: IndexProps) => {
 
   return (
     <QuoteContext.Provider value={quoteData}>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white overflow-x-hidden w-full max-w-[100vw] overflow-fix">
         <motion.div
           style={{
             backgroundColor: "white",
@@ -138,7 +138,7 @@ const Index = ({ onQuoteUpdate }: IndexProps) => {
             zIndex: 1000,
             width: '100%'
           }}
-          className="transition-all duration-200 sticky-nav"
+          className="transition-all duration-200 sticky-nav overflow-x-hidden"
         >
           <Navbar />
         </motion.div>
